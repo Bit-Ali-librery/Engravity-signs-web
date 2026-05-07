@@ -51,8 +51,14 @@ h1,h2,h3,h4 { font-weight: 700; line-height: 1.1; letter-spacing: -0.02em; }
 /* Navbar */
 .navbar { position: fixed; width: 100%; top: 0; z-index: 100; background: rgba(10,11,31,0.65); backdrop-filter: blur(24px) saturate(1.4); border-bottom: 1px solid rgba(0,229,255,0.12); padding: 1rem 0; box-shadow: 0 4px 30px rgba(0,0,0,0.3); }
 .nav-container { display: flex; justify-content: space-between; align-items: center; max-width: 1400px; margin: 0 auto; padding: 0 2rem; }
-.logo { font-size: 1.4rem; font-weight: 800; color: #FFF; text-decoration: none; letter-spacing: 2px; display: flex; align-items: center; gap: 8px; }
-.logo-icon { width: 22px; height: 22px; background: linear-gradient(135deg, #00E5FF, #B200FF); border-radius: 5px; box-shadow: 0 0 14px rgba(0,229,255,0.6), 0 0 20px rgba(178,0,255,0.4); }
+.logo { font-size: 1.4rem; font-weight: 800; color: #FFF; text-decoration: none; letter-spacing: 2px; display: flex; align-items: center; gap: 10px; }
+/* Wolf logo — Engravity brand mark. Subpages use ../assets/, root uses ./assets/.
+   The path is relative to the HTML file, so each page uses its own URL via
+   inline style override OR we rely on the bg position because the CSS is in
+   /src/styles/ which is sibling to /assets/. From CSS, the URL is
+   resolved relative to the CSS file itself, not the HTML — so this path is
+   always correct regardless of which HTML page loads it. */
+.logo-icon { width: 28px; height: 28px; background: url('../../assets/images/wolf-logo.png') center / contain no-repeat; filter: drop-shadow(0 0 8px rgba(0, 229, 255, 0.4)); }
 .nav-links { display: flex; gap: 2rem; }
 .nav-links a { color: var(--text-muted); text-decoration: none; font-weight: 500; transition: color 0.3s; }
 .nav-links a:hover { color: #FFF; }
