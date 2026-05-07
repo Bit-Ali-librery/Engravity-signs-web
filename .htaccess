@@ -120,9 +120,19 @@ ErrorDocument 404 /404.html
 </IfModule>
 
 # ─── Bloquear acceso a archivos sensibles ────────────────────────────
-<FilesMatch "(^\.|\.htaccess|\.json$|\.lock$|\.bat$|\.ps1$|package\.json|vite\.config\.js)">
+# Includes: dotfiles (.git, .gitignore, .gitattributes), .htaccess itself,
+# config (json, yml, lock, rules), scripts (bat, ps1, sh), docs (md, txt),
+# build artifacts (zip, tar, gz), deploy logs.
+<FilesMatch "(^\.|\.htaccess|\.json$|\.lock$|\.bat$|\.ps1$|\.sh$|\.md$|\.markdown$|\.rules$|\.yml$|\.yaml$|\.zip$|\.tar$|\.gz$|\.log$|\.sql$|\.env$|\.bak$|package\.json|vite\.config\.js)">
   Require all denied
 </FilesMatch>
+
+# Block whole sensitive directories (defense in depth)
+RedirectMatch 404 /\.git
+RedirectMatch 404 /\.github
+RedirectMatch 404 /node_modules
+RedirectMatch 404 /imagen
+RedirectMatch 404 /ima
 
 # ─── MIME types correctos ────────────────────────────────────────────
 <IfModule mod_mime.c>

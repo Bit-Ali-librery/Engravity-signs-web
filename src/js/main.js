@@ -1148,6 +1148,100 @@ const translations = {
   }
 };
 
+// ════════════════════════════════════════════════════════════════════
+//  Language detection cascade
+//  Priority: localStorage > navigator.languages > IP geolocation > 'en'
+//  Native: English. Secondary: Spanish. Tertiary: French.
+// ════════════════════════════════════════════════════════════════════
+const SUPPORTED_LANGS = ['en', 'es', 'fr'];
+const DEFAULT_LANG = 'en';
+const LS_KEY = 'engravity.lang';
+const IP_TIMEOUT_MS = 1500;
+
+// ISO 3166-1 country code -> preferred language (anything else falls to 'en')
+const COUNTRY_TO_LANG = {
+  // Spanish-speaking
+  ES: 'es', MX: 'es', AR: 'es', CO: 'es', PE: 'es', VE: 'es', CL: 'es',
+  EC: 'es', GT: 'es', CU: 'es', BO: 'es', DO: 'es', HN: 'es', PY: 'es',
+  SV: 'es', NI: 'es', CR: 'es', PA: 'es', UY: 'es', PR: 'es',
+  // French-speaking
+  FR: 'fr', BE: 'fr', CH: 'fr', LU: 'fr', MC: 'fr',
+  SN: 'fr', CI: 'fr', ML: 'fr', BF: 'fr', NE: 'fr', TG: 'fr', BJ: 'fr',
+  CD: 'fr', CG: 'fr', GA: 'fr', CM: 'fr', MG: 'fr', HT: 'fr',
+};
+
+function _normLang(tag) {
+  if (!tag || typeof tag !== 'string') return null;
+  const code = tag.toLowerCase().split(/[-_]/)[0];
+  return SUPPORTED_LANGS.includes(code) ? code : null;
+}
+
+function _detectFromStorage() {
+  try { return _normLang(localStorage.getItem(LS_KEY)); } catch (e) { return null; }
+}
+
+function _detectFromBrowser() {
+  const list = navigator.languages || [navigator.language || navigator.userLanguage];
+  for (const tag of list) { const c = _normLang(tag); if (c) return c; }
+  return null;
+}
+
+async function _detectFromIP() {
+  try {
+    const ctrl = new AbortController();
+    const t = setTimeout(() => ctrl.abort(), IP_TIMEOUT_MS);
+    const res = await fetch('https://www.cloudflare.com/cdn-cgi/trace', { signal: ctrl.signal });
+    clearTimeout(t);
+    if (!res.ok) return null;
+    const txt = await res.text();
+    const m = txt.match(/loc=([A-Z]{2})/);
+    return m ? (COUNTRY_TO_LANG[m[1]] || null) : null;
+  } catch (e) { return null; }
+}
+
+function _resolveInitialLang() {
+  return _detectFromStorage() || _detectFromBrowser() || DEFAULT_LANG;
+}
+
+// Apply language as early as possible to minimize flash of untranslated text.
+// changeLanguage() is defined later in the file (window-scoped) — wait until
+// it's available before applying.
+(function initLanguageCascade() {
+  const apply = (lang) => {
+    if (typeof window.changeLanguage === 'function') {
+      window.changeLanguage(lang);
+    } else {
+      // changeLanguage not defined yet — patch html lang and queue full apply
+      document.documentElement.lang = lang;
+      const tryApply = () => {
+        if (typeof window.changeLanguage === 'function') {
+          window.changeLanguage(lang);
+        } else {
+          requestAnimationFrame(tryApply);
+        }
+      };
+      requestAnimationFrame(tryApply);
+    }
+  };
+
+  const initial = _resolveInitialLang();
+  if (document.readyState !== 'loading') {
+    apply(initial);
+  } else {
+    document.addEventListener('DOMContentLoaded', () => apply(initial), { once: true });
+  }
+
+  // Background IP check ONLY when no saved preference and the browser language
+  // is not one we support (i.e. fell back to default 'en').
+  const hadStorage = _detectFromStorage();
+  const hadBrowser = _detectFromBrowser();
+  if (!hadStorage && !hadBrowser) {
+    _detectFromIP().then(ipLang => {
+      if (ipLang && ipLang !== initial) apply(ipLang);
+    });
+  }
+})();
+
 // === Initialize App ===
 document.addEventListener('DOMContentLoaded', () => {
   // Lenis Smooth Scroll
@@ -1277,7 +1371,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // === Language Changer ===
-window.currentLang = 'es';
+window.currentLang = 'en';
 window.changeLanguage = (lang) => {
   const dict = translations[lang];
   if (!dict) return;
