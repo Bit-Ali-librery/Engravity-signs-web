@@ -117,6 +117,20 @@ ErrorDocument 404 /404.html
   Header set X-Frame-Options "SAMEORIGIN"
   Header set Referrer-Policy "strict-origin-when-cross-origin"
   Header set Permissions-Policy "geolocation=(), microphone=(), camera=()"
+
+  # ── HSTS — forzar HTTPS por 2 años (después podemos agregar preload) ──
+  Header always set Strict-Transport-Security "max-age=63072000; includeSubDomains" env=HTTPS
+
+  # ── Content Security Policy — defensa principal contra XSS ──
+  # Allows: self + Google Fonts (CSS+font), GSAP CDN, Lenis CDN, Firebase SDK,
+  #         Firebase API endpoints (REST + WebSocket), Cloudflare trace (IP geolocation)
+  # 'unsafe-inline' is required because the site uses inline onclick handlers and
+  # <style> attributes; migrate to addEventListener + classes to remove eventually.
+  Header set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://unpkg.com https://www.gstatic.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://www.cloudflare.com https://*.googleapis.com https://*.firebaseio.com wss://*.firebaseio.com https://*.firebaseapp.com https://identitytoolkit.googleapis.com https://securetoken.googleapis.com https://*.firebasestorage.app; frame-ancestors 'self'; form-action 'self'; base-uri 'self'; object-src 'none';"
+
+  # ── Cross-Origin policies (modern hardening) ──
+  Header set Cross-Origin-Opener-Policy "same-origin-allow-popups"
+  Header set Cross-Origin-Resource-Policy "same-origin"
 </IfModule>
 
 # ─── Bloquear acceso a archivos sensibles ────────────────────────────
