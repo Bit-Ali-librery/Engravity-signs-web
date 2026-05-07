@@ -1,36 +1,30 @@
 // ════════════════════════════════════════════════════════════════════
-// Firebase Configuration
+// Firebase Configuration — Engravity Signs (Blaze)
 // ════════════════════════════════════════════════════════════════════
 //
-// REEMPLAZA los valores de abajo con la config que te da Firebase.
-// Para obtenerla:
-//   1. Ve a console.firebase.google.com
-//   2. Selecciona tu proyecto Engravity
-//   3. ⚙️ Project settings → General → Your apps → "Engravity Web"
-//   4. Scroll hasta "SDK setup and configuration" → copia el objeto firebaseConfig
-//
-// ¿Es seguro tener esto público? SÍ. La seguridad está en las
-// Security Rules de Firestore + Authorized Domains de Auth, NO en ocultar
-// el apiKey. Esto es estándar en todo proyecto web con Firebase.
+// IS IT SAFE TO HAVE THIS PUBLIC? YES. Security lives in Firestore
+// Security Rules + Authorized Domains in Firebase Auth, NOT in hiding
+// the apiKey. This is standard for every Firebase web project.
 // ════════════════════════════════════════════════════════════════════
 
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-app.js";
-import { getAuth } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-auth.js";
-import { getFirestore } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore.js";
+import { getAuth }       from "https://www.gstatic.com/firebasejs/10.12.5/firebase-auth.js";
+import { getFirestore }  from "https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore.js";
+import { getStorage }    from "https://www.gstatic.com/firebasejs/10.12.5/firebase-storage.js";
 
-// ─── PEGAR AQUÍ TU CONFIG REAL ───
 const firebaseConfig = {
-  apiKey: "REEMPLAZAR-CON-TU-API-KEY",
-  authDomain: "engravity-signs-XXXXX.firebaseapp.com",
-  projectId: "engravity-signs-XXXXX",
-  storageBucket: "engravity-signs-XXXXX.appspot.com",
-  messagingSenderId: "REEMPLAZAR",
-  appId: "REEMPLAZAR"
+  apiKey: "AIzaSyBLlyAUD6_h7YcScw8puU3ENKytGRBOg04",
+  authDomain: "engravity-signs.firebaseapp.com",
+  projectId: "engravity-signs",
+  storageBucket: "engravity-signs.firebasestorage.app",
+  messagingSenderId: "250312785941",
+  appId: "1:250312785941:web:f22e6b998c9d222a770e1c",
+  measurementId: "G-FYK9WRMHQE"
 };
-// ─────────────────────────────────
 
-// Inicializar Firebase
+// Initialize Firebase
 const app = initializeApp(firebaseConfig);
 export const auth = getAuth(app);
 export const db = getFirestore(app);
+export const storage = getStorage(app);
 export default app;
