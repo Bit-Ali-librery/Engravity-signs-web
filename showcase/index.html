@@ -1,0 +1,297 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <title>Showcase | Engravity — Letreros reales producidos con Engravity</title>
+    <meta name="description" content="Galería de letreros producidos con Engravity: ADA, dimensionales, exteriores, multimaterial. Casos reales con materiales, dimensiones y aprendizajes.">
+    <link rel="canonical" href="https://engravitysigns.com/showcase/">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://engravitysigns.com/showcase/">
+    <meta property="og:title" content="Showcase Engravity | Letreros reales que dejan huella">
+    <meta property="og:description" content="Una selección de proyectos diseñados, validados y producidos con Engravity.">
+    <meta property="og:image" content="https://engravitysigns.com/assets/images/wood-metal-sign.png">
+    <meta property="og:locale" content="es_MX">
+    <meta property="og:site_name" content="Engravity">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Showcase Engravity">
+    <meta name="twitter:description" content="Letreros reales producidos con Engravity.">
+    <meta name="twitter:image" content="https://engravitysigns.com/assets/images/wood-metal-sign.png">
+
+    <link rel="icon" type="image/png" href="../assets/images/ada-sign.png">
+    <link rel="stylesheet" href="../src/styles/global.css?v=8" />
+    <style>
+      .showcase-hero { max-width: 900px; margin: 140px auto 3rem; padding: 0 2rem; text-align: center; }
+      .showcase-hero h1 { font-size: clamp(2.5rem, 5vw, 4rem); margin-bottom: 1rem; line-height: 1.1; }
+      .showcase-hero p { color: var(--text-muted); font-size: 1.15rem; max-width: 650px; margin: 0 auto 2rem; line-height: 1.6; }
+
+      .showcase-stats { max-width: 1100px; margin: 0 auto 4rem; padding: 0 2rem; display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; }
+      .stat-pill { padding: 1.25rem; background: rgba(20,25,30,0.5); border: 1px solid var(--glass-border); border-radius: 14px; text-align: center; }
+      .stat-pill .stat-num { font-size: 2rem; font-weight: 900; color: var(--accent-primary); line-height: 1; }
+      .stat-pill .stat-label { font-size: 0.75rem; letter-spacing: 1px; text-transform: uppercase; color: var(--text-muted); margin-top: 0.5rem; }
+
+      .showcase-filters { max-width: 1200px; margin: 0 auto 2rem; padding: 0 2rem; display: flex; gap: 0.6rem; flex-wrap: wrap; justify-content: center; }
+      .sc-filter-btn { background: rgba(255,255,255,0.04); border: 1px solid var(--glass-border); color: var(--text-muted); padding: 0.55rem 1.2rem; border-radius: 50px; cursor: pointer; font-size: 0.85rem; font-weight: 600; transition: all 0.3s; }
+      .sc-filter-btn:hover { color: #FFF; border-color: rgba(0,229,255,0.3); }
+      .sc-filter-btn.active { background: var(--accent-primary); color: #000; border-color: var(--accent-primary); }
+
+      .showcase-grid { max-width: 1300px; margin: 0 auto 5rem; padding: 0 2rem; display: grid; grid-template-columns: repeat(auto-fit, minmax(330px, 1fr)); gap: 1.75rem; }
+      .case-card { background: rgba(20,25,30,0.5); border: 1px solid var(--glass-border); border-radius: 18px; overflow: hidden; transition: transform 0.3s, border-color 0.3s; display: flex; flex-direction: column; }
+      .case-card:hover { transform: translateY(-5px); border-color: var(--accent-primary); }
+      .case-img { width: 100%; aspect-ratio: 4/3; object-fit: cover; }
+      .case-body { padding: 1.5rem 1.5rem 1.75rem; flex: 1; display: flex; flex-direction: column; }
+      .case-tags { display: flex; gap: 0.4rem; flex-wrap: wrap; margin-bottom: 0.75rem; }
+      .case-tag-v2 { display: inline-block; padding: 0.2rem 0.65rem; font-size: 0.7rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--accent-primary); background: rgba(0,229,255,0.1); border: 1px solid rgba(0,229,255,0.25); border-radius: 20px; }
+      .case-body h3 { color: #FFF; font-size: 1.2rem; margin-bottom: 0.5rem; line-height: 1.3; }
+      .case-body p { color: var(--text-muted); font-size: 0.9rem; line-height: 1.55; margin-bottom: 1rem; flex: 1; }
+      .case-meta { display: grid; grid-template-columns: auto 1fr; gap: 0.4rem 1rem; font-size: 0.8rem; padding-top: 1rem; border-top: 1px solid var(--glass-border); }
+      .case-meta dt { color: var(--text-muted); font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase; font-size: 0.7rem; }
+      .case-meta dd { color: #FFF; }
+
+      .showcase-cta { max-width: 900px; margin: 6rem auto 4rem; padding: 3rem 2rem; text-align: center; background: rgba(20,25,30,0.5); border: 1px solid var(--glass-border); border-radius: 20px; }
+      .showcase-cta h2 { font-size: clamp(1.75rem, 3vw, 2.25rem); margin-bottom: 1rem; }
+      .showcase-cta p { color: var(--text-muted); margin-bottom: 2rem; max-width: 600px; margin-left: auto; margin-right: auto; }
+
+      @media (max-width: 800px) {
+        .showcase-stats { grid-template-columns: repeat(2, 1fr); }
+      }
+    </style>
+  </head>
+  <body>
+
+    <nav class="navbar">
+      <div class="nav-container">
+        <a href="../index.html" class="logo"><span class="logo-icon"></span> ENGRAVITY</a>
+        <div class="nav-links">
+          <a href="../index.html#features">Características</a>
+          <a href="../index.html#audience">Para quién</a>
+          <a href="../pricing/index.html">Precios</a>
+          <a href="../docs/index.html">Docs</a>
+          <a href="../blog/index.html">Blog</a>
+          <a href="../about/index.html">Nosotros</a>
+        </div>
+        <div class="nav-actions">
+          <a href="../pricing/index.html" class="btn btn-primary">Empieza Gratis</a>
+        </div>
+      </div>
+    </nav>
+
+    <main>
+
+      <!-- HERO -->
+      <section class="showcase-hero">
+        <div class="badge">SHOWCASE</div>
+        <h1><span class="gradient-text pompous-gradient">Letreros que dejan huella.</span></h1>
+        <p>Una selección de proyectos diseñados, validados y producidos con Engravity. Cada uno con sus materiales, dimensiones y la decisión de diseño que lo hizo funcionar.</p>
+      </section>
+
+      <!-- STATS -->
+      <section class="showcase-stats">
+        <div class="stat-pill">
+          <div class="stat-num">100%</div>
+          <div class="stat-label">ADA Compliant</div>
+        </div>
+        <div class="stat-pill">
+          <div class="stat-num">12+</div>
+          <div class="stat-label">Materiales soportados</div>
+        </div>
+        <div class="stat-pill">
+          <div class="stat-num">6</div>
+          <div class="stat-label">Perfiles CNC industriales</div>
+        </div>
+        <div class="stat-pill">
+          <div class="stat-num">3</div>
+          <div class="stat-label">Idiomas nativos</div>
+        </div>
+      </section>
+
+      <!-- FILTERS -->
+      <div class="showcase-filters" id="scFilters">
+        <button class="sc-filter-btn active" data-filter="all">Todos</button>
+        <button class="sc-filter-btn" data-filter="ada">ADA</button>
+        <button class="sc-filter-btn" data-filter="dimensional">Dimensional</button>
+        <button class="sc-filter-btn" data-filter="exterior">Exterior</button>
+        <button class="sc-filter-btn" data-filter="multimaterial">Multimaterial</button>
+        <button class="sc-filter-btn" data-filter="estudiante">Estudiantes</button>
+      </div>
+
+      <!-- GRID -->
+      <section class="showcase-grid" id="scGrid">
+
+        <article class="case-card" data-cat="ada">
+          <img src="../assets/images/modern-ada-sign.png" class="case-img" alt="Señalización Braille moderna" />
+          <div class="case-body">
+            <div class="case-tags"><span class="case-tag-v2">ADA</span><span class="case-tag-v2">Aluminio</span></div>
+            <h3>Señalización Braille moderna</h3>
+            <p>Letrero táctil para identificación de habitaciones en hospital. Validado contra ADA 703 con Braille UEB Grado 2 domado.</p>
+            <dl class="case-meta">
+              <dt>Material</dt><dd>Aluminio negro mate + plata</dd>
+              <dt>Dimensiones</dt><dd>8" × 8"</dd>
+              <dt>Producción</dt><dd>CNC engrave + braille domado</dd>
+            </dl>
+          </div>
+        </article>
+
+        <article class="case-card" data-cat="ada">
+          <img src="../assets/images/ada-sign.png" class="case-img" alt="Letrero ADA premium" />
+          <div class="case-body">
+            <div class="case-tags"><span class="case-tag-v2">ADA</span><span class="case-tag-v2">Premium</span></div>
+            <h3>ADA premium con pictograma ISA</h3>
+            <p>Letrero baño accesible con pictograma campo mínimo, contraste validado al 78% y altura táctil de 1/32".</p>
+            <dl class="case-meta">
+              <dt>Material</dt><dd>Acrílico cast + vinyl negro</dd>
+              <dt>Dimensiones</dt><dd>9" × 9"</dd>
+              <dt>Cumplimiento</dt><dd>ADA 703.1, 703.2, 703.5</dd>
+            </dl>
+          </div>
+        </article>
+
+        <article class="case-card" data-cat="dimensional multimaterial">
+          <img src="../assets/images/wood-metal-sign.png" class="case-img" alt="Letrero corporativo madera y metal" />
+          <div class="case-body">
+            <div class="case-tags"><span class="case-tag-v2">Dimensional</span><span class="case-tag-v2">Multimaterial</span></div>
+            <h3>Recepción corporativa madera + metal</h3>
+            <p>Letras dimensionales en aluminio cepillado sobre panel de nogal oscuro con standoffs de 1". Resuelve el problema de dilatación térmica con fijación flexible.</p>
+            <dl class="case-meta">
+              <dt>Material</dt><dd>Nogal + aluminio cepillado</dd>
+              <dt>Dimensiones</dt><dd>48" × 16"</dd>
+              <dt>Fijación</dt><dd>Standoffs 3/4" + VHB flexible</dd>
+            </dl>
+          </div>
+        </article>
+
+        <article class="case-card" data-cat="dimensional">
+          <img src="../assets/images/acrylic-sign.png" class="case-img" alt="Letrero acrílico premium" />
+          <div class="case-body">
+            <div class="case-tags"><span class="case-tag-v2">Dimensional</span><span class="case-tag-v2">Acrílico</span></div>
+            <h3>Lobby corporativo con separadores</h3>
+            <p>Logo grabado en láser sobre acrílico cast con separadores de acero inoxidable. Iluminación posterior LED indirecta.</p>
+            <dl class="case-meta">
+              <dt>Material</dt><dd>Acrílico cast 1/2" + inox</dd>
+              <dt>Dimensiones</dt><dd>36" × 12"</dd>
+              <dt>Acabado</dt><dd>Pulido cristal + LED 3000K</dd>
+            </dl>
+          </div>
+        </article>
+
+        <article class="case-card" data-cat="exterior multimaterial">
+          <img src="../assets/images/cnc-carving.png" class="case-img" alt="Letrero exterior CNC" />
+          <div class="case-body">
+            <div class="case-tags"><span class="case-tag-v2">Exterior</span><span class="case-tag-v2">CNC</span></div>
+            <h3>Restaurante exterior con cedro tratado</h3>
+            <p>Letras V-carve sobre panel de cedro intemperie con marco de acero inoxidable. Sellado con poliuretano marino.</p>
+            <dl class="case-meta">
+              <dt>Material</dt><dd>Cedro tratado + inox 304</dd>
+              <dt>Dimensiones</dt><dd>60" × 20"</dd>
+              <dt>Producción</dt><dd>V-carve 60° + sellado UV</dd>
+            </dl>
+          </div>
+        </article>
+
+        <article class="case-card" data-cat="estudiante">
+          <img src="../assets/images/software-ui.png" class="case-img" alt="Proyecto académico estudiante" />
+          <div class="case-body">
+            <div class="case-tags"><span class="case-tag-v2">Estudiante</span><span class="case-tag-v2">Académico</span></div>
+            <h3>Proyecto final de comunicación visual</h3>
+            <p>Sistema completo de señalética para una biblioteca académica diseñado por estudiante en plan Estudiante. Incluye 12 placas ADA validadas.</p>
+            <dl class="case-meta">
+              <dt>Material</dt><dd>Acrílico + vinyl reflectante</dd>
+              <dt>Piezas</dt><dd>12 placas modulares</dd>
+              <dt>Plan</dt><dd>Estudiante (gratuito)</dd>
+            </dl>
+          </div>
+        </article>
+
+        <article class="case-card" data-cat="dimensional">
+          <img src="../assets/images/vinyl-cutting.png" class="case-img" alt="Vinyl cutting decorativo" />
+          <div class="case-body">
+            <div class="case-tags"><span class="case-tag-v2">Vinyl</span><span class="case-tag-v2">Tipografía</span></div>
+            <h3>Branding integral en vinyl arquitectónico</h3>
+            <p>Tipografía expandida y cortada en vinyl 3M de 7 años aplicada sobre vidrio templado. Sin junturas visibles.</p>
+            <dl class="case-meta">
+              <dt>Material</dt><dd>Vinyl 3M IJ180Cv3</dd>
+              <dt>Dimensiones</dt><dd>120" × 40"</dd>
+              <dt>Aplicación</dt><dd>Vidrio templado interior</dd>
+            </dl>
+          </div>
+        </article>
+
+        <article class="case-card" data-cat="exterior">
+          <img src="../assets/images/workshop.png" class="case-img" alt="Letrero monumental industrial" />
+          <div class="case-body">
+            <div class="case-tags"><span class="case-tag-v2">Exterior</span><span class="case-tag-v2">Monumental</span></div>
+            <h3>Letrero monumental parque industrial</h3>
+            <p>Estructura de acero galvanizado con paneles de pino tratado a presión. Cálculo estructural ajustado al 35% extra de peso por tratamiento.</p>
+            <dl class="case-meta">
+              <dt>Material</dt><dd>Acero galvanizado + pino tratado</dd>
+              <dt>Dimensiones</dt><dd>240" × 84"</dd>
+              <dt>Anclaje</dt><dd>Cimentación de concreto reforzado</dd>
+            </dl>
+          </div>
+        </article>
+
+      </section>
+
+      <!-- CTA -->
+      <section class="showcase-cta">
+        <h2>¿Hiciste algo con Engravity?</h2>
+        <p>Si produjiste un letrero usando Engravity (o estás por hacerlo), nos encantaría conocer tu caso. Lo añadimos al showcase con tu autoría y un enlace a tu taller.</p>
+        <a href="mailto:hola@engravitysigns.com?subject=Showcase%20Engravity" class="btn btn-primary btn-mega">Mandar mi caso</a>
+      </section>
+
+    </main>
+
+    <footer class="footer-unified">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h3 class="gradient-text pompous-gradient">ENGRAVITY</h3>
+          <p>Una startup construida desde el taller. Herramientas profesionales hechas por fabricantes, para fabricantes — y para quienes están aprendiendo a serlo.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Producto</h4>
+          <a href="../index.html#features">Características</a>
+          <a href="../pricing/index.html">Precios</a>
+          <a href="../download/index.html">Descargar</a>
+          <a href="../changelog/index.html">Changelog</a>
+        </div>
+        <div class="footer-col">
+          <h4>Recursos</h4>
+          <a href="../docs/index.html">Documentación</a>
+          <a href="../blog/index.html">Blog</a>
+          <a href="../showcase/index.html">Showcase</a>
+        </div>
+        <div class="footer-col">
+          <h4>Compañía</h4>
+          <a href="../about/index.html">Nosotros</a>
+          <a href="mailto:hola@engravitysigns.com">Contacto</a>
+        </div>
+      </div>
+      <div class="footer-divider">
+        <span>&copy; 2026 Engravitysigns.com — Todos los derechos reservados.</span>
+      </div>
+    </footer>
+
+    <script src="../src/js/main.js"></script>
+    <script type="module" src="../src/js/auth.js"></script>
+    <script>
+      const filterBtns = document.querySelectorAll('.sc-filter-btn');
+      const cards = document.querySelectorAll('#scGrid .case-card');
+      filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          filterBtns.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          const filter = btn.dataset.filter;
+          cards.forEach(c => {
+            const cats = (c.dataset.cat || '').split(' ');
+            c.style.display = (filter === 'all' || cats.includes(filter)) ? '' : 'none';
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

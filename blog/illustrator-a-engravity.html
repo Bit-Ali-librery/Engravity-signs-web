@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <title>De Illustrator a Engravity: tu primer proyecto académico | Blog Engravity</title>
+    <meta name="description" content="Si vienes de la escuela de diseño y nunca tocaste un CNC, esta guía te lleva paso a paso desde tu archivo .ai hasta un letrero físico producido por máquina.">
+    <link rel="canonical" href="https://engravitysigns.com/blog/illustrator-a-engravity.html">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://engravitysigns.com/blog/illustrator-a-engravity.html">
+    <meta property="og:title" content="De Illustrator a Engravity: tu primer proyecto académico">
+    <meta property="og:description" content="El cambio mental del píxel al material. Guía para estudiantes que diseñan para fabricación por primera vez.">
+    <meta property="og:image" content="https://engravitysigns.com/assets/images/software-ui.png">
+    <meta property="og:locale" content="es_MX">
+    <meta property="og:site_name" content="Engravity">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://engravitysigns.com/assets/images/software-ui.png">
+    <link rel="icon" type="image/png" href="../assets/images/ada-sign.png">
+    <link rel="stylesheet" href="../src/styles/global.css?v=8" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <style>
+      .blog-article { max-width: 800px; margin: 120px auto 100px; padding: 0 24px; font-size: 1.1rem; line-height: 1.8; color: var(--text-muted); }
+      .blog-article h1 { font-size: 3rem; color: #FFF; margin-bottom: 20px; line-height: 1.1; }
+      .blog-article h2 { color: #FFF; margin-top: 40px; margin-bottom: 20px; font-size: 2rem; }
+      .blog-article p { margin-bottom: 24px; }
+      .blog-article ul, .blog-article ol { margin-bottom: 30px; margin-left: 20px; }
+      .blog-article li { margin-bottom: 15px; }
+      .hero-img { width: 100%; height: 400px; object-fit: cover; border-radius: 12px; margin: 40px 0; border: 1px solid var(--glass-border); }
+      .meta { display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--glass-border); padding-bottom: 20px; margin-bottom: 30px; flex-wrap: wrap; gap: 1rem; }
+      .author { color: var(--accent-primary); font-weight: 600; }
+      .blog-article .callout { padding: 1rem 1.25rem; background: rgba(0,229,255,0.05); border-left: 3px solid var(--accent-primary); border-radius: 6px; margin: 1.5rem 0; color: #FFF; font-size: 1rem; }
+    </style>
+  </head>
+  <body>
+
+    <nav class="navbar">
+      <div class="nav-container">
+        <a href="../index.html" class="logo"><span class="logo-icon"></span> ENGRAVITY</a>
+        <div class="nav-links">
+          <a href="../index.html#features">Características</a>
+          <a href="../pricing/index.html">Precios</a>
+          <a href="../docs/index.html">Docs</a>
+          <a href="../blog/index.html">Blog</a>
+        </div>
+        <div class="nav-actions">
+          <a href="../blog/index.html" class="btn btn-secondary">← Volver al Blog</a>
+        </div>
+      </div>
+    </nav>
+
+    <main class="blog-article">
+      <div class="meta">
+        <span class="author">Por el Equipo Fundador Engravity</span>
+        <span>Tiempo de lectura: 7 minutos · Mayo 2026</span>
+      </div>
+
+      <h1>De Illustrator a Engravity: tu primer proyecto académico</h1>
+
+      <img class="hero-img" src="../assets/images/software-ui.png" alt="Diseño vectorial en pantalla" />
+
+      <p>Si estás en la escuela de diseño industrial, comunicación visual o arquitectura, probablemente ya manejas Illustrator, Figma o CorelDRAW. Has hecho identidades, posters y mockups bonitos. Pero un día tu profe (o un cliente, o tú mismo) te pide algo distinto: que ese diseño se vuelva un objeto físico. Una placa. Un letrero. Un objeto que alguien va a tocar.</p>
+
+      <p>Y ahí, los programas que conocías se quedan cortos. Esta guía es para ese momento.</p>
+
+      <h2>1. El cambio mental: del píxel al material</h2>
+
+      <p>Diseñar para pantalla es diseñar luz. Diseñar para fabricación es diseñar materia. La diferencia no es solo técnica — es conceptual. En pantalla, tu archivo es la obra final. En fabricación, tu archivo es solo una instrucción que la máquina interpreta sobre un pedazo de acrílico, madera o aluminio.</p>
+
+      <p>Eso significa tres cosas que vas a tener que internalizar:</p>
+
+      <ul>
+        <li><strong>Las medidas son reales.</strong> Si dibujas un texto de 0.5 pulgadas de alto, va a salir de 0.5 pulgadas de alto. Sin escalado mágico. Sin "se ve bien en mockup".</li>
+        <li><strong>Los grosores importan.</strong> Una línea de 0.1 pt en pantalla se ve fina y elegante. Esa misma línea cortada en CNC simplemente <em>no se corta</em> — la fresa es más gruesa que la línea.</li>
+        <li><strong>La profundidad existe.</strong> Tu Illustrator es 2D. Un letrero ADA es 3D: tiene capas, espesores, relieve táctil. Hay que pensar en Z.</li>
+      </ul>
+
+      <h2>2. Lleva tu .ai a Engravity</h2>
+
+      <p>La buena noticia: no tienes que abandonar Illustrator. Engravity importa archivos <code>.ai</code>, <code>.svg</code>, <code>.dxf</code> y <code>.cdr</code> nativos, conservando capas, texto editable y gradientes. Tu workflow sigue siendo familiar.</p>
+
+      <p>El workflow típico para un primer proyecto académico es:</p>
+
+      <ol>
+        <li>Diseñas en Illustrator como ya sabes (composición, color, tipografía).</li>
+        <li>Cuando la pieza está lista, exportas como <code>.ai</code> o <code>.svg</code>.</li>
+        <li>Abres Engravity, creas un proyecto del tipo "Letrero ADA" o "Personalizado", y arrastras tu archivo al lienzo.</li>
+        <li>Engravity te muestra tu diseño en el contexto de un letrero real: con las capas físicas (face, backer, laminate) y los materiales que vas a usar.</li>
+      </ol>
+
+      <div class="callout">
+        <strong>Tip de estudiante:</strong> el plan Estudiante está pensado para esto. Es gratuito y permite que importes, edites y veas la previsualización 3D sin pagar nada. Lo único que tiene marca de agua educativa son los exportes finales.
+      </div>
+
+      <h2>3. Lo que tu profe va a evaluar (y tú no sabías)</h2>
+
+      <p>En la academia se evalúa la propuesta visual. En la industria se evalúa también la <strong>fabricabilidad</strong>. Estos son los criterios que aparecen el día que tu diseño tiene que producirse:</p>
+
+      <ul>
+        <li><strong>Contraste real:</strong> el contraste de color que se ve bien en tu MacBook Retina puede ser ilegal según ADA cuando se imprime en aluminio. Engravity te marca esto en rojo apenas pasa el umbral.</li>
+        <li><strong>Tipografía táctil:</strong> los letreros que se tocan no pueden usar serifas, ni cursivas, ni negritas exageradas. La regla parece arbitraria pero responde a cómo los dedos perciben el relieve.</li>
+        <li><strong>Espesores mínimos:</strong> cualquier línea o detalle por debajo del diámetro de la fresa simplemente no existe en producción. Aprender a respetar esto te ahorra horas de revisión.</li>
+        <li><strong>Profundidad de grabado:</strong> los textos en relieve deben elevarse al menos 1/32" del fondo. Si lo dibujas en Illustrator, el archivo no contiene esta información — Engravity la añade.</li>
+      </ul>
+
+      <h2>4. Tu primer entregable híbrido</h2>
+
+      <p>Una vez que tu pieza pasa el validador de Engravity, puedes generar tres entregables que te diferencian del resto del salón:</p>
+
+      <ul>
+        <li><strong>Render 3D real:</strong> no un mockup en Photoshop, sino una simulación volumétrica con materiales correctos. Lo presentas y se ve profesional.</li>
+        <li><strong>Reporte ADA en PDF:</strong> demuestra que tu diseño cumple normas federales. En una entrega académica, esto es oro.</li>
+        <li><strong>Archivo G-Code:</strong> si tu universidad tiene un CNC, tu pieza puede producirse físicamente esa misma tarde.</li>
+      </ul>
+
+      <h2>Cierre</h2>
+
+      <p>El salto de Illustrator a Engravity no es aprender otro programa. Es aprender otra forma de pensar: del diseño como imagen al diseño como objeto. Esa diferencia es la que separa a los diseñadores que solo entregan mockups de los que entregan piezas reales que la gente usa.</p>
+
+      <p>Y esa transición se hace mejor mientras todavía estás estudiando, sin la presión de un cliente esperando.</p>
+
+      <p style="margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--glass-border); display:flex; justify-content: space-between; flex-wrap: wrap; gap:1rem;">
+        <a href="../blog/index.html" class="btn btn-secondary">← Volver al Blog</a>
+        <a href="../pricing/index.html" class="btn btn-primary">Ver plan Estudiante →</a>
+      </p>
+    </main>
+
+    <footer class="footer-unified">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h3 class="gradient-text pompous-gradient">ENGRAVITY</h3>
+          <p>Una startup construida desde el taller. Herramientas profesionales hechas por fabricantes, para fabricantes — y para quienes están aprendiendo a serlo.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Producto</h4>
+          <a href="../index.html#features">Características</a>
+          <a href="../pricing/index.html">Precios</a>
+          <a href="../download/index.html">Descargar</a>
+          <a href="../changelog/index.html">Changelog</a>
+        </div>
+        <div class="footer-col">
+          <h4>Recursos</h4>
+          <a href="../docs/index.html">Documentación</a>
+          <a href="../blog/index.html">Blog</a>
+        </div>
+        <div class="footer-col">
+          <h4>Compañía</h4>
+          <a href="../about/index.html">Nosotros</a>
+          <a href="mailto:hola@engravitysigns.com">Contacto</a>
+        </div>
+      </div>
+      <div class="footer-divider">
+        <span>&copy; 2026 Engravitysigns.com — Todos los derechos reservados.</span>
+      </div>
+    </footer>
+
+    <script src="../src/js/main.js"></script>
+  </body>
+</html>

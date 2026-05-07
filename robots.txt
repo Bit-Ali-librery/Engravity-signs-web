@@ -1,0 +1,12 @@
+User-agent: *
+Allow: /
+
+Disallow: /node_modules/
+Disallow: /src/
+Disallow: /*.bat
+Disallow: /*.ps1
+Disallow: /package.json
+Disallow: /package-lock.json
+Disallow: /vite.config.js
+
+Sitemap: https://engravitysigns.com/sitemap.xml

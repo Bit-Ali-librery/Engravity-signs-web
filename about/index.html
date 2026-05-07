@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <title>Nosotros | Engravity — Una startup hecha desde el taller</title>
+    <meta name="description" content="La historia detrás de Engravity: dos fundadores con 25+ años en talleres de letreros construyendo la herramienta que siempre necesitaron.">
+    <link rel="canonical" href="https://engravitysigns.com/about/">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://engravitysigns.com/about/">
+    <meta property="og:title" content="Nosotros | Engravity">
+    <meta property="og:description" content="Dos fundadores con 25+ años en talleres construyendo la herramienta que siempre quisimos tener.">
+    <meta property="og:image" content="https://engravitysigns.com/assets/images/workshop.png">
+    <meta property="og:locale" content="es_MX">
+    <meta property="og:site_name" content="Engravity">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Nosotros | Engravity">
+    <meta name="twitter:description" content="Una startup construida desde el taller.">
+    <meta name="twitter:image" content="https://engravitysigns.com/assets/images/workshop.png">
+
+    <link rel="icon" type="image/png" href="../assets/images/ada-sign.png">
+    <link rel="stylesheet" href="../src/styles/global.css?v=8" />
+    <style>
+      .about-hero { max-width: 900px; margin: 140px auto 4rem; padding: 0 2rem; text-align: center; }
+      .about-hero h1 { font-size: clamp(2.5rem, 5vw, 4rem); margin-bottom: 1.25rem; line-height: 1.1; }
+      .about-hero p { color: var(--text-muted); font-size: 1.2rem; max-width: 700px; margin: 0 auto; line-height: 1.6; }
+
+      .about-section { max-width: 1100px; margin: 5rem auto; padding: 0 2rem; }
+      .about-section h2 { font-size: clamp(2rem, 3.5vw, 2.75rem); margin-bottom: 1rem; text-align: center; }
+      .about-section .lead { color: var(--text-muted); font-size: 1.1rem; text-align: center; max-width: 700px; margin: 0 auto 3rem; line-height: 1.6; }
+
+      .story-text { max-width: 800px; margin: 0 auto; }
+      .story-text p { font-size: 1.1rem; line-height: 1.8; color: var(--text-muted); margin-bottom: 1.5rem; }
+      .story-text p strong { color: #FFF; }
+
+      /* Timeline */
+      .timeline { max-width: 800px; margin: 0 auto; position: relative; padding-left: 2rem; }
+      .timeline::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 2px; background: linear-gradient(to bottom, var(--accent-primary), rgba(178,0,255,0.3), transparent); }
+      .timeline-item { position: relative; padding: 0 0 2.5rem 1.5rem; }
+      .timeline-item::before { content: ""; position: absolute; left: -2.5rem; top: 0.5rem; width: 14px; height: 14px; background: var(--accent-primary); border-radius: 50%; box-shadow: 0 0 12px var(--accent-primary); border: 3px solid var(--bg-primary, #07081a); }
+      .timeline-year { font-size: 0.75rem; letter-spacing: 2px; color: var(--accent-primary); font-weight: 700; text-transform: uppercase; margin-bottom: 0.4rem; }
+      .timeline-item h3 { color: #FFF; font-size: 1.25rem; margin-bottom: 0.5rem; }
+      .timeline-item p { color: var(--text-muted); line-height: 1.6; font-size: 0.98rem; }
+
+      /* Values */
+      .values-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+      .value-card { padding: 2rem; background: rgba(20,25,30,0.5); border: 1px solid var(--glass-border); border-radius: 16px; transition: transform 0.3s, border-color 0.3s; }
+      .value-card:hover { transform: translateY(-4px); border-color: var(--accent-primary); }
+      .value-icon { font-size: 2.25rem; margin-bottom: 1rem; display: block; }
+      .value-card h3 { color: #FFF; font-size: 1.25rem; margin-bottom: 0.75rem; }
+      .value-card p { color: var(--text-muted); line-height: 1.6; font-size: 0.95rem; }
+
+      /* Founders */
+      .founders-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+      .founder-card { padding: 2.5rem; background: rgba(20,25,30,0.5); border: 1px solid var(--glass-border); border-radius: 20px; }
+      .founder-avatar { width: 80px; height: 80px; border-radius: 50%; background: linear-gradient(135deg, rgba(0,229,255,0.3), rgba(178,0,255,0.3)); display: flex; align-items: center; justify-content: center; font-size: 2rem; margin-bottom: 1.5rem; }
+      .founder-name { font-size: 1.4rem; color: #FFF; margin-bottom: 0.25rem; }
+      .founder-role { font-size: 0.85rem; color: var(--accent-primary); font-weight: 600; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 1rem; }
+      .founder-bio { color: var(--text-muted); line-height: 1.6; font-size: 0.95rem; }
+
+      /* CTA final */
+      .about-cta { max-width: 900px; margin: 6rem auto 4rem; padding: 3rem 2rem; text-align: center; background: rgba(20,25,30,0.5); border: 1px solid var(--glass-border); border-radius: 20px; }
+      .about-cta h2 { font-size: clamp(1.75rem, 3vw, 2.25rem); margin-bottom: 1rem; }
+      .about-cta p { color: var(--text-muted); margin-bottom: 2rem; max-width: 600px; margin-left: auto; margin-right: auto; }
+
+      @media (max-width: 900px) {
+        .values-grid, .founders-grid { grid-template-columns: 1fr; }
+      }
+    </style>
+  </head>
+  <body>
+
+    <nav class="navbar">
+      <div class="nav-container">
+        <a href="../index.html" class="logo"><span class="logo-icon"></span> ENGRAVITY</a>
+        <div class="nav-links">
+          <a href="../index.html#features">Características</a>
+          <a href="../index.html#audience">Para quién</a>
+          <a href="../pricing/index.html">Precios</a>
+          <a href="../docs/index.html">Docs</a>
+          <a href="../blog/index.html">Blog</a>
+        </div>
+        <div class="nav-actions">
+          <a href="../index.html" class="btn btn-secondary">Volver al inicio</a>
+          <a href="../pricing/index.html" class="btn btn-primary">Empieza Gratis</a>
+        </div>
+      </div>
+    </nav>
+
+    <main>
+
+      <!-- HERO -->
+      <section class="about-hero">
+        <div class="badge">NUESTRA HISTORIA</div>
+        <h1><span class="gradient-text pompous-gradient">Nacidos en el taller.</span><br>Construyendo lo que siempre nos faltó.</h1>
+        <p>Engravity no nació en una incubadora ni en una oficina. Nació en un taller con polvo de MDF, ruido de fresa y la frustración de saber que cada flujo de trabajo del que dependíamos estaba roto.</p>
+      </section>
+
+      <!-- HISTORIA NARRATIVA -->
+      <section class="about-section">
+        <div class="story-text">
+          <p>Somos <strong>una mujer y un hombre</strong> con más de <strong>25 años combinados</strong> trabajando en talleres de letreros. Hemos cortado en CNC, grabado con láser, impreso en 3D, lijado a mano, lavado piezas a las 11 de la noche, peleado con software de los noventas y entregado letreros que nos hacían sentir orgullosos al día siguiente.</p>
+
+          <p>En todo ese tiempo, una cosa nunca cambió: <strong>el software no nos servía</strong>. Diseñábamos en Illustrator porque era lo que había. Validábamos ADA con reglas y calculadora. Generábamos G-Code con programas que parecían de los noventas. Cada vez que cambiábamos de herramienta, perdíamos algo en la traducción.</p>
+
+          <p>Después de un par de décadas haciendo eso, nos preguntamos algo simple: <strong>¿qué pasaría si construyéramos la herramienta que siempre quisimos tener?</strong> Una que entendiera el flujo real de un taller, que no tratáramos a la validación ADA como una ocurrencia tardía, que generara G-Code limpio sin necesitar tres exportaciones intermedias.</p>
+
+          <p>Eso es Engravity. Y lo construimos con la misma paciencia con la que cortamos nuestro primer letrero — sabiendo que las primeras versiones nunca son perfectas, pero que cada iteración acerca la herramienta a la realidad del taller.</p>
+        </div>
+      </section>
+
+      <!-- TIMELINE -->
+      <section class="about-section">
+        <h2><span class="gradient-text">Cómo llegamos aquí</span></h2>
+        <p class="lead">Una línea de tiempo honesta — sin barniz, sin marketing.</p>
+
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-year">~2000</div>
+            <h3>Primeros días en el taller</h3>
+            <p>Empezamos a trabajar en producción de letreros sin saber que íbamos a quedarnos dos décadas. Aprendimos cortando, grabando y lijando, no en un curso.</p>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-year">2010 — 2020</div>
+            <h3>Una década de producción</h3>
+            <p>Pasamos por todos los procesos: CNC routing, corte láser, impresión Logojet 3D, vinyl cutting, finishing industrial. Cada uno nos enseñó dónde el software dejaba a deber.</p>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-year">2023</div>
+            <h3>La idea</h3>
+            <p>Hicimos la lista de todo lo que querríamos en un software ideal. Era larga. Decidimos empezar con lo más doloroso: validación ADA automática y G-Code que no necesitara post-edición.</p>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-year">2024 — 2025</div>
+            <h3>Construyendo el motor</h3>
+            <p>Dos años de desarrollo silencioso. Validamos cada feature contra archivos reales de proyectos que ya habíamos producido. Si el software fallaba donde antes habíamos batallado, lo arreglábamos antes de añadir nada nuevo.</p>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-year">Marzo 2026</div>
+            <h3>v1.0 al mundo</h3>
+            <p>Lanzamos la primera versión pública. La gente que la prueba nos sigue diciendo qué falta, qué sobra y qué los hace volver. Estamos escuchando.</p>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-year">Hoy</div>
+            <h3>Aprendiendo en público</h3>
+            <p>Engravity está vivo y cambiando cada semana. No tenemos un comité de producto en una sala lejana — la prioridad es lo que la comunidad de fabricantes nos pide.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- VALORES -->
+      <section class="about-section">
+        <h2><span class="gradient-text">Cómo trabajamos</span></h2>
+        <p class="lead">No son valores corporativos colgados en una pared — son las reglas con las que tomamos decisiones todos los días.</p>
+
+        <div class="values-grid">
+          <div class="value-card">
+            <span class="value-icon">🪚</span>
+            <h3>Construido desde el taller</h3>
+            <p>Cada feature responde a un dolor real que vivimos en producción, no a una idea bonita en una junta. Si nunca lo sufrimos en carne propia, lo cuestionamos.</p>
+          </div>
+          <div class="value-card">
+            <span class="value-icon">🤝</span>
+            <h3>Aprender en público</h3>
+            <p>No pretendemos saberlo todo. Cuando nos equivocamos lo decimos, y cuando alguien nos enseña algo lo incorporamos. La comunidad es parte del equipo de producto.</p>
+          </div>
+          <div class="value-card">
+            <span class="value-icon">🎓</span>
+            <h3>Acceso, no exclusividad</h3>
+            <p>Las herramientas profesionales no deberían ser un lujo. Por eso el plan Estudiante existe gratis — para que quien viene aprendiendo pueda tener lo mismo que un taller industrial.</p>
+          </div>
+          <div class="value-card">
+            <span class="value-icon">🛠️</span>
+            <h3>Calidad sin teatro</h3>
+            <p>No vamos a inventar features para vender. Si una funcionalidad no resuelve un problema real, la dejamos fuera, aunque el competidor la tenga.</p>
+          </div>
+          <div class="value-card">
+            <span class="value-icon">📐</span>
+            <h3>Precisión en lugar de magia</h3>
+            <p>La IA es útil cuando ahorra tiempo, pero el archivo final tiene que ser exacto. Preferimos un workflow predecible que un truco impresionante.</p>
+          </div>
+          <div class="value-card">
+            <span class="value-icon">🌎</span>
+            <h3>Hablamos varios idiomas</h3>
+            <p>Engravity nace en español, pero los talleres que lo usan están en inglés, francés y portugués. La traducción no es opcional — es parte del producto desde día uno.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- FUNDADORES -->
+      <section class="about-section">
+        <h2><span class="gradient-text">Las personas detrás</span></h2>
+        <p class="lead">Somos dos. No tenemos un equipo de marketing inflado ni inversionistas presionando.</p>
+
+        <div class="founders-grid">
+          <div class="founder-card">
+            <div class="founder-avatar">👩‍🔧</div>
+            <div class="founder-name">Co-fundadora</div>
+            <div class="founder-role">Producción & Compliance ADA</div>
+            <p class="founder-bio">Más de una década dirigiendo producción y compliance ADA en talleres industriales. La voz de "esto no va a producir bien" cuando alguien quiere meter un detalle imposible en el archivo.</p>
+          </div>
+          <div class="founder-card">
+            <div class="founder-avatar">👨‍🎨</div>
+            <div class="founder-name">Co-fundador</div>
+            <div class="founder-role">Diseño & Tecnología</div>
+            <p class="founder-bio">Diseñador y desarrollador. Pasó de Illustrator a programar el motor vectorial cuando se dio cuenta de que era más rápido construirlo que esperar que alguien más lo hiciera.</p>
+          </div>
+        </div>
+
+        <p style="text-align: center; margin-top: 2.5rem; color: var(--text-muted);">¿Quieres saludar? Escríbenos a <a href="mailto:hola@engravitysigns.com" style="color: var(--accent-primary); font-weight: 600;">hola@engravitysigns.com</a></p>
+      </section>
+
+      <!-- CTA FINAL -->
+      <section class="about-cta">
+        <h2>Si esta historia te suena, deberíamos hablar.</h2>
+        <p>Engravity está creciendo gracias a la gente que se atreve a probar herramientas nuevas y a darnos su feedback. Si eres una de esas personas, te queremos cerca.</p>
+        <div style="display:flex; gap:1rem; justify-content:center; flex-wrap:wrap;">
+          <a href="../pricing/index.html" class="btn btn-primary btn-mega">Empieza Gratis</a>
+          <a href="../blog/index.html" class="btn btn-secondary btn-mega">Lee nuestro blog</a>
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="footer-unified">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h3 class="gradient-text pompous-gradient">ENGRAVITY</h3>
+          <p>Una startup construida desde el taller. Herramientas profesionales hechas por fabricantes, para fabricantes — y para quienes están aprendiendo a serlo.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Producto</h4>
+          <a href="../index.html#features">Características</a>
+          <a href="../pricing/index.html">Precios</a>
+          <a href="../download/index.html">Descargar</a>
+          <a href="../changelog/index.html">Changelog</a>
+        </div>
+        <div class="footer-col">
+          <h4>Recursos</h4>
+          <a href="../docs/index.html">Documentación</a>
+          <a href="../blog/index.html">Blog</a>
+        </div>
+        <div class="footer-col">
+          <h4>Compañía</h4>
+          <a href="../about/index.html">Nosotros</a>
+          <a href="mailto:hola@engravitysigns.com">Contacto</a>
+        </div>
+      </div>
+      <div class="footer-divider">
+        <span>&copy; 2026 Engravitysigns.com — Todos los derechos reservados.</span>
+      </div>
+    </footer>
+
+    <script src="../src/js/main.js"></script>
+    <script type="module" src="../src/js/auth.js"></script>
+  </body>
+</html>

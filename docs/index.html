@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <title>Documentación | Engravity</title>
+    <meta name="description" content="Documentación oficial de Engravity: guías de inicio rápido, validación ADA, configuración CNC, y referencia de la API.">
+    <link rel="canonical" href="https://engravitysigns.com/docs/">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://engravitysigns.com/docs/">
+    <meta property="og:title" content="Documentación Engravity | Guías y tutoriales">
+    <meta property="og:description" content="Aprende Engravity a tu ritmo: instalación, primer proyecto, validación ADA, exportación G-Code y más.">
+    <meta property="og:image" content="https://engravitysigns.com/assets/images/software-ui.png">
+    <meta property="og:locale" content="es_MX">
+    <meta property="og:site_name" content="Engravity">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Documentación Engravity">
+    <meta name="twitter:description" content="Guías paso a paso, referencias técnicas y tutoriales.">
+    <meta name="twitter:image" content="https://engravitysigns.com/assets/images/software-ui.png">
+
+    <link rel="icon" type="image/png" href="../assets/images/ada-sign.png">
+    <link rel="stylesheet" href="../src/styles/global.css?v=8" />
+  </head>
+  <body>
+
+    <nav class="navbar">
+      <div class="nav-container">
+        <a href="../index.html" class="logo"><span class="logo-icon"></span> ENGRAVITY</a>
+        <div class="nav-links">
+          <a href="../index.html#features" data-i18n="nav.features">Características</a>
+          <a href="../index.html#audience" data-i18n="nav.audience">Para quién</a>
+          <a href="../index.html#ada-braille" data-i18n="nav.compliance">ADA & Braille</a>
+          <a href="../pricing/index.html" data-i18n="nav.pricing">Precios</a>
+          <a href="../docs/index.html" data-i18n="nav.docs">Docs</a>
+          <a href="../blog/index.html" data-i18n="nav.blog">Blog</a>
+        </div>
+        <div class="nav-actions">
+          <div class="lang-dropdown">
+            <button class="lang-btn" id="langToggle">ES ▾</button>
+            <div class="lang-menu" id="langMenu">
+              <a href="#" onclick="changeLanguage('es')">Español (ES)</a>
+              <a href="#" onclick="changeLanguage('en')">English (EN)</a>
+              <a href="#" onclick="changeLanguage('fr')">Français (FR)</a>
+            </div>
+          </div>
+          <button class="btn btn-secondary login-btn" onclick="openModal('loginModal')" data-i18n="nav.login">Log In</button>
+          <button class="btn btn-primary" onclick="openModal('signupModal')" data-i18n="nav.signup">Empieza Gratis</button>
+        </div>
+      </div>
+    </nav>
+
+    <div class="modal-overlay" id="loginModal">
+      <div class="modal-content glass-panel">
+        <button class="modal-close" onclick="closeModal('loginModal')">&times;</button>
+        <h2 data-i18n="auth.loginTitle">Bienvenido de nuevo</h2>
+        <p data-i18n="auth.loginSub">Inicia sesión para continuar diseñando.</p>
+        <form onsubmit="handleAuth(event)">
+          <div class="form-group"><label data-i18n="auth.email">Email</label><input type="email" required placeholder="nombre@taller.com" /></div>
+          <div class="form-group"><label data-i18n="auth.password">Contraseña</label><input type="password" required placeholder="••••••••" /></div>
+          <button type="submit" class="btn btn-primary btn-block" data-i18n="nav.login">Log In</button>
+        </form>
+      </div>
+    </div>
+    <div class="modal-overlay" id="signupModal">
+      <div class="modal-content glass-panel">
+        <button class="modal-close" onclick="closeModal('signupModal')">&times;</button>
+        <h2 data-i18n="auth.signupTitle2">Crea tu cuenta</h2>
+        <p data-i18n="auth.signupSub2">Empieza con el plan que mejor encaje contigo.</p>
+        <form onsubmit="handleAuth(event)">
+          <div class="form-group"><label data-i18n="auth.name">Nombre</label><input type="text" required /></div>
+          <div class="form-group"><label data-i18n="auth.email">Email</label><input type="email" required /></div>
+          <div class="form-group"><label data-i18n="auth.password">Contraseña</label><input type="password" required placeholder="••••••••" /></div>
+          <button type="submit" class="btn btn-primary btn-block" data-i18n="auth.createAccount">Crear cuenta</button>
+        </form>
+      </div>
+    </div>
+
+    <main>
+      <section class="docs-hero">
+        <div class="badge" data-i18n="docs.heroBadge">DOCUMENTACIÓN</div>
+        <h1 data-i18n="docs.heroTitle">Aprende Engravity a tu ritmo.</h1>
+        <p data-i18n="docs.heroLead">Guías paso a paso, referencias técnicas y tutoriales que cubren desde el primer letrero hasta la integración con tu flota de CNC.</p>
+        <div class="docs-search">
+          <input type="search" placeholder="Buscar en la documentación..." data-i18n-placeholder="docs.searchPh" disabled />
+        </div>
+      </section>
+
+      <section class="docs-grid">
+        <a href="./quick-start.html" class="doc-card">
+          <span class="doc-card-icon">🚀</span>
+          <h3 data-i18n="docs.qsTitle">Quick Start</h3>
+          <p data-i18n="docs.qsDesc">Tu primer letrero ADA en menos de 10 minutos. Desde la instalación hasta el archivo G-Code listo para producir.</p>
+          <span class="doc-card-meta" data-i18n="docs.qsMeta">5 min · Recomendado para empezar</span>
+        </a>
+
+        <a href="./quick-start.html#instalacion" class="doc-card">
+          <span class="doc-card-icon">⚙️</span>
+          <h3 data-i18n="docs.installTitle">Instalación</h3>
+          <p data-i18n="docs.installDesc">Cómo instalar Engravity en Windows, macOS y Linux. Requisitos del sistema y solución de problemas comunes.</p>
+          <span class="doc-card-meta">3 min</span>
+        </a>
+
+        <a href="../blog/ada-compliance.html" class="doc-card">
+          <span class="doc-card-icon">♿</span>
+          <h3 data-i18n="docs.adaCardTitle">Guía ADA & Braille</h3>
+          <p data-i18n="docs.adaCardDesc">Cómo validar tus letreros bajo la norma ADA 703, generar Braille UEB Grado 2 y exportar reportes de cumplimiento.</p>
+          <span class="doc-card-meta">12 min</span>
+        </a>
+
+        <a href="../blog/cnc-routing.html" class="doc-card">
+          <span class="doc-card-icon">🛠️</span>
+          <h3 data-i18n="docs.cncCardTitle">Producción CNC</h3>
+          <p data-i18n="docs.cncCardDesc">Configura perfiles de máquina, optimiza toolpaths y exporta G-Code limpio para tu router o láser.</p>
+          <span class="doc-card-meta">15 min</span>
+        </a>
+
+        <a href="./quick-start.html#vectores" class="doc-card">
+          <span class="doc-card-icon">✏️</span>
+          <h3 data-i18n="docs.vectorTitle">Diseño vectorial</h3>
+          <p data-i18n="docs.vectorDesc">Pen tool, curvas Bézier, pathfinder y operaciones booleanas. Importa AI, DXF, SVG y CDR sin perder calidad.</p>
+          <span class="doc-card-meta">8 min</span>
+        </a>
+
+        <a href="./quick-start.html#ia" class="doc-card">
+          <span class="doc-card-icon">🤖</span>
+          <h3 data-i18n="docs.aiTitle">IA generativa</h3>
+          <p data-i18n="docs.aiDesc">Cómo usar el motor de IA en canvas para generar geometría, vectores y aplicar color directamente sobre tu diseño.</p>
+          <span class="doc-card-meta">6 min</span>
+        </a>
+
+        <a href="#" class="doc-card" style="opacity:0.6;">
+          <span class="doc-card-icon">🔌</span>
+          <h3 data-i18n="docs.apiTitle">API & Integraciones</h3>
+          <p data-i18n="docs.apiDesc">Integra Engravity con tu ERP, sistema de cotización o flujo de trabajo existente. Endpoints, autenticación y webhooks.</p>
+          <span class="doc-card-meta" data-i18n="docs.soon">Próximamente</span>
+        </a>
+
+        <a href="#" class="doc-card" style="opacity:0.6;">
+          <span class="doc-card-icon">📚</span>
+          <h3 data-i18n="docs.studentsTitle">Para estudiantes</h3>
+          <p data-i18n="docs.studentsDesc">Tutoriales gratuitos pensados para estudiantes de diseño industrial, arquitectura y comunicación visual.</p>
+          <span class="doc-card-meta" data-i18n="docs.soon">Próximamente</span>
+        </a>
+      </section>
+
+      <section class="audience-section" style="margin-top: 4rem;">
+        <h2 data-i18n="docs.helpTitle">¿No sabes por dónde empezar?</h2>
+        <p class="lead" data-i18n="docs.helpLead">Cuéntanos qué quieres lograr y te guiamos a la documentación correcta.</p>
+        <div style="display:flex; gap:1rem; justify-content:center; flex-wrap:wrap;">
+          <a href="./quick-start.html" class="btn btn-primary btn-mega" data-i18n="docs.firstSign">Quiero hacer mi primer letrero</a>
+          <a href="../blog/cnc-routing.html" class="btn btn-secondary btn-mega" data-i18n="docs.configCnc">Configurar mi CNC</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer-unified">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h3 class="gradient-text pompous-gradient">ENGRAVITY</h3>
+          <p data-i18n="footer.desc">Una startup construida desde el taller. Herramientas profesionales hechas por fabricantes, para fabricantes — y para quienes están aprendiendo a serlo.</p>
+        </div>
+        <div class="footer-col">
+          <h4 data-i18n="footer.colProduct">Producto</h4>
+          <a href="../index.html#features" data-i18n="nav.features">Características</a>
+          <a href="../pricing/index.html" data-i18n="nav.pricing">Precios</a>
+          <a href="../download/index.html" data-i18n="footer.download">Descargar</a>
+          <a href="../changelog/index.html" data-i18n="footer.changelog">Changelog</a>
+        </div>
+        <div class="footer-col">
+          <h4 data-i18n="footer.colResources">Recursos</h4>
+          <a href="../docs/index.html" data-i18n="footer.docs">Documentación</a>
+          <a href="../blog/index.html" data-i18n="nav.blog">Blog</a>
+          <a href="../blog/ada-compliance.html" data-i18n="footer.adaGuide">Guía ADA</a>
+          <a href="../blog/cnc-routing.html" data-i18n="footer.cncGuide">Guía CNC</a>
+        </div>
+        <div class="footer-col">
+          <h4 data-i18n="footer.colCompany">Compañía</h4>
+          <a href="../about/index.html" data-i18n="nav.about">Nosotros</a>
+          <a href="mailto:hola@engravitysigns.com" data-i18n="footer.contact">Contacto</a>
+          <a href="https://github.com/engravity" target="_blank" rel="noopener">GitHub</a>
+        </div>
+      </div>
+      <div class="footer-divider">
+        <span data-i18n="footer.copyright">&copy; 2026 Engravitysigns.com — Todos los derechos reservados.</span>
+        <span data-i18n="footer.startupNote">Primer producto · Aprendiendo y creciendo con la industria</span>
+      </div>
+    </footer>
+
+    <script src="../src/js/main.js?v=3"></script>
+    <script type="module" src="../src/js/auth.js"></script>
+  </body>
+</html>

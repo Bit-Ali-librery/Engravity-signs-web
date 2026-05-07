@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <title>Roadmap 2026: lo que viene en Engravity | Blog Engravity</title>
+    <meta name="description" content="Una mirada honesta a las features que estamos construyendo, las que descartamos, y cómo decidimos en qué orden lanzarlas.">
+    <link rel="canonical" href="https://engravitysigns.com/blog/roadmap-2026.html">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://engravitysigns.com/blog/roadmap-2026.html">
+    <meta property="og:title" content="Roadmap 2026 de Engravity">
+    <meta property="og:description" content="Q2, Q3, Q4: lo que estamos construyendo, y lo que decidimos no hacer.">
+    <meta property="og:image" content="https://engravitysigns.com/assets/images/workshop.png">
+    <meta property="og:locale" content="es_MX">
+    <meta property="og:site_name" content="Engravity">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://engravitysigns.com/assets/images/workshop.png">
+    <link rel="icon" type="image/png" href="../assets/images/ada-sign.png">
+    <link rel="stylesheet" href="../src/styles/global.css?v=8" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <style>
+      .blog-article { max-width: 800px; margin: 120px auto 100px; padding: 0 24px; font-size: 1.1rem; line-height: 1.8; color: var(--text-muted); }
+      .blog-article h1 { font-size: 3rem; color: #FFF; margin-bottom: 20px; line-height: 1.1; }
+      .blog-article h2 { color: #FFF; margin-top: 40px; margin-bottom: 20px; font-size: 2rem; }
+      .blog-article h3 { color: #FFF; margin-top: 30px; margin-bottom: 15px; font-size: 1.4rem; }
+      .blog-article p { margin-bottom: 24px; }
+      .blog-article ul, .blog-article ol { margin-bottom: 30px; margin-left: 20px; }
+      .blog-article li { margin-bottom: 15px; }
+      .hero-img { width: 100%; height: 400px; object-fit: cover; border-radius: 12px; margin: 40px 0; border: 1px solid var(--glass-border); }
+      .meta { display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--glass-border); padding-bottom: 20px; margin-bottom: 30px; flex-wrap: wrap; gap: 1rem; }
+      .author { color: var(--accent-primary); font-weight: 600; }
+      .roadmap-quarter { background: rgba(20,25,30,0.5); border: 1px solid var(--glass-border); border-radius: 12px; padding: 1.5rem 1.75rem; margin-bottom: 1.25rem; }
+      .roadmap-quarter h3 { margin-top: 0; color: var(--accent-primary); display: flex; align-items: center; gap: 0.75rem; }
+      .roadmap-status { font-size: 0.7rem; padding: 0.2rem 0.6rem; border-radius: 20px; background: rgba(0,229,255,0.15); border: 1px solid rgba(0,229,255,0.3); color: var(--accent-primary); font-weight: 700; letter-spacing: 1px; text-transform: uppercase; }
+      .roadmap-status.done { background: rgba(76,217,100,0.15); border-color: rgba(76,217,100,0.3); color: #4CD964; }
+      .roadmap-status.next { background: rgba(255,179,71,0.15); border-color: rgba(255,179,71,0.3); color: #FFB347; }
+    </style>
+  </head>
+  <body>
+
+    <nav class="navbar">
+      <div class="nav-container">
+        <a href="../index.html" class="logo"><span class="logo-icon"></span> ENGRAVITY</a>
+        <div class="nav-links">
+          <a href="../index.html#features">Características</a>
+          <a href="../pricing/index.html">Precios</a>
+          <a href="../docs/index.html">Docs</a>
+          <a href="../blog/index.html">Blog</a>
+        </div>
+        <div class="nav-actions">
+          <a href="../blog/index.html" class="btn btn-secondary">← Volver al Blog</a>
+        </div>
+      </div>
+    </nav>
+
+    <main class="blog-article">
+      <div class="meta">
+        <span class="author">Por el Equipo Fundador Engravity</span>
+        <span>Tiempo de lectura: 5 minutos · Mayo 2026</span>
+      </div>
+
+      <h1>Roadmap 2026: lo que viene en Engravity</h1>
+
+      <img class="hero-img" src="../assets/images/workshop.png" alt="Taller de letreros con piezas en producción" />
+
+      <p>Cuando lanzamos Engravity v1.0 en marzo, prometimos construir esta herramienta junto a la comunidad. Eso significa transparencia total sobre lo que estamos haciendo, lo que descartamos y por qué. Este es nuestro roadmap real para 2026, no una lista de features inventadas para vender.</p>
+
+      <p>Lo dividimos por trimestre. Las prioridades pueden cambiar (y van a cambiar) según lo que escuchemos de ustedes.</p>
+
+      <h2>Q2 2026 — Cimientos sólidos</h2>
+
+      <div class="roadmap-quarter">
+        <h3>Plan Estudiante <span class="roadmap-status next">EN DEFINICIÓN</span></h3>
+        <p>El plan gratuito para estudiantes verificados. Estamos definiendo si es por email .edu o por validación manual. Quien tiene una idea o feedback, escríbanos.</p>
+      </div>
+
+      <div class="roadmap-quarter">
+        <h3>Mejoras al motor vectorial <span class="roadmap-status">EN DESARROLLO</span></h3>
+        <p>Pen tool con preview en vivo, snap inteligente entre paths, y un nuevo modo de edición de nodos que reduce el número de clicks para tareas comunes. Beta cerrada empezando este mes.</p>
+      </div>
+
+      <div class="roadmap-quarter">
+        <h3>Importación de CorelDRAW (.cdr) <span class="roadmap-status done">LANZADO</span></h3>
+        <p>Llevábamos meses con esto. Por fin importamos archivos .cdr conservando capas, gradientes y texto editable.</p>
+      </div>
+
+      <h2>Q3 2026 — Producción y precisión</h2>
+
+      <div class="roadmap-quarter">
+        <h3>Simulación CNC con materiales reales</h3>
+        <p>La simulación 3D que ya existe va a pasar de "render bonito" a "render predictivo": va a mostrar cómo se ve el corte real en acrílico cast vs extruido, cómo se comporta la veta de la madera, y dónde podría aparecer tear-out antes de que pase.</p>
+      </div>
+
+      <div class="roadmap-quarter">
+        <h3>Perfiles de máquina personalizados</h3>
+        <p>Hoy soportamos 6 máquinas industriales preconfiguradas. Vamos a dejar que cualquier usuario en plan Industrial o Estudio cree su propio perfil con sus parámetros, husillos y post-procesador.</p>
+      </div>
+
+      <div class="roadmap-quarter">
+        <h3>Reportes de costos por proyecto</h3>
+        <p>Calcular cuánto cuesta producir un letrero (material + tiempo de máquina + acabados) sigue siendo manual para casi todos. Vamos a integrarlo dentro de Engravity, con plantillas adaptables a tu lista de precios.</p>
+      </div>
+
+      <h2>Q4 2026 — Trabajo en equipo</h2>
+
+      <div class="roadmap-quarter">
+        <h3>Librerías compartidas</h3>
+        <p>Para estudios y talleres con varios diseñadores: una biblioteca de elementos, materiales y plantillas que vive en la nube y se sincroniza entre equipos. Versionada, con permisos.</p>
+      </div>
+
+      <div class="roadmap-quarter">
+        <h3>Comentarios y revisiones en el lienzo</h3>
+        <p>Hoy las correcciones de cliente viajan por WhatsApp y email. Queremos que viajen dentro del archivo: marcar un punto, dejar un comentario, ver el historial.</p>
+      </div>
+
+      <div class="roadmap-quarter">
+        <h3>API pública v1</h3>
+        <p>Para integrar Engravity con tu ERP, sistema de cotización o flujo de producción existente. Endpoints REST, webhooks, autenticación con tokens.</p>
+      </div>
+
+      <h2>Lo que decidimos NO hacer en 2026</h2>
+
+      <p>Tan importante como decir qué viene es decir qué no. Estas son features que mucha gente nos pidió y que decidimos no hacer en este año:</p>
+
+      <ul>
+        <li><strong>Marketplace de plantillas pagas.</strong> Nos parece importante mantener el espíritu colaborativo. Las plantillas que la comunidad cree se compartirán gratuitas en el plan Estudiante y Profesional.</li>
+        <li><strong>Aplicación móvil completa.</strong> Diseñar letreros en una pantalla de 6 pulgadas es frustrante para todos. Vamos a hacer un visor móvil para revisar y aprobar, pero no un editor.</li>
+        <li><strong>Soporte para impresión litográfica.</strong> No es nuestro mundo. Si necesitas eso, hay herramientas mejores y nos queremos enfocar en CNC y producción tridimensional.</li>
+      </ul>
+
+      <h2>Cómo influir en este roadmap</h2>
+
+      <p>El roadmap se actualiza cada trimestre. Si una feature es importante para ti y no la ves aquí, dinos. Las decisiones de prioridad las tomamos viendo qué nos pide la gente que ya está usando Engravity día a día. No hay un comité de producto en una sala lejana.</p>
+
+      <p>Escríbenos a <a href="mailto:hola@engravitysigns.com">hola@engravitysigns.com</a> o ábrenos un issue en <a href="https://github.com/engravity" target="_blank" rel="noopener">GitHub</a>. Leemos todo, aunque a veces tardemos en responder.</p>
+
+      <p style="margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--glass-border); display:flex; justify-content: space-between; flex-wrap: wrap; gap:1rem;">
+        <a href="../blog/index.html" class="btn btn-secondary">← Volver al Blog</a>
+        <a href="../changelog/index.html" class="btn btn-primary">Ver Changelog →</a>
+      </p>
+    </main>
+
+    <footer class="footer-unified">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h3 class="gradient-text pompous-gradient">ENGRAVITY</h3>
+          <p>Una startup construida desde el taller. Herramientas profesionales hechas por fabricantes, para fabricantes — y para quienes están aprendiendo a serlo.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Producto</h4>
+          <a href="../index.html#features">Características</a>
+          <a href="../pricing/index.html">Precios</a>
+          <a href="../download/index.html">Descargar</a>
+          <a href="../changelog/index.html">Changelog</a>
+        </div>
+        <div class="footer-col">
+          <h4>Recursos</h4>
+          <a href="../docs/index.html">Documentación</a>
+          <a href="../blog/index.html">Blog</a>
+        </div>
+        <div class="footer-col">
+          <h4>Compañía</h4>
+          <a href="../about/index.html">Nosotros</a>
+          <a href="mailto:hola@engravitysigns.com">Contacto</a>
+        </div>
+      </div>
+      <div class="footer-divider">
+        <span>&copy; 2026 Engravitysigns.com — Todos los derechos reservados.</span>
+      </div>
+    </footer>
+
+    <script src="../src/js/main.js"></script>
+  </body>
+</html>

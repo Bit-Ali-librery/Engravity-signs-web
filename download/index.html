@@ -1,0 +1,302 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <title>Descargar Engravity | Diseño y producción CNC para Windows, macOS y Linux</title>
+    <meta name="description" content="Descarga Engravity v1.0 para Windows, macOS o Linux. Diseño vectorial profesional, validación ADA automática y exportación G-Code lista para producción.">
+    <link rel="canonical" href="https://engravitysigns.com/download/">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://engravitysigns.com/download/">
+    <meta property="og:title" content="Descargar Engravity v1.0 | Windows, macOS, Linux">
+    <meta property="og:description" content="14 días de prueba gratis sin tarjeta. Diseño, validación ADA y producción CNC unificadas.">
+    <meta property="og:image" content="https://engravitysigns.com/assets/images/software-ui.png">
+    <meta property="og:locale" content="es_MX">
+    <meta property="og:site_name" content="Engravity">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Descargar Engravity v1.0">
+    <meta name="twitter:description" content="Disponible para Windows, macOS y Linux.">
+    <meta name="twitter:image" content="https://engravitysigns.com/assets/images/software-ui.png">
+
+    <link rel="icon" type="image/png" href="../assets/images/ada-sign.png">
+    <link rel="stylesheet" href="../src/styles/global.css?v=8" />
+    <style>
+      .dl-hero { max-width: 1200px; margin: 130px auto 3rem; padding: 0 2rem; text-align: center; }
+      .dl-hero h1 { font-size: clamp(2.5rem, 5vw, 4rem); margin-bottom: 1rem; line-height: 1.1; }
+      .dl-hero p { color: var(--text-muted); font-size: 1.15rem; max-width: 650px; margin: 0 auto 2rem; line-height: 1.6; }
+      .dl-version-info { display: inline-flex; align-items: center; gap: 0.75rem; padding: 0.5rem 1rem; background: rgba(0,229,255,0.08); border: 1px solid rgba(0,229,255,0.25); border-radius: 50px; font-size: 0.85rem; }
+      .dl-version-info .v-num { color: var(--accent-primary); font-weight: 700; font-family: monospace; }
+      .dl-version-info .v-sep { width: 4px; height: 4px; background: var(--text-muted); border-radius: 50%; }
+
+      .dl-layout { max-width: 1200px; margin: 0 auto 4rem; padding: 0 2rem; display: grid; grid-template-columns: 1.2fr 1fr; gap: 2.5rem; align-items: flex-start; }
+
+      .dl-main-card { background: linear-gradient(160deg, rgba(40,46,72,0.55), rgba(18,20,38,0.55)); border: 1px solid var(--accent-primary); border-radius: 20px; padding: 2.5rem; box-shadow: 0 10px 50px rgba(0,229,255,0.1); }
+      .dl-os-icon { font-size: 3rem; display: block; margin-bottom: 0.75rem; }
+      .dl-os-name { color: var(--accent-primary); font-size: 0.85rem; letter-spacing: 2px; text-transform: uppercase; font-weight: 700; margin-bottom: 0.5rem; }
+      .dl-os-headline { font-size: 1.6rem; color: #FFF; margin-bottom: 1.25rem; }
+      .dl-cta-btn { width: 100%; padding: 1.1rem; font-size: 1.05rem; margin-bottom: 0.75rem; }
+      .dl-meta { display: flex; gap: 1.25rem; justify-content: center; flex-wrap: wrap; color: var(--text-muted); font-size: 0.85rem; margin-top: 0.75rem; }
+      .dl-meta span { display: inline-flex; align-items: center; gap: 0.4rem; }
+
+      .dl-platforms { margin-top: 1.75rem; padding-top: 1.5rem; border-top: 1px solid var(--glass-border); }
+      .dl-platforms h4 { font-size: 0.75rem; letter-spacing: 1.5px; text-transform: uppercase; color: var(--text-muted); margin-bottom: 1rem; font-weight: 700; }
+      .dl-platforms-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.6rem; }
+      .dl-platforms-grid a { display: flex; align-items: center; gap: 0.5rem; padding: 0.7rem 0.9rem; background: rgba(255,255,255,0.04); border: 1px solid var(--glass-border); border-radius: 8px; color: var(--text-muted); text-decoration: none; font-size: 0.85rem; transition: all 0.3s; }
+      .dl-platforms-grid a:hover { color: #FFF; border-color: rgba(0,229,255,0.3); background: rgba(0,229,255,0.06); }
+
+      /* Side card */
+      .dl-side { display: flex; flex-direction: column; gap: 1.5rem; }
+      .dl-side-card { background: rgba(20,25,30,0.5); border: 1px solid var(--glass-border); border-radius: 16px; padding: 1.75rem; }
+      .dl-side-card h3 { color: #FFF; font-size: 1.1rem; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem; }
+      .dl-side-card ul { list-style: none; }
+      .dl-side-card li { color: var(--text-muted); font-size: 0.9rem; padding: 0.4rem 0 0.4rem 1.5rem; position: relative; line-height: 1.5; }
+      .dl-side-card li::before { content: "✓"; position: absolute; left: 0; color: var(--accent-primary); font-weight: 700; }
+      .dl-side-card .new-badge { font-size: 0.65rem; padding: 0.15rem 0.5rem; background: linear-gradient(135deg, #00E5FF, #B200FF); color: #000; border-radius: 12px; font-weight: 700; letter-spacing: 1px; margin-left: 0.5rem; }
+
+      /* Screenshots */
+      .dl-screenshots { max-width: 1200px; margin: 5rem auto; padding: 0 2rem; }
+      .dl-screenshots h2 { text-align: center; font-size: clamp(1.8rem, 3.5vw, 2.5rem); margin-bottom: 1rem; }
+      .dl-screenshots .lead { text-align: center; color: var(--text-muted); margin-bottom: 3rem; max-width: 600px; margin-left: auto; margin-right: auto; }
+      .dl-screens-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+      .dl-screen { background: rgba(20,25,30,0.5); border: 1px solid var(--glass-border); border-radius: 14px; overflow: hidden; }
+      .dl-screen img { width: 100%; aspect-ratio: 16/10; object-fit: cover; display: block; }
+      .dl-screen-caption { padding: 1rem 1.25rem; }
+      .dl-screen-caption h4 { color: #FFF; font-size: 0.95rem; margin-bottom: 0.25rem; }
+      .dl-screen-caption p { color: var(--text-muted); font-size: 0.8rem; line-height: 1.4; }
+
+      /* Sys reqs detailed */
+      .dl-sysreqs { max-width: 1100px; margin: 5rem auto; padding: 0 2rem; }
+      .dl-sysreqs h2 { text-align: center; font-size: clamp(1.8rem, 3.5vw, 2.5rem); margin-bottom: 3rem; }
+      .dl-sysreqs-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+      .dl-sysreq-card { background: rgba(20,25,30,0.5); border: 1px solid var(--glass-border); border-radius: 14px; padding: 1.75rem; }
+      .dl-sysreq-card h3 { color: #FFF; font-size: 1.1rem; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem; }
+      .dl-sysreq-card dl { display: grid; grid-template-columns: 100px 1fr; gap: 0.5rem 1rem; font-size: 0.85rem; }
+      .dl-sysreq-card dt { color: var(--text-muted); font-weight: 600; text-transform: uppercase; font-size: 0.7rem; letter-spacing: 1px; }
+      .dl-sysreq-card dd { color: #FFF; }
+
+      @media (max-width: 900px) {
+        .dl-layout { grid-template-columns: 1fr; }
+        .dl-screens-grid, .dl-sysreqs-grid { grid-template-columns: 1fr; }
+        .dl-platforms-grid { grid-template-columns: 1fr; }
+      }
+    </style>
+  </head>
+  <body>
+
+    <nav class="navbar">
+      <div class="nav-container">
+        <a href="../index.html" class="logo"><span class="logo-icon"></span> ENGRAVITY</a>
+        <div class="nav-links">
+          <a href="../index.html#features">Características</a>
+          <a href="../index.html#audience">Para quién</a>
+          <a href="../pricing/index.html">Precios</a>
+          <a href="../docs/index.html">Docs</a>
+          <a href="../blog/index.html">Blog</a>
+          <a href="../showcase/index.html">Showcase</a>
+        </div>
+        <div class="nav-actions">
+          <a href="../pricing/index.html" class="btn btn-primary">Ver planes</a>
+        </div>
+      </div>
+    </nav>
+
+    <main>
+
+      <!-- HERO -->
+      <section class="dl-hero">
+        <div class="badge">DESCARGAR ENGRAVITY</div>
+        <h1><span class="gradient-text pompous-gradient">Diseña, valida y produce.</span><br/>Todo desde un solo lugar.</h1>
+        <p>La última versión de Engravity está disponible para Windows, macOS y Linux. 14 días de prueba gratis, sin tarjeta.</p>
+        <div class="dl-version-info">
+          <span class="v-num">v1.0.0</span>
+          <span class="v-sep"></span>
+          <span>Lanzado Marzo 2026</span>
+          <span class="v-sep"></span>
+          <a href="../changelog/index.html" style="color: var(--accent-primary); text-decoration: none; font-weight: 600;">Ver changelog →</a>
+        </div>
+      </section>
+
+      <!-- DOWNLOAD LAYOUT -->
+      <section class="dl-layout">
+
+        <!-- Main download card -->
+        <div class="dl-main-card glass-glow">
+          <div class="glow-spotlight"></div>
+          <span class="dl-os-icon">💻</span>
+          <div class="dl-os-name">Sistema detectado: <span class="detected-os-name">Detectando...</span></div>
+          <h2 class="dl-os-headline">Engravity para tu computadora</h2>
+
+          <a href="#" class="btn btn-primary btn-mega dl-cta-btn dynamic-os-download btn-pulse">💻 Download</a>
+          <div class="dl-meta">
+            <span>📦 <span class="detected-os-size">~85 MB</span></span>
+            <span>🔒 Instalador firmado</span>
+            <span>✓ Sin spyware ni telemetría sin consentimiento</span>
+          </div>
+
+          <div class="dl-platforms">
+            <h4>Otras plataformas</h4>
+            <div class="dl-platforms-grid">
+              <a href="#">🍎 macOS (Apple Silicon)</a>
+              <a href="#">🍎 macOS (Intel)</a>
+              <a href="#">🪟 Windows 10 / 11</a>
+              <a href="#">🐧 Linux AppImage</a>
+              <a href="#">📦 Código fuente</a>
+              <a href="#">🪟 Versión portable</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Side: what's new + what you get -->
+        <aside class="dl-side">
+
+          <div class="dl-side-card">
+            <h3>Novedades v1.0.0 <span class="new-badge">NUEVO</span></h3>
+            <ul>
+              <li>Motor vectorial Bézier con snap inteligente</li>
+              <li>Validación ADA 703 en tiempo real</li>
+              <li>Braille UEB Grado 2 con domado de 1/32"</li>
+              <li>Importación nativa <code>.ai</code>, <code>.dxf</code>, <code>.svg</code>, <code>.cdr</code></li>
+              <li>6 perfiles G-Code industriales preconfigurados</li>
+              <li>IA generativa en canvas para vectores y color</li>
+            </ul>
+          </div>
+
+          <div class="dl-side-card">
+            <h3>Qué obtienes al instalar</h3>
+            <ul>
+              <li>14 días de prueba del plan Profesional sin tarjeta</li>
+              <li>Acceso completo al validador ADA</li>
+              <li>Exportación de hasta 3 proyectos en plan gratuito</li>
+              <li>Actualizaciones automáticas mientras la app esté abierta</li>
+              <li>Documentación y Quick Start integrados</li>
+            </ul>
+          </div>
+
+          <div class="dl-side-card">
+            <h3>¿Eres estudiante?</h3>
+            <ul>
+              <li>Plan Estudiante gratuito (en definición)</li>
+              <li>Sin marca de agua en archivos académicos</li>
+              <li>Tutoriales pensados para nivel inicial</li>
+            </ul>
+            <a href="../pricing/index.html" class="btn btn-secondary btn-block" style="margin-top: 1rem;">Ver plan Estudiante →</a>
+          </div>
+
+        </aside>
+      </section>
+
+      <!-- SCREENSHOTS -->
+      <section class="dl-screenshots">
+        <h2><span class="gradient-text">Mira Engravity en acción</span></h2>
+        <p class="lead">Capturas reales de la aplicación corriendo en producción.</p>
+        <div class="dl-screens-grid">
+          <div class="dl-screen">
+            <img src="../assets/images/software-ui.png" alt="Interfaz principal de Engravity" />
+            <div class="dl-screen-caption">
+              <h4>Editor vectorial</h4>
+              <p>Pen tool, pathfinder, y un canvas que se siente familiar si vienes de Illustrator.</p>
+            </div>
+          </div>
+          <div class="dl-screen">
+            <img src="../assets/images/braille-closeup.png" alt="Validación de Braille" />
+            <div class="dl-screen-caption">
+              <h4>Validación ADA en vivo</h4>
+              <p>Cada error de cumplimiento se marca en el lienzo antes de exportar.</p>
+            </div>
+          </div>
+          <div class="dl-screen">
+            <img src="../assets/images/cnc-carving.png" alt="Simulación CNC" />
+            <div class="dl-screen-caption">
+              <h4>Simulación de corte 3D</h4>
+              <p>Renderiza cómo se va a ver tu pieza antes de mandarla a la máquina.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SYSTEM REQUIREMENTS DETAILED -->
+      <section class="dl-sysreqs">
+        <h2><span class="gradient-text">Requisitos del sistema</span></h2>
+        <div class="dl-sysreqs-grid">
+
+          <div class="dl-sysreq-card">
+            <h3>🪟 Windows</h3>
+            <dl>
+              <dt>Sistema</dt><dd>Windows 10 (64-bit) o 11</dd>
+              <dt>Procesador</dt><dd>Intel/AMD x86-64, 4 núcleos+</dd>
+              <dt>RAM</dt><dd>4 GB mínimo · 8 GB recomendado</dd>
+              <dt>GPU</dt><dd>OpenGL 2.0+ · NVIDIA opcional para IA</dd>
+              <dt>Almacén</dt><dd>500 MB libres</dd>
+              <dt>Tamaño</dt><dd>85 MB instalador</dd>
+            </dl>
+          </div>
+
+          <div class="dl-sysreq-card">
+            <h3>🍎 macOS</h3>
+            <dl>
+              <dt>Sistema</dt><dd>macOS 11 Big Sur o superior</dd>
+              <dt>Procesador</dt><dd>Apple Silicon (M1+) o Intel</dd>
+              <dt>RAM</dt><dd>4 GB mínimo · 8 GB recomendado</dd>
+              <dt>GPU</dt><dd>Metal 2.0+ integrado o discreto</dd>
+              <dt>Almacén</dt><dd>500 MB libres</dd>
+              <dt>Tamaño</dt><dd>92 MB universal binary</dd>
+            </dl>
+          </div>
+
+          <div class="dl-sysreq-card">
+            <h3>🐧 Linux</h3>
+            <dl>
+              <dt>Sistema</dt><dd>Ubuntu 22.04+, Fedora 38+, Arch</dd>
+              <dt>Procesador</dt><dd>x86-64, 4 núcleos+</dd>
+              <dt>RAM</dt><dd>4 GB mínimo · 8 GB recomendado</dd>
+              <dt>GPU</dt><dd>OpenGL 2.0+ con drivers Mesa</dd>
+              <dt>Almacén</dt><dd>500 MB libres</dd>
+              <dt>Tamaño</dt><dd>78 MB AppImage portátil</dd>
+            </dl>
+          </div>
+
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="footer-unified">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h3 class="gradient-text pompous-gradient">ENGRAVITY</h3>
+          <p>Una startup construida desde el taller. Herramientas profesionales hechas por fabricantes, para fabricantes — y para quienes están aprendiendo a serlo.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Producto</h4>
+          <a href="../index.html#features">Características</a>
+          <a href="../pricing/index.html">Precios</a>
+          <a href="../download/index.html">Descargar</a>
+          <a href="../changelog/index.html">Changelog</a>
+        </div>
+        <div class="footer-col">
+          <h4>Recursos</h4>
+          <a href="../docs/index.html">Documentación</a>
+          <a href="../blog/index.html">Blog</a>
+          <a href="../showcase/index.html">Showcase</a>
+        </div>
+        <div class="footer-col">
+          <h4>Compañía</h4>
+          <a href="../about/index.html" data-i18n="nav.about">Nosotros</a>
+          <a href="mailto:hola@engravitysigns.com">Contacto</a>
+          <a href="https://github.com/engravity" target="_blank" rel="noopener">GitHub</a>
+        </div>
+      </div>
+      <div class="footer-divider">
+        <span>&copy; 2026 Engravitysigns.com — Todos los derechos reservados.</span>
+      </div>
+    </footer>
+
+    <script src="../src/js/main.js?v=3"></script>
+    <script type="module" src="../src/js/auth.js"></script>
+  </body>
+</html>
