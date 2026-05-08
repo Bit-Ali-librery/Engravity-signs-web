@@ -63,7 +63,7 @@
       .founder-role { font-size: 0.85rem; color: var(--accent-primary); font-weight: 600; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 1rem; }
       .founder-bio { color: var(--text-muted); line-height: 1.6; font-size: 0.95rem; }
 
-      /* CTA final */
+      /* Final CTA */
       .about-cta { max-width: 900px; margin: 6rem auto 4rem; padding: 3rem 2rem; text-align: center; background: rgba(20,25,30,0.5); border: 1px solid var(--glass-border); border-radius: 20px; }
       .about-cta h2 { font-size: clamp(1.75rem, 3vw, 2.25rem); margin-bottom: 1rem; }
       .about-cta p { color: var(--text-muted); margin-bottom: 2rem; max-width: 600px; margin-left: auto; margin-right: auto; }
@@ -79,15 +79,15 @@
       <div class="nav-container">
         <a href="../index.html" class="logo"><span class="logo-icon"></span> ENGRAVITY</a>
         <div class="nav-links">
-          <a href="../index.html#features">Características</a>
-          <a href="../index.html#audience">Para quién</a>
-          <a href="../pricing/index.html">Precios</a>
-          <a href="../docs/index.html">Docs</a>
-          <a href="../blog/index.html">Blog</a>
+          <a href="../index.html#features" data-i18n="nav.features">Features</a>
+          <a href="../index.html#audience" data-i18n="nav.audience">For Whom</a>
+          <a href="../pricing/index.html" data-i18n="nav.pricing">Pricing</a>
+          <a href="../docs/index.html" data-i18n="nav.docs">Docs</a>
+          <a href="../blog/index.html" data-i18n="nav.blog">Blog</a>
         </div>
         <div class="nav-actions">
-          <a href="../index.html" class="btn btn-secondary">Volver al inicio</a>
-          <a href="../pricing/index.html" class="btn btn-primary">Empieza Gratis</a>
+          <a href="../index.html" class="btn btn-secondary">Back to home</a>
+          <a href="../pricing/index.html" class="btn btn-primary" data-i18n="nav.signup">Start Free</a>
         </div>
       </div>
     </nav>
@@ -96,132 +96,132 @@
 
       <!-- HERO -->
       <section class="about-hero">
-        <div class="badge">NUESTRA HISTORIA</div>
-        <h1><span class="gradient-text pompous-gradient">Nacidos en el taller.</span><br>Construyendo lo que siempre nos faltó.</h1>
-        <p>Engravity no nació en una incubadora ni en una oficina. Nació en un taller con polvo de MDF, ruido de fresa y la frustración de saber que cada flujo de trabajo del que dependíamos estaba roto.</p>
+        <div class="badge" data-i18n="about.badge">OUR STORY</div>
+        <h1><span class="gradient-text pompous-gradient">Born in the workshop.</span><br>Building what we always lacked.</h1>
+        <p>Engravity wasn't born in an incubator or an office. It was born in a workshop with MDF dust, router noise, and the frustration of knowing that every workflow we relied on was broken.</p>
       </section>
 
-      <!-- HISTORIA NARRATIVA -->
+      <!-- NARRATIVE STORY -->
       <section class="about-section">
         <div class="story-text">
-          <p>Somos <strong>una mujer y un hombre</strong> con más de <strong>25 años combinados</strong> trabajando en talleres de letreros. Hemos cortado en CNC, grabado con láser, impreso en 3D, lijado a mano, lavado piezas a las 11 de la noche, peleado con software de los noventas y entregado letreros que nos hacían sentir orgullosos al día siguiente.</p>
+          <p>We are <strong>a woman and a man</strong> with more than <strong>25 combined years</strong> working in sign workshops. We've cut on CNC, engraved with laser, printed in 3D, sanded by hand, washed parts at 11pm, fought with software from the nineties, and delivered signs that made us proud the next day.</p>
 
-          <p>En todo ese tiempo, una cosa nunca cambió: <strong>el software no nos servía</strong>. Diseñábamos en Illustrator porque era lo que había. Validábamos ADA con reglas y calculadora. Generábamos G-Code con programas que parecían de los noventas. Cada vez que cambiábamos de herramienta, perdíamos algo en la traducción.</p>
+          <p>In all that time, one thing never changed: <strong>the software didn't serve us</strong>. We designed in Illustrator because that's what was there. We validated ADA with rulers and a calculator. We generated G-Code with programs that felt like they were from the nineties. Every time we switched tools, we lost something in translation.</p>
 
-          <p>Después de un par de décadas haciendo eso, nos preguntamos algo simple: <strong>¿qué pasaría si construyéramos la herramienta que siempre quisimos tener?</strong> Una que entendiera el flujo real de un taller, que no tratáramos a la validación ADA como una ocurrencia tardía, que generara G-Code limpio sin necesitar tres exportaciones intermedias.</p>
+          <p>After a couple of decades doing that, we asked ourselves something simple: <strong>what if we built the tool we always wanted to have?</strong> One that understood the real workflow of a workshop, that didn't treat ADA validation as an afterthought, that generated clean G-Code without needing three intermediate exports.</p>
 
-          <p>Eso es Engravity. Y lo construimos con la misma paciencia con la que cortamos nuestro primer letrero — sabiendo que las primeras versiones nunca son perfectas, pero que cada iteración acerca la herramienta a la realidad del taller.</p>
+          <p>That's Engravity. And we built it with the same patience we used cutting our first sign — knowing that the first versions are never perfect, but that every iteration brings the tool closer to the reality of the shop floor.</p>
         </div>
       </section>
 
       <!-- TIMELINE -->
       <section class="about-section">
-        <h2><span class="gradient-text">Cómo llegamos aquí</span></h2>
-        <p class="lead">Una línea de tiempo honesta — sin barniz, sin marketing.</p>
+        <h2><span class="gradient-text">How we got here</span></h2>
+        <p class="lead">An honest timeline — no varnish, no marketing.</p>
 
         <div class="timeline">
           <div class="timeline-item">
             <div class="timeline-year">~2000</div>
-            <h3>Primeros días en el taller</h3>
-            <p>Empezamos a trabajar en producción de letreros sin saber que íbamos a quedarnos dos décadas. Aprendimos cortando, grabando y lijando, no en un curso.</p>
+            <h3>Early days in the workshop</h3>
+            <p>We started working in sign production without knowing we were going to stay for two decades. We learned by cutting, engraving, and sanding — not in a course.</p>
           </div>
           <div class="timeline-item">
             <div class="timeline-year">2010 — 2020</div>
-            <h3>Una década de producción</h3>
-            <p>Pasamos por todos los procesos: CNC routing, corte láser, impresión Logojet 3D, vinyl cutting, finishing industrial. Cada uno nos enseñó dónde el software dejaba a deber.</p>
+            <h3>A decade of production</h3>
+            <p>We went through every process: CNC routing, laser cutting, Logojet 3D printing, vinyl cutting, industrial finishing. Each one taught us where the software was falling short.</p>
           </div>
           <div class="timeline-item">
             <div class="timeline-year">2023</div>
-            <h3>La idea</h3>
-            <p>Hicimos la lista de todo lo que querríamos en un software ideal. Era larga. Decidimos empezar con lo más doloroso: validación ADA automática y G-Code que no necesitara post-edición.</p>
+            <h3>The idea</h3>
+            <p>We made a list of everything we'd want in an ideal piece of software. It was long. We decided to start with the most painful: automatic ADA validation and G-Code that didn't need post-editing.</p>
           </div>
           <div class="timeline-item">
             <div class="timeline-year">2024 — 2025</div>
-            <h3>Construyendo el motor</h3>
-            <p>Dos años de desarrollo silencioso. Validamos cada feature contra archivos reales de proyectos que ya habíamos producido. Si el software fallaba donde antes habíamos batallado, lo arreglábamos antes de añadir nada nuevo.</p>
+            <h3>Building the engine</h3>
+            <p>Two years of quiet development. We validated every feature against real files from projects we had already produced. If the software failed where we had previously struggled, we fixed it before adding anything new.</p>
           </div>
           <div class="timeline-item">
-            <div class="timeline-year">Marzo 2026</div>
-            <h3>v1.0 al mundo</h3>
-            <p>Lanzamos la primera versión pública. La gente que la prueba nos sigue diciendo qué falta, qué sobra y qué los hace volver. Estamos escuchando.</p>
+            <div class="timeline-year">March 2026</div>
+            <h3>v1.0 to the world</h3>
+            <p>We launched the first public version. The people who try it keep telling us what's missing, what's redundant, and what makes them come back. We are listening.</p>
           </div>
           <div class="timeline-item">
-            <div class="timeline-year">Hoy</div>
-            <h3>Aprendiendo en público</h3>
-            <p>Engravity está vivo y cambiando cada semana. No tenemos un comité de producto en una sala lejana — la prioridad es lo que la comunidad de fabricantes nos pide.</p>
+            <div class="timeline-year">Today</div>
+            <h3>Learning in public</h3>
+            <p>Engravity is alive and changing every week. We don't have a product committee in a distant room — the priority is what the maker community asks us for.</p>
           </div>
         </div>
       </section>
 
-      <!-- VALORES -->
+      <!-- VALUES -->
       <section class="about-section">
-        <h2><span class="gradient-text">Cómo trabajamos</span></h2>
-        <p class="lead">No son valores corporativos colgados en una pared — son las reglas con las que tomamos decisiones todos los días.</p>
+        <h2><span class="gradient-text">How we work</span></h2>
+        <p class="lead">These aren't corporate values pinned to a wall — they're the rules we use to make decisions every day.</p>
 
         <div class="values-grid">
           <div class="value-card">
             <span class="value-icon">🪚</span>
-            <h3>Construido desde el taller</h3>
-            <p>Cada feature responde a un dolor real que vivimos en producción, no a una idea bonita en una junta. Si nunca lo sufrimos en carne propia, lo cuestionamos.</p>
+            <h3>Built from the workshop</h3>
+            <p>Every feature responds to a real pain we lived in production, not to a pretty idea in a meeting. If we never suffered it ourselves, we question it.</p>
           </div>
           <div class="value-card">
             <span class="value-icon">🤝</span>
-            <h3>Aprender en público</h3>
-            <p>No pretendemos saberlo todo. Cuando nos equivocamos lo decimos, y cuando alguien nos enseña algo lo incorporamos. La comunidad es parte del equipo de producto.</p>
+            <h3>Learn in public</h3>
+            <p>We don't pretend to know everything. When we get something wrong we say so, and when someone teaches us something we incorporate it. The community is part of the product team.</p>
           </div>
           <div class="value-card">
             <span class="value-icon">🎓</span>
-            <h3>Acceso, no exclusividad</h3>
-            <p>Las herramientas profesionales no deberían ser un lujo. Por eso el plan Estudiante existe gratis — para que quien viene aprendiendo pueda tener lo mismo que un taller industrial.</p>
+            <h3>Access, not exclusivity</h3>
+            <p>Professional tools shouldn't be a luxury. That's why the Student plan exists for free — so anyone learning can have the same toolkit as an industrial workshop.</p>
           </div>
           <div class="value-card">
             <span class="value-icon">🛠️</span>
-            <h3>Calidad sin teatro</h3>
-            <p>No vamos a inventar features para vender. Si una funcionalidad no resuelve un problema real, la dejamos fuera, aunque el competidor la tenga.</p>
+            <h3>Quality without theater</h3>
+            <p>We won't invent features just to sell. If a function doesn't solve a real problem, we leave it out — even if a competitor has it.</p>
           </div>
           <div class="value-card">
             <span class="value-icon">📐</span>
-            <h3>Precisión en lugar de magia</h3>
-            <p>La IA es útil cuando ahorra tiempo, pero el archivo final tiene que ser exacto. Preferimos un workflow predecible que un truco impresionante.</p>
+            <h3>Precision over magic</h3>
+            <p>AI is useful when it saves time, but the final file has to be exact. We prefer a predictable workflow over an impressive trick.</p>
           </div>
           <div class="value-card">
             <span class="value-icon">🌎</span>
-            <h3>Hablamos varios idiomas</h3>
-            <p>Engravity nace en español, pero los talleres que lo usan están en inglés, francés y portugués. La traducción no es opcional — es parte del producto desde día uno.</p>
+            <h3>We speak many languages</h3>
+            <p>Engravity was born bilingual. The shops that use it run in English, Spanish, French, and Portuguese. Translation isn't optional — it's part of the product from day one.</p>
           </div>
         </div>
       </section>
 
-      <!-- FUNDADORES -->
+      <!-- FOUNDERS -->
       <section class="about-section">
-        <h2><span class="gradient-text">Las personas detrás</span></h2>
-        <p class="lead">Somos dos. No tenemos un equipo de marketing inflado ni inversionistas presionando.</p>
+        <h2><span class="gradient-text">The people behind it</span></h2>
+        <p class="lead">There are two of us. No bloated marketing team, no investors pushing.</p>
 
         <div class="founders-grid">
           <div class="founder-card">
             <div class="founder-avatar">👩‍🔧</div>
-            <div class="founder-name">Co-fundadora</div>
-            <div class="founder-role">Producción & Compliance ADA</div>
-            <p class="founder-bio">Más de una década dirigiendo producción y compliance ADA en talleres industriales. La voz de "esto no va a producir bien" cuando alguien quiere meter un detalle imposible en el archivo.</p>
+            <div class="founder-name">Co-founder</div>
+            <div class="founder-role">Production & ADA Compliance</div>
+            <p class="founder-bio">More than a decade running production and ADA compliance in industrial workshops. The voice of "this is not going to produce well" when someone wants to push an impossible detail into the file.</p>
           </div>
           <div class="founder-card">
             <div class="founder-avatar">👨‍🎨</div>
-            <div class="founder-name">Co-fundador</div>
-            <div class="founder-role">Diseño & Tecnología</div>
-            <p class="founder-bio">Diseñador y desarrollador. Pasó de Illustrator a programar el motor vectorial cuando se dio cuenta de que era más rápido construirlo que esperar que alguien más lo hiciera.</p>
+            <div class="founder-name">Co-founder</div>
+            <div class="founder-role">Design & Technology</div>
+            <p class="founder-bio">Designer and developer. He went from Illustrator to programming the vector engine when he realized it was faster to build it than to wait for someone else to do it.</p>
           </div>
         </div>
 
-        <p style="text-align: center; margin-top: 2.5rem; color: var(--text-muted);">¿Quieres saludar? Escríbenos a <a href="mailto:hola@engravitysigns.com" style="color: var(--accent-primary); font-weight: 600;">hola@engravitysigns.com</a></p>
+        <p style="text-align: center; margin-top: 2.5rem; color: var(--text-muted);">Want to say hi? Write to us at <a href="mailto:hola@engravitysigns.com" style="color: var(--accent-primary); font-weight: 600;">hola@engravitysigns.com</a></p>
       </section>
 
-      <!-- CTA FINAL -->
+      <!-- FINAL CTA -->
       <section class="about-cta">
-        <h2>Si esta historia te suena, deberíamos hablar.</h2>
-        <p>Engravity está creciendo gracias a la gente que se atreve a probar herramientas nuevas y a darnos su feedback. Si eres una de esas personas, te queremos cerca.</p>
+        <h2>If this story sounds like you, we should talk.</h2>
+        <p>Engravity is growing thanks to the people who dare to try new tools and give us their feedback. If you're one of those people, we want you close.</p>
         <div style="display:flex; gap:1rem; justify-content:center; flex-wrap:wrap;">
-          <a href="../pricing/index.html" class="btn btn-primary btn-mega">Empieza Gratis</a>
-          <a href="../blog/index.html" class="btn btn-secondary btn-mega">Lee nuestro blog</a>
+          <a href="../pricing/index.html" class="btn btn-primary btn-mega" data-i18n="nav.signup">Start Free</a>
+          <a href="../blog/index.html" class="btn btn-secondary btn-mega">Read our blog</a>
         </div>
       </section>
 
@@ -231,32 +231,32 @@
       <div class="footer-grid">
         <div class="footer-brand">
           <h3 class="gradient-text pompous-gradient">ENGRAVITY</h3>
-          <p>Una startup construida desde el taller. Herramientas profesionales hechas por fabricantes, para fabricantes — y para quienes están aprendiendo a serlo.</p>
+          <p data-i18n="footer.desc">A startup built from the workshop floor. Professional tools made by makers, for makers — and for those learning to be one.</p>
         </div>
         <div class="footer-col">
-          <h4>Producto</h4>
-          <a href="../index.html#features">Características</a>
-          <a href="../pricing/index.html">Precios</a>
-          <a href="../download/index.html">Descargar</a>
-          <a href="../changelog/index.html">Changelog</a>
+          <h4 data-i18n="footer.product">Product</h4>
+          <a href="../index.html#features" data-i18n="footer.features">Features</a>
+          <a href="../pricing/index.html" data-i18n="footer.pricing">Pricing</a>
+          <a href="../download/index.html" data-i18n="footer.download">Download</a>
+          <a href="../changelog/index.html" data-i18n="footer.changelog">Changelog</a>
         </div>
         <div class="footer-col">
-          <h4>Recursos</h4>
-          <a href="../docs/index.html">Documentación</a>
-          <a href="../blog/index.html">Blog</a>
+          <h4 data-i18n="footer.resources">Resources</h4>
+          <a href="../docs/index.html" data-i18n="footer.docs">Documentation</a>
+          <a href="../blog/index.html" data-i18n="footer.blog">Blog</a>
         </div>
         <div class="footer-col">
-          <h4>Compañía</h4>
-          <a href="../about/index.html">Nosotros</a>
-          <a href="mailto:hola@engravitysigns.com">Contacto</a>
+          <h4 data-i18n="footer.company">Company</h4>
+          <a href="../about/index.html" data-i18n="footer.about">About Us</a>
+          <a href="mailto:hola@engravitysigns.com" data-i18n="footer.contact">Contact</a>
         </div>
       </div>
       <div class="footer-divider">
-        <span>&copy; 2026 Engravitysigns.com — Todos los derechos reservados.</span>
+        <span data-i18n="footer.copyright">&copy; 2026 Engravitysigns.com — All rights reserved.</span>
       </div>
     </footer>
 
-    <script src="../src/js/main.js"></script>
+    <script src="../src/js/main.js?v=5"></script>
     <script type="module" src="../src/js/auth.js"></script>
   </body>
 </html>

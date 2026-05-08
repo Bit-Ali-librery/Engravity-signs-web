@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <title>Page not found | Engravity</title>
+    <meta name="description" content="The page you are looking for does not exist. Go back to the Engravity homepage.">
     <meta name="robots" content="noindex">
     <link rel="stylesheet" href="/src/styles/global.css?v=10" />
     <link rel="icon" type="image/png" href="/assets/images/ada-sign.png">
@@ -15,13 +16,13 @@
       <div class="nav-container">
         <a href="/" class="logo"><span class="logo-icon"></span> ENGRAVITY</a>
         <div class="nav-links">
-          <a href="/#features">Características</a>
-          <a href="/pricing/">Precios</a>
-          <a href="/docs/">Docs</a>
-          <a href="/blog/">Blog</a>
+          <a href="/#features" data-i18n="nav.features">Features</a>
+          <a href="/pricing/" data-i18n="nav.pricing">Pricing</a>
+          <a href="/docs/" data-i18n="nav.docs">Docs</a>
+          <a href="/blog/" data-i18n="nav.blog">Blog</a>
         </div>
         <div class="nav-actions">
-          <a href="/" class="btn btn-primary">Volver al inicio</a>
+          <a href="/" class="btn btn-primary">Back to home</a>
         </div>
       </div>
     </nav>
@@ -30,17 +31,17 @@
       <div style="max-width: 600px; text-align: center; padding: 3rem 0;">
         <div class="badge">ERROR 404</div>
         <h1 style="font-size: clamp(3rem, 8vw, 6rem); margin: 1rem 0;">
-          <span class="gradient-text pompous-gradient">Página no encontrada.</span>
+          <span class="gradient-text pompous-gradient">Page not found.</span>
         </h1>
         <p style="color: var(--text-muted); font-size: 1.15rem; line-height: 1.6; margin-bottom: 2rem;">
-          La URL que buscas no existe o se movió de lugar. Puede ser un enlace viejo, un typo, o algo que aún no construimos. Si llegaste aquí desde un link nuestro, escríbenos para arreglarlo.
+          The URL you're looking for doesn't exist or has moved. It could be an old link, a typo, or something we haven't built yet. If you got here from one of our links, let us know so we can fix it.
         </p>
         <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
-          <a href="/" class="btn btn-primary btn-mega">Volver al inicio</a>
-          <a href="/blog/" class="btn btn-secondary btn-mega">Explorar el blog</a>
+          <a href="/" class="btn btn-primary btn-mega">Back to home</a>
+          <a href="/blog/" class="btn btn-secondary btn-mega">Explore the blog</a>
         </div>
         <p style="margin-top: 3rem; color: var(--text-muted); font-size: 0.9rem;">
-          ¿Crees que esto es un error? Avísanos a <a href="mailto:hola@engravitysigns.com" style="color: var(--accent-primary); font-weight: 600;">hola@engravitysigns.com</a>
+          Think this is an error? Let us know at <a href="mailto:hola@engravitysigns.com" style="color: var(--accent-primary); font-weight: 600;">hola@engravitysigns.com</a>
         </p>
       </div>
     </main>
@@ -49,30 +50,32 @@
       <div class="footer-grid">
         <div class="footer-brand">
           <h3 class="gradient-text pompous-gradient">ENGRAVITY</h3>
-          <p>Una startup construida desde el taller. Herramientas profesionales hechas por fabricantes, para fabricantes.</p>
+          <p data-i18n="footer.desc">A startup built from the workshop floor. Professional tools made by makers, for makers.</p>
         </div>
         <div class="footer-col">
-          <h4>Producto</h4>
-          <a href="/#features">Características</a>
-          <a href="/pricing/">Precios</a>
-          <a href="/download/">Descargar</a>
+          <h4 data-i18n="footer.product">Product</h4>
+          <a href="/#features" data-i18n="footer.features">Features</a>
+          <a href="/pricing/" data-i18n="footer.pricing">Pricing</a>
+          <a href="/download/" data-i18n="footer.download">Download</a>
         </div>
         <div class="footer-col">
-          <h4>Recursos</h4>
-          <a href="/docs/">Documentación</a>
-          <a href="/blog/">Blog</a>
+          <h4 data-i18n="footer.resources">Resources</h4>
+          <a href="/docs/" data-i18n="footer.docs">Documentation</a>
+          <a href="/blog/" data-i18n="footer.blog">Blog</a>
           <a href="/showcase/">Showcase</a>
         </div>
         <div class="footer-col">
-          <h4>Compañía</h4>
-          <a href="/about/">Nosotros</a>
-          <a href="mailto:hola@engravitysigns.com">Contacto</a>
+          <h4 data-i18n="footer.company">Company</h4>
+          <a href="/about/" data-i18n="footer.about">About</a>
+          <a href="mailto:hola@engravitysigns.com" data-i18n="footer.contact">Contact</a>
         </div>
       </div>
       <div class="footer-divider">
-        <span>&copy; 2026 Engravitysigns.com — Todos los derechos reservados.</span>
+        <span data-i18n="footer.copyright">&copy; 2026 Engravitysigns.com — All rights reserved.</span>
       </div>
     </footer>
+
+    <script src="/src/js/main.js?v=5"></script>
 
   </body>
 </html>

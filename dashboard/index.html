@@ -7,6 +7,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <title>My Account | Engravity</title>
+    <meta name="description" content="Your Engravity account: subscription, projects, and saved settings.">
     <meta name="robots" content="noindex">
     <link rel="stylesheet" href="../src/styles/global.css?v=10" />
     <link rel="icon" type="image/png" href="../assets/images/ada-sign.png">
@@ -56,13 +57,13 @@
       <div class="nav-container">
         <a href="../index.html" class="logo"><span class="logo-icon"></span> ENGRAVITY</a>
         <div class="nav-links">
-          <a href="../index.html#features">Características</a>
-          <a href="../pricing/index.html">Precios</a>
-          <a href="../docs/index.html">Docs</a>
-          <a href="../blog/index.html">Blog</a>
+          <a href="../index.html#features" data-i18n="nav.features">Features</a>
+          <a href="../pricing/index.html" data-i18n="nav.pricing">Pricing</a>
+          <a href="../docs/index.html" data-i18n="nav.docs">Docs</a>
+          <a href="../blog/index.html" data-i18n="nav.blog">Blog</a>
         </div>
         <div class="nav-actions">
-          <button class="btn btn-secondary" onclick="window.logOut()">Cerrar sesión</button>
+          <button class="btn btn-secondary" onclick="window.logOut()">Log out</button>
         </div>
       </div>
     </nav>
@@ -70,10 +71,10 @@
     <!-- LOADING STATE -->
     <main id="dashLoading" class="dash-loading">
       <div class="dash-spinner"></div>
-      <p style="color: var(--text-muted);">Cargando tu cuenta...</p>
+      <p style="color: var(--text-muted);">Loading your account...</p>
     </main>
 
-    <!-- DASHBOARD CONTENT (oculto hasta cargar) -->
+    <!-- DASHBOARD CONTENT (hidden until loaded) -->
     <main id="dashContent" class="dash-layout" style="display: none;">
 
       <aside class="dash-sidebar">
@@ -83,66 +84,66 @@
           <div class="dash-user-email" id="userEmail">—</div>
         </div>
         <nav class="dash-nav">
-          <a href="#overview" class="active">📊 Resumen</a>
-          <a href="#subscription">💳 Suscripción</a>
-          <a href="#payments">📜 Pagos</a>
-          <a href="#download">⬇️ Descargar app</a>
-          <a href="#settings">⚙️ Configuración</a>
-          <a href="#" class="danger" onclick="window.logOut(); return false;">🚪 Cerrar sesión</a>
+          <a href="#overview" class="active">📊 Overview</a>
+          <a href="#subscription">💳 Subscription</a>
+          <a href="#payments">📜 Payments</a>
+          <a href="#download">⬇️ Download app</a>
+          <a href="#settings">⚙️ Settings</a>
+          <a href="#" class="danger" onclick="window.logOut(); return false;">🚪 Log out</a>
         </nav>
       </aside>
 
       <div class="dash-content">
 
         <section class="dash-greeting">
-          <h1><span class="gradient-text pompous-gradient">Hola, <span id="greetingName">amig@</span>.</span></h1>
-          <p>Esto es tu panel de control. Desde aquí gestionas tu plan, descargas la app y revisas tu historial.</p>
+          <h1><span class="gradient-text pompous-gradient">Hi, <span id="greetingName">friend</span>.</span></h1>
+          <p>This is your control panel. From here you manage your plan, download the app, and review your history.</p>
         </section>
 
         <!-- OVERVIEW -->
         <div class="dash-cards" id="overview">
           <div class="dash-card">
-            <div class="dash-card-label">Plan actual</div>
-            <div class="dash-card-value" id="planName">Gratis</div>
+            <div class="dash-card-label">Current plan</div>
+            <div class="dash-card-value" id="planName">Free</div>
             <span class="plan-pill" id="planBadge">FREE</span>
           </div>
           <div class="dash-card">
-            <div class="dash-card-label">Miembro desde</div>
+            <div class="dash-card-label">Member since</div>
             <div class="dash-card-value" id="memberSince">—</div>
-            <div class="dash-card-sub" id="lastLogin">Última conexión: ahora</div>
+            <div class="dash-card-sub" id="lastLogin">Last login: now</div>
           </div>
         </div>
 
         <!-- SUBSCRIPTION -->
         <section class="dash-section" id="subscription">
-          <h2>💳 Tu suscripción</h2>
-          <p>Estás en el plan <strong id="subscriptionPlan">Gratis</strong>. Si quieres más features (validación ADA, simulación CNC, soporte prioritario), súbete a Profesional o Industrial.</p>
+          <h2>💳 Your subscription</h2>
+          <p>You're on the <strong id="subscriptionPlan">Free</strong> plan. If you want more features (ADA validation, CNC simulation, priority support), move up to Professional or Industrial.</p>
           <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
-            <a href="../pricing/index.html" class="btn btn-primary">Ver planes</a>
-            <a href="mailto:hola@engravitysigns.com" class="btn btn-secondary">Hablar con soporte</a>
+            <a href="../pricing/index.html" class="btn btn-primary">See plans</a>
+            <a href="mailto:hola@engravitysigns.com" class="btn btn-secondary">Talk to support</a>
           </div>
         </section>
 
         <!-- PAYMENTS -->
         <section class="dash-section" id="payments">
-          <h2>📜 Historial de pagos</h2>
+          <h2>📜 Payment history</h2>
           <div class="empty-state" id="paymentsEmpty">
-            Aún no tienes pagos registrados. Los verás aquí cuando empieces un plan de pago.
+            You don't have any payments registered yet. They'll appear here when you start a paid plan.
           </div>
         </section>
 
         <!-- DOWNLOAD -->
         <section class="dash-section" id="download">
-          <h2>⬇️ Descargar Engravity</h2>
-          <p>La app de escritorio para Windows, macOS y Linux. Detectamos tu sistema automáticamente.</p>
-          <a href="../download/index.html" class="btn btn-primary">Ir a descargas</a>
+          <h2>⬇️ Download Engravity</h2>
+          <p>The desktop app for Windows, macOS, and Linux. We auto-detect your OS.</p>
+          <a href="../download/index.html" class="btn btn-primary">Go to downloads</a>
         </section>
 
         <!-- SETTINGS -->
         <section class="dash-section" id="settings">
-          <h2>⚙️ Configuración</h2>
-          <p>¿Olvidaste tu contraseña o quieres cambiarla? Te enviamos un link al email registrado.</p>
-          <button class="btn btn-secondary" onclick="window.resetPassword(document.getElementById('userEmail').textContent)">Restablecer contraseña</button>
+          <h2>⚙️ Settings</h2>
+          <p>Forgot your password or want to change it? We'll email a reset link to your registered address.</p>
+          <button class="btn btn-secondary" onclick="window.resetPassword(document.getElementById('userEmail').textContent)">Reset password</button>
         </section>
 
       </div>
@@ -152,54 +153,54 @@
       <div class="footer-grid">
         <div class="footer-brand">
           <h3 class="gradient-text pompous-gradient">ENGRAVITY</h3>
-          <p>Una startup construida desde el taller. Herramientas profesionales hechas por fabricantes, para fabricantes.</p>
+          <p data-i18n="footer.desc">A startup built from the workshop floor. Professional tools made by makers, for makers.</p>
         </div>
         <div class="footer-col">
-          <h4>Producto</h4>
-          <a href="../index.html#features">Características</a>
-          <a href="../pricing/index.html">Precios</a>
-          <a href="../download/index.html">Descargar</a>
+          <h4 data-i18n="footer.product">Product</h4>
+          <a href="../index.html#features" data-i18n="footer.features">Features</a>
+          <a href="../pricing/index.html" data-i18n="footer.pricing">Pricing</a>
+          <a href="../download/index.html" data-i18n="footer.download">Download</a>
         </div>
         <div class="footer-col">
-          <h4>Recursos</h4>
-          <a href="../docs/index.html">Documentación</a>
-          <a href="../blog/index.html">Blog</a>
+          <h4 data-i18n="footer.resources">Resources</h4>
+          <a href="../docs/index.html" data-i18n="footer.docs">Documentation</a>
+          <a href="../blog/index.html" data-i18n="footer.blog">Blog</a>
           <a href="../showcase/index.html">Showcase</a>
         </div>
         <div class="footer-col">
-          <h4>Compañía</h4>
-          <a href="../about/index.html">Nosotros</a>
-          <a href="mailto:hola@engravitysigns.com">Contacto</a>
+          <h4 data-i18n="footer.company">Company</h4>
+          <a href="../about/index.html" data-i18n="footer.about">About</a>
+          <a href="mailto:hola@engravitysigns.com" data-i18n="footer.contact">Contact</a>
         </div>
       </div>
       <div class="footer-divider">
-        <span>&copy; 2026 Engravitysigns.com — Todos los derechos reservados.</span>
+        <span data-i18n="footer.copyright">&copy; 2026 Engravitysigns.com — All rights reserved.</span>
       </div>
     </footer>
 
-    <!-- Cargar Firebase Auth + Firestore para esta página -->
+    <!-- Load Firebase Auth + Firestore for this page -->
     <script type="module">
       import { auth, db } from '../src/js/firebase-config.js';
       import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-auth.js";
       import { doc, getDoc } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore.js";
 
-      // Mapeo de plan → texto bonito
+      // Plan key → display label
       const planLabels = {
-        free: { name: 'Gratis', badge: 'FREE' },
-        student: { name: 'Estudiante', badge: 'STUDENT' },
-        professional: { name: 'Profesional', badge: 'PRO' },
+        free: { name: 'Free', badge: 'FREE' },
+        student: { name: 'Student', badge: 'STUDENT' },
+        professional: { name: 'Professional', badge: 'PRO' },
         industrial: { name: 'Industrial', badge: 'INDUSTRIAL' },
-        studio: { name: 'Estudio', badge: 'STUDIO' }
+        studio: { name: 'Studio', badge: 'STUDIO' }
       };
 
       onAuthStateChanged(auth, async (user) => {
         if (!user) {
-          // No hay sesión → redirigir al home
+          // No session → redirect home
           window.location.href = '../index.html';
           return;
         }
 
-        // Llenar UI con datos básicos del auth
+        // Fill UI with basic auth data
         const name = user.displayName || user.email.split('@')[0];
         const initial = (name[0] || '?').toUpperCase();
         document.getElementById('userAvatar').textContent = initial;
@@ -207,7 +208,7 @@
         document.getElementById('userEmail').textContent = user.email;
         document.getElementById('greetingName').textContent = name;
 
-        // Leer doc del usuario en Firestore
+        // Read user doc from Firestore
         try {
           const userDoc = await getDoc(doc(db, 'users', user.uid));
           if (userDoc.exists()) {
@@ -221,18 +222,19 @@
             if (data.createdAt && data.createdAt.toDate) {
               const date = data.createdAt.toDate();
               document.getElementById('memberSince').textContent =
-                date.toLocaleDateString('es', { year: 'numeric', month: 'long', day: 'numeric' });
+                date.toLocaleDateString('en', { year: 'numeric', month: 'long', day: 'numeric' });
             }
           }
         } catch (e) {
-          console.warn('No se pudo leer perfil de Firestore:', e);
+          console.warn('Could not read profile from Firestore:', e);
         }
 
-        // Mostrar dashboard, ocultar loading
+        // Show dashboard, hide loading
         document.getElementById('dashLoading').style.display = 'none';
         document.getElementById('dashContent').style.display = 'grid';
       });
     </script>
+    <script src="../src/js/main.js?v=5"></script>
     <script type="module" src="../src/js/auth.js"></script>
   </body>
 </html>
