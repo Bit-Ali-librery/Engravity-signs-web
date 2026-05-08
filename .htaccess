@@ -142,11 +142,12 @@ ErrorDocument 404 /404.html
 </FilesMatch>
 
 # Block whole sensitive directories (defense in depth)
-RedirectMatch 404 /\.git
-RedirectMatch 404 /\.github
-RedirectMatch 404 /node_modules
-RedirectMatch 404 /imagen
-RedirectMatch 404 /ima
+# CRITICAL: anchor patterns with ^ and require trailing /, otherwise unanchored
+# regex `/ima` matches `/assets/images/` and breaks every site image (404).
+# /ima and /imagen are gitignored so they never reach the server — removed.
+RedirectMatch 404 ^/\.git(/|$)
+RedirectMatch 404 ^/\.github(/|$)
+RedirectMatch 404 ^/node_modules(/|$)
 
 # ─── MIME types correctos ────────────────────────────────────────────
 <IfModule mod_mime.c>
