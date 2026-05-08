@@ -31,12 +31,19 @@
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="./assets/images/ada-sign.png">
 
-    <link rel="stylesheet" href="./src/styles/global.css?v=10" />
+    <link rel="stylesheet" href="./src/styles/global.css?v=11" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
     <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
   </head>
   <body>
+    <!-- ═══ LAUNCH ANNOUNCEMENT BANNER ═══ -->
+    <div class="launch-banner" id="launchBanner" role="status">
+      <span class="launch-banner-pulse" aria-hidden="true"></span>
+      <span class="launch-banner-text" data-i18n="banner.launching">Launch coming soon — Engravity is gearing up for its public release.</span>
+      <a href="#videos" class="launch-banner-cta" data-i18n="banner.cta">Watch the demos →</a>
+    </div>
+
     <!-- ═══ NAVBAR ═══ -->
     <nav class="navbar">
       <div class="nav-container">
@@ -45,6 +52,7 @@
           <a href="#features" data-i18n="nav.features">Features</a>
           <a href="#audience" data-i18n="nav.audience">For Whom</a>
           <a href="#ada-braille" data-i18n="nav.compliance">ADA & Braille</a>
+          <a href="#videos" data-i18n="nav.videos">Videos</a>
           <a href="./pricing/index.html" data-i18n="nav.pricing">Pricing</a>
           <a href="./docs/index.html" data-i18n="nav.docs">Docs</a>
           <a href="./blog/index.html" data-i18n="nav.blog">Blog</a>
@@ -311,6 +319,54 @@
           </div>
         </section>
 
+        <!-- ═══ VIDEOS — WHAT ENGRAVITY CAN DO ═══ -->
+        <section id="videos" class="videos-section">
+          <div class="videos-header">
+            <div class="badge" data-i18n="videos.badge">SEE IT IN ACTION</div>
+            <h2 class="section-title text-center"><span class="gradient-text pompous-gradient" data-i18n="videos.title">Watch what Engravity can do.</span></h2>
+            <p class="section-subtitle text-center" data-i18n="videos.subtitle">Short demos of real workflows: design, ADA validation, and CNC production on a single canvas.</p>
+          </div>
+
+          <div class="videos-grid">
+
+            <article class="video-card glass-panel glass-glow reveal-up tilt-element" data-tilt>
+              <div class="glow-spotlight"></div>
+              <div class="video-frame">
+                <video controls preload="none" poster="./assets/images/software-ui.png" playsinline>
+                  <source src="./assets/videos/demo-design.mp4" type="video/mp4">
+                </video>
+              </div>
+              <h3 data-i18n="videos.card1Title">Design with the vector engine</h3>
+              <p data-i18n="videos.card1Desc">From a blank canvas to a production-ready sign in minutes — Bézier tools, layers, and live previews.</p>
+            </article>
+
+            <article class="video-card glass-panel glass-glow reveal-up tilt-element" data-tilt>
+              <div class="glow-spotlight"></div>
+              <div class="video-frame">
+                <video controls preload="none" poster="./assets/images/braille-closeup.png" playsinline>
+                  <source src="./assets/videos/demo-ada.mp4" type="video/mp4">
+                </video>
+              </div>
+              <h3 data-i18n="videos.card2Title">ADA &amp; Braille validation</h3>
+              <p data-i18n="videos.card2Desc">Real-time geometric checks for character heights, dome reliefs, and 3/8" clear zones — straight to UEB Grade 2.</p>
+            </article>
+
+            <article class="video-card glass-panel glass-glow reveal-up tilt-element" data-tilt>
+              <div class="glow-spotlight"></div>
+              <div class="video-frame">
+                <video controls preload="none" poster="./assets/images/cnc-simulation.png" playsinline>
+                  <source src="./assets/videos/demo-cnc.mp4" type="video/mp4">
+                </video>
+              </div>
+              <h3 data-i18n="videos.card3Title">CNC simulation &amp; G-Code</h3>
+              <p data-i18n="videos.card3Desc">Multi-material toolpath simulation with collision checks and ready-to-cut G-Code for your machine profile.</p>
+            </article>
+
+          </div>
+
+          <p class="videos-note text-center" data-i18n="videos.note">More demos arriving as the launch approaches.</p>
+        </section>
+
         <!-- ═══ NOSOTROS — EXPERIENCIA INMERSIVA ═══ -->
         <section id="about" class="about-immersive">
 
@@ -519,7 +575,7 @@
       </div>
     </footer>
 
-    <script src="./src/js/main.js?v=6"></script>
+    <script src="./src/js/main.js?v=7"></script>
     <script type="module" src="./src/js/auth.js"></script>
   </body>
 </html>
