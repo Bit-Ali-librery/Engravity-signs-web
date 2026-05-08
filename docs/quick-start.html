@@ -27,10 +27,10 @@
       <div class="nav-container">
         <a href="../index.html" class="logo"><span class="logo-icon"></span> ENGRAVITY</a>
         <div class="nav-links">
-          <a href="../index.html#features" data-i18n="nav.features">Características</a>
-          <a href="../index.html#audience" data-i18n="nav.audience">Para quién</a>
+          <a href="../index.html#features" data-i18n="nav.features">Features</a>
+          <a href="../index.html#audience" data-i18n="nav.audience">For Whom</a>
           <a href="../index.html#ada-braille" data-i18n="nav.compliance">ADA & Braille</a>
-          <a href="../pricing/index.html" data-i18n="nav.pricing">Precios</a>
+          <a href="../pricing/index.html" data-i18n="nav.pricing">Pricing</a>
           <a href="../docs/index.html" data-i18n="nav.docs">Docs</a>
           <a href="../blog/index.html" data-i18n="nav.blog">Blog</a>
         </div>
@@ -44,7 +44,7 @@
             </div>
           </div>
           <button class="btn btn-secondary login-btn" onclick="openModal('loginModal')" data-i18n="nav.login">Log In</button>
-          <button class="btn btn-primary" onclick="openModal('signupModal')" data-i18n="nav.signup">Empieza Gratis</button>
+          <button class="btn btn-primary" onclick="openModal('signupModal')" data-i18n="nav.signup">Start Free</button>
         </div>
       </div>
     </nav>
@@ -52,10 +52,10 @@
     <div class="modal-overlay" id="loginModal">
       <div class="modal-content glass-panel">
         <button class="modal-close" onclick="closeModal('loginModal')">&times;</button>
-        <h2 data-i18n="auth.loginTitle">Bienvenido de nuevo</h2>
+        <h2 data-i18n="auth.loginTitle">Welcome back</h2>
         <form onsubmit="handleAuth(event)">
           <div class="form-group"><label data-i18n="auth.email">Email</label><input type="email" required /></div>
-          <div class="form-group"><label data-i18n="auth.password">Contraseña</label><input type="password" required /></div>
+          <div class="form-group"><label data-i18n="auth.password">Password</label><input type="password" required /></div>
           <button type="submit" class="btn btn-primary btn-block" data-i18n="nav.login">Log In</button>
         </form>
       </div>
@@ -63,12 +63,12 @@
     <div class="modal-overlay" id="signupModal">
       <div class="modal-content glass-panel">
         <button class="modal-close" onclick="closeModal('signupModal')">&times;</button>
-        <h2 data-i18n="auth.signupTitle2">Crea tu cuenta</h2>
+        <h2 data-i18n="auth.signupTitle2">Create your account</h2>
         <form onsubmit="handleAuth(event)">
           <div class="form-group"><label data-i18n="auth.name">Nombre</label><input type="text" required /></div>
           <div class="form-group"><label data-i18n="auth.email">Email</label><input type="email" required /></div>
-          <div class="form-group"><label data-i18n="auth.password">Contraseña</label><input type="password" required /></div>
-          <button type="submit" class="btn btn-primary btn-block" data-i18n="auth.createAccount">Crear cuenta</button>
+          <div class="form-group"><label data-i18n="auth.password">Password</label><input type="password" required /></div>
+          <button type="submit" class="btn btn-primary btn-block" data-i18n="auth.createAccount">Create account</button>
         </form>
       </div>
     </div>
@@ -77,99 +77,99 @@
       <div class="docs-layout">
 
         <aside class="docs-sidebar">
-          <h4 data-i18n="qs.sideStart">Empezar</h4>
-          <a href="#bienvenida" class="active" data-i18n="qs.sideWelcome">Bienvenida</a>
-          <a href="#instalacion" data-i18n="docs.installTitle">Instalación</a>
-          <a href="#primer-proyecto" data-i18n="qs.sideFirstProject">Primer proyecto</a>
+          <h4 data-i18n="qs.sideStart">Get Started</h4>
+          <a href="#bienvenida" class="active" data-i18n="qs.sideWelcome">Welcome</a>
+          <a href="#instalacion" data-i18n="docs.installTitle">Installation</a>
+          <a href="#primer-proyecto" data-i18n="qs.sideFirstProject">First project</a>
 
-          <h4 data-i18n="qs.sideDesign">Diseño</h4>
-          <a href="#vectores" data-i18n="qs.sideVectors">Herramientas vectoriales</a>
-          <a href="#ia" data-i18n="docs.aiTitle">IA generativa</a>
-          <a href="#importacion" data-i18n="qs.sideImport">Importar archivos</a>
+          <h4 data-i18n="qs.sideDesign">Design</h4>
+          <a href="#vectores" data-i18n="qs.sideVectors">Vector tools</a>
+          <a href="#ia" data-i18n="docs.aiTitle">Generative AI</a>
+          <a href="#importacion" data-i18n="qs.sideImport">Import files</a>
 
-          <h4 data-i18n="qs.sideProd">Producción</h4>
-          <a href="#ada" data-i18n="qs.sideAda">Validación ADA</a>
-          <a href="#gcode" data-i18n="qs.sideGcode">Exportar G-Code</a>
+          <h4 data-i18n="qs.sideProd">Production</h4>
+          <a href="#ada" data-i18n="qs.sideAda">ADA validation</a>
+          <a href="#gcode" data-i18n="qs.sideGcode">Export G-Code</a>
 
-          <h4 data-i18n="qs.sideMore">Más recursos</h4>
-          <a href="../blog/ada-compliance.html" data-i18n="qs.sideAdaFull">Guía ADA completa</a>
-          <a href="../blog/cnc-routing.html" data-i18n="qs.sideCncSetup">Configurar CNC</a>
-          <a href="../docs/index.html" data-i18n="qs.sideBackIndex">Volver al índice</a>
+          <h4 data-i18n="qs.sideMore">More resources</h4>
+          <a href="../blog/ada-compliance.html" data-i18n="qs.sideAdaFull">Full ADA Guide</a>
+          <a href="../blog/cnc-routing.html" data-i18n="qs.sideCncSetup">Configure CNC</a>
+          <a href="../docs/index.html" data-i18n="qs.sideBackIndex">Back to index</a>
         </aside>
 
         <article class="docs-content">
 
           <div class="badge" data-i18n="qs.badge">QUICK START · 5 MIN</div>
-          <h1 id="bienvenida" data-i18n="qs.title">Tu primer letrero en Engravity</h1>
-          <p data-i18n="qs.intro">Esta guía te lleva desde cero hasta tener un letrero ADA validado y un archivo G-Code listo para producir. No necesitas experiencia previa con software vectorial — solo seguir los pasos.</p>
+          <h1 id="welcome" data-i18n="qs.title">Your first sign in Engravity</h1>
+          <p data-i18n="qs.intro">This guide takes you from zero to a validated ADA sign and a G-Code file ready to produce. No prior experience with vector software required — just follow the steps.</p>
 
-          <div class="callout" data-i18n="qs.calloutBefore"><strong>Antes de empezar:</strong> Asegúrate de tener una cuenta en Engravity. Puedes crear una gratis desde el botón "Empieza Gratis" arriba o en <a href="../pricing/index.html">la página de precios</a>.</div>
+          <div class="callout" data-i18n="qs.calloutBefore"><strong>Before you start:</strong> make sure you have an Engravity account. You can create one for free from the &quot;Start Free&quot; button at the top, or on <a href="../pricing/index.html">the pricing page</a>.</div>
 
-          <h2 id="instalacion" data-i18n="qs.h1Install">1. Instalación</h2>
-          <p data-i18n="qs.installP">Engravity está disponible para Windows, macOS y Linux. Descarga el instalador desde la <a href="../download/index.html">página de descargas</a>; detectaremos automáticamente tu sistema operativo.</p>
+          <h2 id="install" data-i18n="qs.h1Install">1. Installation</h2>
+          <p data-i18n="qs.installP">Engravity is available for Windows, macOS, and Linux. Download the installer from the <a href="../download/index.html">downloads page</a>; we'll auto-detect your operating system.</p>
           <ul>
-            <li data-i18n="qs.installL1"><strong>Windows 10/11:</strong> instalador <code>.exe</code> firmado · ~85 MB</li>
-            <li data-i18n="qs.installL2"><strong>macOS (Apple Silicon e Intel):</strong> <code>.dmg</code> universal · ~92 MB</li>
-            <li data-i18n="qs.installL3"><strong>Linux:</strong> <code>.AppImage</code> portátil · ~78 MB</li>
+            <li data-i18n="qs.installL1"><strong>Windows 10/11:</strong> signed <code>.exe</code> installer · ~85 MB</li>
+            <li data-i18n="qs.installL2"><strong>macOS (Apple Silicon and Intel):</strong> universal <code>.dmg</code> · ~92 MB</li>
+            <li data-i18n="qs.installL3"><strong>Linux:</strong> portable <code>.AppImage</code> · ~78 MB</li>
           </ul>
-          <p data-i18n="qs.installP2">Una vez instalado, abre la aplicación e inicia sesión con la cuenta que creaste. La primera apertura puede tardar unos segundos mientras se descarga el motor de IA.</p>
+          <p data-i18n="qs.installP2">Once installed, open the app and sign in with the account you created. The first launch can take a few seconds while the AI engine downloads.</p>
 
-          <h2 id="primer-proyecto" data-i18n="qs.h2First">2. Tu primer proyecto</h2>
-          <p data-i18n="qs.firstP">Crea un proyecto nuevo desde <code>Archivo → Nuevo proyecto</code>. Se te pedirá:</p>
+          <h2 id="first-project" data-i18n="qs.h2First">2. Your first project</h2>
+          <p data-i18n="qs.firstP">Create a new project from <code>File → New project</code>. You'll be asked for:</p>
           <ol>
-            <li data-i18n="qs.firstO1"><strong>Tipo de letrero:</strong> elige entre interior, exterior, ADA o personalizado.</li>
-            <li data-i18n="qs.firstO2"><strong>Material principal:</strong> acrílico, aluminio, MDF, espuma PVC u otro.</li>
-            <li data-i18n="qs.firstO3"><strong>Dimensiones:</strong> en pulgadas o milímetros.</li>
+            <li data-i18n="qs.firstO1"><strong>Sign type:</strong> choose between interior, exterior, ADA, or custom.</li>
+            <li data-i18n="qs.firstO2"><strong>Primary material:</strong> acrylic, aluminum, MDF, PVC foam, or other.</li>
+            <li data-i18n="qs.firstO3"><strong>Dimensions:</strong> in inches or millimeters.</li>
           </ol>
-          <p data-i18n="qs.firstP2">Engravity precarga automáticamente el lienzo con guías de seguridad ADA si elegiste ese tipo, así no tienes que recordar las distancias mínimas a los bordes.</p>
+          <p data-i18n="qs.firstP2">If you chose ADA, Engravity preloads the canvas with ADA safety guides automatically — so you don't have to remember the minimum distances to edges.</p>
 
-          <h2 id="vectores" data-i18n="qs.h3Vector">3. Herramientas vectoriales</h2>
-          <p data-i18n="qs.vectorP">Si vienes de Illustrator o CorelDRAW, las herramientas te van a resultar familiares. Las más usadas:</p>
+          <h2 id="vectors" data-i18n="qs.h3Vector">3. Vector tools</h2>
+          <p data-i18n="qs.vectorP">If you come from Illustrator or CorelDRAW, the tools will feel familiar. The most used ones:</p>
           <ul>
-            <li data-i18n="qs.vectorL1"><strong>Pen tool (P):</strong> dibuja curvas Bézier con control completo.</li>
-            <li data-i18n="qs.vectorL2"><strong>Pathfinder (Shift+M):</strong> operaciones booleanas (unión, sustracción, intersección).</li>
-            <li data-i18n="qs.vectorL3"><strong>Texto vectorizado (T):</strong> tipografía que se convierte directamente en path para corte.</li>
-            <li data-i18n="qs.vectorL4"><strong>Mesh y warp:</strong> deformaciones avanzadas para letreros con curvatura.</li>
+            <li data-i18n="qs.vectorL1"><strong>Pen tool (P):</strong> draw Bézier curves with full control.</li>
+            <li data-i18n="qs.vectorL2"><strong>Pathfinder (Shift+M):</strong> boolean operations (union, subtraction, intersection).</li>
+            <li data-i18n="qs.vectorL3"><strong>Vector text (T):</strong> typography that converts directly to a cuttable path.</li>
+            <li data-i18n="qs.vectorL4"><strong>Mesh and warp:</strong> advanced deformations for curved signage.</li>
           </ul>
 
-          <div class="callout" data-i18n="qs.calloutShortcut"><strong>Atajo útil:</strong> Mantén <code>Espacio</code> presionado para mover el lienzo sin cambiar de herramienta.</div>
+          <div class="callout" data-i18n="qs.calloutShortcut"><strong>Useful shortcut:</strong> hold <code>Space</code> to pan the canvas without switching tools.</div>
 
-          <h2 id="ia" data-i18n="qs.h4Ai">4. IA generativa en canvas</h2>
-          <p data-i18n="qs.aiP">Si necesitas generar formas o vectores rápido, abre el panel de IA con <code>Cmd/Ctrl + I</code> y describe lo que quieres:</p>
-          <pre><code>/crear letrero "Restroom"
-material: aluminio cepillado
-braille: UEB Grado 2
-icono: figura ADA estándar</code></pre>
-          <p data-i18n="qs.aiP2">La IA genera el diseño base directamente sobre el canvas. Puedes editarlo después como cualquier otro vector.</p>
+          <h2 id="ai" data-i18n="qs.h4Ai">4. Generative AI on canvas</h2>
+          <p data-i18n="qs.aiP">If you need to generate shapes or vectors fast, open the AI panel with <code>Cmd/Ctrl + I</code> and describe what you want:</p>
+          <pre><code>/create sign "Restroom"
+material: brushed aluminum
+braille: UEB Grade 2
+icon: standard ADA figure</code></pre>
+          <p data-i18n="qs.aiP2">The AI generates the base design directly on the canvas. You can edit it afterward like any other vector.</p>
 
-          <h2 id="importacion" data-i18n="qs.h5Import">5. Importar archivos existentes</h2>
-          <p data-i18n="qs.importP">Engravity importa nativamente <code>.ai</code>, <code>.dxf</code>, <code>.svg</code> y <code>.cdr</code> sin perder capas, gradientes ni texto editable. Arrastra el archivo al lienzo o usa <code>Archivo → Importar</code>.</p>
+          <h2 id="import" data-i18n="qs.h5Import">5. Import existing files</h2>
+          <p data-i18n="qs.importP">Engravity natively imports <code>.ai</code>, <code>.dxf</code>, <code>.svg</code>, and <code>.cdr</code> without losing layers, gradients, or editable text. Drag the file onto the canvas or use <code>File → Import</code>.</p>
 
-          <h2 id="ada" data-i18n="qs.h6Ada">6. Validación ADA</h2>
-          <p data-i18n="qs.adaP">Cuando tu diseño esté listo, ejecuta el validador desde <code>Herramientas → Validar ADA 703</code>. Engravity revisa:</p>
+          <h2 id="ada" data-i18n="qs.h6Ada">6. ADA validation</h2>
+          <p data-i18n="qs.adaP">Once your design is ready, run the validator from <code>Tools → Validate ADA 703</code>. Engravity checks:</p>
           <ul>
-            <li data-i18n="qs.adaL1">Altura de caracteres (mínimo 5/8" para letreros táctiles).</li>
-            <li data-i18n="qs.adaL2">Contraste de color con el fondo (≥70%).</li>
-            <li data-i18n="qs.adaL3">Espaciado entre letras y líneas.</li>
-            <li data-i18n="qs.adaL4">Calidad del Braille UEB Grado 2.</li>
-            <li data-i18n="qs.adaL5">Distancias a bordes y esquinas.</li>
+            <li data-i18n="qs.adaL1">Character height (minimum 5/8" for tactile signs).</li>
+            <li data-i18n="qs.adaL2">Color contrast against background (≥70%).</li>
+            <li data-i18n="qs.adaL3">Letter and line spacing.</li>
+            <li data-i18n="qs.adaL4">UEB Grade 2 Braille quality.</li>
+            <li data-i18n="qs.adaL5">Distances to edges and corners.</li>
           </ul>
-          <p data-i18n="qs.adaP2">Si hay errores, el validador te muestra exactamente qué corregir y dónde. Cuando todo está verde, puedes exportar el reporte de cumplimiento en PDF.</p>
+          <p data-i18n="qs.adaP2">If there are errors, the validator shows you exactly what to fix and where. Once everything is green, you can export the compliance report as a PDF.</p>
 
-          <h2 id="gcode" data-i18n="qs.h7Gcode">7. Exportar G-Code</h2>
-          <p data-i18n="qs.gcodeP">Con el diseño validado, abre <code>Archivo → Exportar → G-Code</code>. Selecciona:</p>
+          <h2 id="gcode" data-i18n="qs.h7Gcode">7. Export G-Code</h2>
+          <p data-i18n="qs.gcodeP">With the design validated, open <code>File → Export → G-Code</code>. Pick:</p>
           <ol>
-            <li data-i18n="qs.gcodeO1">Perfil de máquina (Mach3, GRBL, LinuxCNC, etc.).</li>
-            <li data-i18n="qs.gcodeO2">Operaciones a realizar: Engrave, Cut, Pocket, V-Carve.</li>
-            <li data-i18n="qs.gcodeO3">Profundidad y velocidad de avance.</li>
+            <li data-i18n="qs.gcodeO1">Machine profile (Mach3, GRBL, LinuxCNC, etc.).</li>
+            <li data-i18n="qs.gcodeO2">Operations to run: Engrave, Cut, Pocket, V-Carve.</li>
+            <li data-i18n="qs.gcodeO3">Depth and feed rate.</li>
           </ol>
-          <p data-i18n="qs.gcodeP2">Engravity genera un archivo <code>.nc</code> limpio y listo para enviar a tu CNC. Si tienes el plan Industrial, también puedes ver la simulación 3D del corte antes de mandarlo a producción.</p>
+          <p data-i18n="qs.gcodeP2">Engravity generates a clean <code>.nc</code> file ready to send to your CNC. With the Industrial plan, you can also preview a 3D simulation of the cut before sending it to production.</p>
 
-          <div class="callout" data-i18n="qs.calloutMore"><strong>¿Listo para más?</strong> Sigue con la <a href="../blog/cnc-routing.html">guía de configuración CNC avanzada</a> o aprende a personalizar perfiles de máquina.</div>
+          <div class="callout" data-i18n="qs.calloutMore"><strong>Ready for more?</strong> Continue with the <a href="../blog/cnc-routing.html">advanced CNC configuration guide</a> or learn how to customize machine profiles.</div>
 
           <p style="margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--glass-border); display:flex; justify-content: space-between; flex-wrap: wrap; gap:1rem;">
-            <a href="../docs/index.html" class="btn btn-secondary" data-i18n="qs.backDocs">← Volver a Docs</a>
-            <a href="../blog/cnc-routing.html" class="btn btn-primary" data-i18n="qs.nextCnc">Siguiente: Configurar CNC →</a>
+            <a href="../docs/index.html" class="btn btn-secondary" data-i18n="qs.backDocs">← Back to Docs</a>
+            <a href="../blog/cnc-routing.html" class="btn btn-primary" data-i18n="qs.nextCnc">Next: Configure CNC →</a>
           </p>
 
         </article>
@@ -180,32 +180,32 @@ icono: figura ADA estándar</code></pre>
       <div class="footer-grid">
         <div class="footer-brand">
           <h3 class="gradient-text pompous-gradient">ENGRAVITY</h3>
-          <p data-i18n="footer.desc">Una startup construida desde el taller. Herramientas profesionales hechas por fabricantes, para fabricantes — y para quienes están aprendiendo a serlo.</p>
+          <p data-i18n="footer.desc">A startup built from the workshop floor. Professional tools made by makers, for makers — and for those learning to be one.</p>
         </div>
         <div class="footer-col">
-          <h4 data-i18n="footer.colProduct">Producto</h4>
-          <a href="../index.html#features" data-i18n="nav.features">Características</a>
-          <a href="../pricing/index.html" data-i18n="nav.pricing">Precios</a>
-          <a href="../download/index.html" data-i18n="footer.download">Descargar</a>
+          <h4 data-i18n="footer.colProduct">Product</h4>
+          <a href="../index.html#features" data-i18n="nav.features">Features</a>
+          <a href="../pricing/index.html" data-i18n="nav.pricing">Pricing</a>
+          <a href="../download/index.html" data-i18n="footer.download">Download</a>
           <a href="../changelog/index.html" data-i18n="footer.changelog">Changelog</a>
         </div>
         <div class="footer-col">
-          <h4 data-i18n="footer.colResources">Recursos</h4>
-          <a href="../docs/index.html" data-i18n="footer.docs">Documentación</a>
+          <h4 data-i18n="footer.colResources">Resources</h4>
+          <a href="../docs/index.html" data-i18n="footer.docs">Documentation</a>
           <a href="../blog/index.html" data-i18n="nav.blog">Blog</a>
-          <a href="../blog/ada-compliance.html" data-i18n="footer.adaGuide">Guía ADA</a>
-          <a href="../blog/cnc-routing.html" data-i18n="footer.cncGuide">Guía CNC</a>
+          <a href="../blog/ada-compliance.html" data-i18n="footer.adaGuide">ADA Guide</a>
+          <a href="../blog/cnc-routing.html" data-i18n="footer.cncGuide">CNC Guide</a>
         </div>
         <div class="footer-col">
-          <h4 data-i18n="footer.colCompany">Compañía</h4>
-          <a href="../about/index.html" data-i18n="nav.about">Nosotros</a>
-          <a href="mailto:hola@engravitysigns.com" data-i18n="footer.contact">Contacto</a>
+          <h4 data-i18n="footer.colCompany">Company</h4>
+          <a href="../about/index.html" data-i18n="nav.about">About</a>
+          <a href="mailto:hola@engravitysigns.com" data-i18n="footer.contact">Contact</a>
           <a href="https://github.com/engravity" target="_blank" rel="noopener">GitHub</a>
         </div>
       </div>
       <div class="footer-divider">
-        <span data-i18n="footer.copyright">&copy; 2026 Engravitysigns.com — Todos los derechos reservados.</span>
-        <span data-i18n="footer.startupNote">Primer producto · Aprendiendo y creciendo con la industria</span>
+        <span data-i18n="footer.copyright">&copy; 2026 Engravitysigns.com — All rights reserved.</span>
+        <span data-i18n="footer.startupNote">First product · Learning and growing with the industry</span>
       </div>
     </footer>
 

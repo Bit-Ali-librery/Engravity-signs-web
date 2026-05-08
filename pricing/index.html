@@ -34,10 +34,10 @@
       <div class="nav-container">
         <a href="../index.html" class="logo"><span class="logo-icon"></span> ENGRAVITY</a>
         <div class="nav-links">
-          <a href="../index.html#features" data-i18n="nav.features">Características</a>
-          <a href="../index.html#audience" data-i18n="nav.audience">Para quién</a>
+          <a href="../index.html#features" data-i18n="nav.features">Features</a>
+          <a href="../index.html#audience" data-i18n="nav.audience">For Whom</a>
           <a href="../index.html#ada-braille" data-i18n="nav.compliance">ADA & Braille</a>
-          <a href="../pricing/index.html" data-i18n="nav.pricing">Precios</a>
+          <a href="../pricing/index.html" data-i18n="nav.pricing">Pricing</a>
           <a href="../docs/index.html" data-i18n="nav.docs">Docs</a>
           <a href="../blog/index.html" data-i18n="nav.blog">Blog</a>
         </div>
@@ -51,7 +51,7 @@
             </div>
           </div>
           <button class="btn btn-secondary login-btn" onclick="openModal('loginModal')" data-i18n="nav.login">Log In</button>
-          <button class="btn btn-primary" onclick="openModal('signupModal')" data-i18n="nav.signup">Empieza Gratis</button>
+          <button class="btn btn-primary" onclick="openModal('signupModal')" data-i18n="nav.signup">Start Free</button>
         </div>
       </div>
     </nav>
@@ -60,11 +60,11 @@
     <div class="modal-overlay" id="loginModal">
       <div class="modal-content glass-panel">
         <button class="modal-close" onclick="closeModal('loginModal')">&times;</button>
-        <h2 data-i18n="auth.loginTitle">Bienvenido de nuevo</h2>
-        <p data-i18n="auth.loginSub">Inicia sesión para continuar diseñando.</p>
+        <h2 data-i18n="auth.loginTitle">Welcome back</h2>
+        <p data-i18n="auth.loginSub">Sign in to keep designing.</p>
         <form onsubmit="handleAuth(event)">
           <div class="form-group"><label data-i18n="auth.email">Email</label><input type="email" required placeholder="nombre@taller.com" /></div>
-          <div class="form-group"><label data-i18n="auth.password">Contraseña</label><input type="password" required placeholder="••••••••" /></div>
+          <div class="form-group"><label data-i18n="auth.password">Password</label><input type="password" required placeholder="••••••••" /></div>
           <button type="submit" class="btn btn-primary btn-block" data-i18n="nav.login">Log In</button>
         </form>
       </div>
@@ -72,13 +72,13 @@
     <div class="modal-overlay" id="signupModal">
       <div class="modal-content glass-panel">
         <button class="modal-close" onclick="closeModal('signupModal')">&times;</button>
-        <h2 data-i18n="auth.signupTitle2">Crea tu cuenta</h2>
-        <p data-i18n="auth.signupSub2">Empieza con el plan que mejor encaje contigo.</p>
+        <h2 data-i18n="auth.signupTitle2">Create your account</h2>
+        <p data-i18n="auth.signupSub2">Start with the plan that fits you best.</p>
         <form onsubmit="handleAuth(event)">
           <div class="form-group"><label data-i18n="auth.name">Nombre</label><input type="text" required /></div>
           <div class="form-group"><label data-i18n="auth.email">Email</label><input type="email" required /></div>
-          <div class="form-group"><label data-i18n="auth.password">Contraseña</label><input type="password" required placeholder="••••••••" /></div>
-          <button type="submit" class="btn btn-primary btn-block" data-i18n="auth.createAccount">Crear cuenta</button>
+          <div class="form-group"><label data-i18n="auth.password">Password</label><input type="password" required placeholder="••••••••" /></div>
+          <button type="submit" class="btn btn-primary btn-block" data-i18n="auth.createAccount">Create account</button>
         </form>
       </div>
     </div>
@@ -86,131 +86,131 @@
     <main>
       <!-- ═══ HERO PRICING ═══ -->
       <section class="pricing-hero">
-        <div class="badge" data-i18n="pricingPg.badge">PLANES FLEXIBLES</div>
-        <h1 data-i18n="pricingPg.title">Un plan para cada etapa de tu trabajo.</h1>
-        <p data-i18n="pricingPg.lead">Desde estudiantes que están aprendiendo hasta talleres industriales. Pagas por lo que usas y creces sin fricciones.</p>
+        <div class="badge" data-i18n="pricingPg.badge">FLEXIBLE PLANS</div>
+        <h1 data-i18n="pricingPg.title">A plan for every stage of your work.</h1>
+        <p data-i18n="pricingPg.lead">From students who are still learning to industrial workshops. Pay for what you use and grow without friction.</p>
         <div class="billing-toggle" role="tablist">
-          <button class="active" id="billMonthly" onclick="toggleBilling('monthly')" data-i18n="pricingPg.monthly">Mensual</button>
-          <button id="billAnnual" onclick="toggleBilling('annual')"><span data-i18n="pricingPg.annual">Anual</span> <span class="billing-discount">−20%</span></button>
+          <button class="active" id="billMonthly" onclick="toggleBilling('monthly')" data-i18n="pricingPg.monthly">Monthly</button>
+          <button id="billAnnual" onclick="toggleBilling('annual')"><span data-i18n="pricingPg.annual">Annual</span> <span class="billing-discount">−20%</span></button>
         </div>
       </section>
 
       <!-- ═══ TIERS ═══ -->
       <section class="pricing-grid-4">
 
-        <!-- ESTUDIANTE / FREE -->
+        <!-- STUDENT / FREE -->
         <div class="price-tier-v2">
-          <div class="tier-name" data-i18n="pricingPg.tierStudent">Estudiante</div>
-          <div class="tier-headline" data-i18n="pricingPg.tierStudentHead">Aprende sin barreras</div>
-          <div class="tier-desc" data-i18n="pricingPg.tierStudentDesc">Para estudiantes y makers que están explorando el diseño vectorial y la producción CNC.</div>
-          <div class="tier-price"><small>$</small>0<small data-i18n="pricing.perMonth">/mes</small></div>
-          <div class="tier-price-sub" data-i18n="pricingPg.tierStudentSub">Precio por definir · Plan placeholder</div>
-          <button class="btn btn-secondary btn-block tier-cta" onclick="openModal('signupModal')" data-i18n="pricingPg.startFree">Empezar gratis</button>
+          <div class="tier-name" data-i18n="pricingPg.tierStudent">Student</div>
+          <div class="tier-headline" data-i18n="pricingPg.tierStudentHead">Learn without barriers</div>
+          <div class="tier-desc" data-i18n="pricingPg.tierStudentDesc">For students and makers exploring vector design and CNC production.</div>
+          <div class="tier-price"><small>$</small>0<small data-i18n="pricing.perMonth">/month</small></div>
+          <div class="tier-price-sub" data-i18n="pricingPg.tierStudentSub">Pricing TBD · Plan placeholder</div>
+          <button class="btn btn-secondary btn-block tier-cta" onclick="openModal('signupModal')" data-i18n="pricingPg.startFree">Start free</button>
           <ul class="tier-features">
-            <li data-i18n="pricingPg.studentF1">Editor vectorial completo</li>
-            <li data-i18n="pricingPg.studentF2">Importación AI / DXF / SVG</li>
-            <li data-i18n="pricingPg.studentF3">3 proyectos activos</li>
-            <li data-i18n="pricingPg.studentF4">Marca de agua educativa en exportes</li>
-            <li class="muted" data-i18n="pricing.tier1F1">Validación ADA 703</li>
-            <li class="muted" data-i18n="pricingPg.gcodeCnc">G-Code para CNC</li>
-            <li class="muted" data-i18n="pricingPg.directSupport">Soporte directo</li>
+            <li data-i18n="pricingPg.studentF1">Full vector editor</li>
+            <li data-i18n="pricingPg.studentF2">Import AI / DXF / SVG</li>
+            <li data-i18n="pricingPg.studentF3">3 active projects</li>
+            <li data-i18n="pricingPg.studentF4">Educational watermark on exports</li>
+            <li class="muted" data-i18n="pricing.tier1F1">ADA 703 validation</li>
+            <li class="muted" data-i18n="pricingPg.gcodeCnc">G-Code for CNC</li>
+            <li class="muted" data-i18n="pricingPg.directSupport">Direct support</li>
           </ul>
         </div>
 
-        <!-- PROFESIONAL -->
+        <!-- PROFESSIONAL -->
         <div class="price-tier-v2 featured">
-          <div class="popular-badge-v2" data-i18n="pricingPg.mostChosen">MÁS ELEGIDO</div>
-          <div class="tier-name" data-i18n="pricing.tier1">Profesional</div>
-          <div class="tier-headline" data-i18n="pricingPg.tierProHead">Diseña y produce</div>
-          <div class="tier-desc" data-i18n="pricingPg.tierProDesc">Para diseñadores y talleres pequeños que necesitan herramientas reales sin pagar de más.</div>
-          <div class="tier-price" data-monthly="49" data-annual="39"><small>$</small><span class="price-num">49</span><small data-i18n="pricing.perMonth">/mes</small></div>
-          <div class="tier-price-sub" data-i18n="pricingPg.tierProSub">Sin contrato. Cancela cuando quieras.</div>
-          <button class="btn btn-primary btn-block tier-cta" onclick="openModal('signupModal')" data-i18n="pricingPg.startTrial">Empezar prueba</button>
+          <div class="popular-badge-v2" data-i18n="pricingPg.mostChosen">MOST CHOSEN</div>
+          <div class="tier-name" data-i18n="pricing.tier1">Professional</div>
+          <div class="tier-headline" data-i18n="pricingPg.tierProHead">Design and produce</div>
+          <div class="tier-desc" data-i18n="pricingPg.tierProDesc">For designers and small workshops that need real tools without overpaying.</div>
+          <div class="tier-price" data-monthly="49" data-annual="39"><small>$</small><span class="price-num">49</span><small data-i18n="pricing.perMonth">/month</small></div>
+          <div class="tier-price-sub" data-i18n="pricingPg.tierProSub">No contract. Cancel anytime.</div>
+          <button class="btn btn-primary btn-block tier-cta" onclick="openModal('signupModal')" data-i18n="pricingPg.startTrial">Start trial</button>
           <ul class="tier-features">
-            <li data-i18n="pricingPg.allStudent">Todo lo del plan Estudiante</li>
-            <li data-i18n="pricingPg.adaFull">Validación ADA 703 completa</li>
-            <li data-i18n="pricingPg.bezierAdv">Motor vectorial Bézier avanzado</li>
-            <li data-i18n="pricingPg.gcodeStandard">G-Code estándar exportable</li>
-            <li data-i18n="pricing.tier1F4">Proyectos ilimitados</li>
-            <li data-i18n="pricingPg.noWatermark">Sin marca de agua</li>
-            <li class="muted" data-i18n="pricingPg.cncMulti">Simulación CNC multimaterial</li>
+            <li data-i18n="pricingPg.allStudent">Everything in the Student plan</li>
+            <li data-i18n="pricingPg.adaFull">Full ADA 703 validation</li>
+            <li data-i18n="pricingPg.bezierAdv">Advanced Bézier vector engine</li>
+            <li data-i18n="pricingPg.gcodeStandard">Standard G-Code export</li>
+            <li data-i18n="pricing.tier1F4">Unlimited projects</li>
+            <li data-i18n="pricingPg.noWatermark">No watermark</li>
+            <li class="muted" data-i18n="pricingPg.cncMulti">Multi-material CNC simulation</li>
           </ul>
         </div>
 
         <!-- INDUSTRIAL -->
         <div class="price-tier-v2">
           <div class="tier-name" data-i18n="pricing.tier2">Industrial</div>
-          <div class="tier-headline" data-i18n="pricingPg.tierIndHead">Producción a escala</div>
-          <div class="tier-desc" data-i18n="pricingPg.tierIndDesc">Para talleres con CNC en producción que necesitan simulación real y soporte directo.</div>
-          <div class="tier-price" data-monthly="129" data-annual="103"><small>$</small><span class="price-num">129</span><small data-i18n="pricing.perMonth">/mes</small></div>
-          <div class="tier-price-sub" data-i18n="pricingPg.perUserMonth">Por usuario / mes</div>
-          <button class="btn btn-secondary btn-block tier-cta" onclick="openModal('signupModal')" data-i18n="pricingPg.optimize">Optimizar taller</button>
+          <div class="tier-headline" data-i18n="pricingPg.tierIndHead">Production at scale</div>
+          <div class="tier-desc" data-i18n="pricingPg.tierIndDesc">For shops running CNC in production that need real simulation and direct support.</div>
+          <div class="tier-price" data-monthly="129" data-annual="103"><small>$</small><span class="price-num">129</span><small data-i18n="pricing.perMonth">/month</small></div>
+          <div class="tier-price-sub" data-i18n="pricingPg.perUserMonth">Per user / month</div>
+          <button class="btn btn-secondary btn-block tier-cta" onclick="openModal('signupModal')" data-i18n="pricingPg.optimize">Optimize workshop</button>
           <ul class="tier-features">
-            <li data-i18n="pricingPg.allPro">Todo lo del plan Profesional</li>
-            <li data-i18n="pricingPg.cncFull">Simulación CNC acrílico, madera, metal</li>
-            <li data-i18n="pricingPg.swPalette">Sherwin-Williams Pro + paletas custom</li>
-            <li data-i18n="pricingPg.machines6">6 perfiles de máquina industriales</li>
-            <li data-i18n="pricingPg.priorSupport">Soporte especializado prioritario</li>
-            <li data-i18n="pricingPg.onboard">Onboarding 1:1</li>
+            <li data-i18n="pricingPg.allPro">Everything in the Professional plan</li>
+            <li data-i18n="pricingPg.cncFull">CNC simulation: acrylic, wood, metal</li>
+            <li data-i18n="pricingPg.swPalette">Sherwin-Williams Pro + custom palettes</li>
+            <li data-i18n="pricingPg.machines6">6 industrial machine profiles</li>
+            <li data-i18n="pricingPg.priorSupport">Priority specialized support</li>
+            <li data-i18n="pricingPg.onboard">1:1 onboarding</li>
           </ul>
         </div>
 
-        <!-- ESTUDIO -->
+        <!-- STUDIO -->
         <div class="price-tier-v2">
-          <div class="tier-name" data-i18n="pricingPg.tierStudio">Estudio</div>
-          <div class="tier-headline" data-i18n="pricingPg.tierStudioHead">Para tu equipo</div>
-          <div class="tier-desc" data-i18n="pricingPg.tierStudioDesc">Para estudios y empresas con varios diseñadores trabajando en paralelo.</div>
+          <div class="tier-name" data-i18n="pricingPg.tierStudio">Studio</div>
+          <div class="tier-headline" data-i18n="pricingPg.tierStudioHead">For your team</div>
+          <div class="tier-desc" data-i18n="pricingPg.tierStudioDesc">For studios and companies with multiple designers working in parallel.</div>
           <div class="tier-price"><span class="price-num" style="font-size:2rem;" data-i18n="pricingPg.custom">Custom</span></div>
-          <div class="tier-price-sub" data-i18n="pricingPg.talkToUs">Hablamos contigo</div>
-          <a href="mailto:hola@engravitysigns.com" class="btn btn-secondary btn-block tier-cta" data-i18n="pricingPg.contactSales">Contactar ventas</a>
+          <div class="tier-price-sub" data-i18n="pricingPg.talkToUs">Let's talk</div>
+          <a href="mailto:hola@engravitysigns.com" class="btn btn-secondary btn-block tier-cta" data-i18n="pricingPg.contactSales">Contact sales</a>
           <ul class="tier-features">
-            <li data-i18n="pricingPg.allInd">Todo lo del plan Industrial</li>
-            <li data-i18n="pricingPg.sso">Asientos múltiples con SSO</li>
-            <li data-i18n="pricingPg.libraries">Librerías compartidas del equipo</li>
-            <li data-i18n="pricingPg.billing">Facturación consolidada</li>
-            <li data-i18n="pricingPg.sla">SLA y soporte dedicado</li>
-            <li data-i18n="pricingPg.training">Capacitación para tu equipo</li>
+            <li data-i18n="pricingPg.allInd">Everything in the Industrial plan</li>
+            <li data-i18n="pricingPg.sso">Multiple seats with SSO</li>
+            <li data-i18n="pricingPg.libraries">Shared team libraries</li>
+            <li data-i18n="pricingPg.billing">Consolidated billing</li>
+            <li data-i18n="pricingPg.sla">SLA and dedicated support</li>
+            <li data-i18n="pricingPg.training">Training for your team</li>
           </ul>
         </div>
       </section>
 
       <!-- ═══ COMPARISON TABLE ═══ -->
       <section class="compare-section">
-        <h2 data-i18n="pricingPg.compareTitle">Compara los planes en detalle</h2>
-        <p class="lead" data-i18n="pricingPg.compareLead">Todo lo que incluye cada plan, sin letra chica.</p>
+        <h2 data-i18n="pricingPg.compareTitle">Compare plans in detail</h2>
+        <p class="lead" data-i18n="pricingPg.compareLead">Everything each plan includes — no fine print.</p>
         <div style="overflow-x: auto;">
           <table class="compare-table">
             <thead>
               <tr>
-                <th data-i18n="pricingPg.feature">Característica</th>
-                <th data-i18n="pricingPg.tierStudent">Estudiante</th>
-                <th data-i18n="pricing.tier1">Profesional</th>
+                <th data-i18n="pricingPg.feature">Feature</th>
+                <th data-i18n="pricingPg.tierStudent">Student</th>
+                <th data-i18n="pricing.tier1">Professional</th>
                 <th data-i18n="pricing.tier2">Industrial</th>
-                <th data-i18n="pricingPg.tierStudio">Estudio</th>
+                <th data-i18n="pricingPg.tierStudio">Studio</th>
               </tr>
             </thead>
             <tbody>
-              <tr><th class="feat-cat" colspan="5" data-i18n="pricingPg.catVector">Diseño vectorial</th></tr>
-              <tr><td data-i18n="pricingPg.fPen">Pen tool & curvas Bézier</td><td class="checkmark">✓</td><td class="checkmark">✓</td><td class="checkmark">✓</td><td class="checkmark">✓</td></tr>
-              <tr><td data-i18n="pricingPg.fPath">Pathfinder booleano</td><td class="checkmark">✓</td><td class="checkmark">✓</td><td class="checkmark">✓</td><td class="checkmark">✓</td></tr>
-              <tr><td data-i18n="pricingPg.fImport">Importación AI / DXF / SVG / CDR</td><td class="checkmark">✓</td><td class="checkmark">✓</td><td class="checkmark">✓</td><td class="checkmark">✓</td></tr>
-              <tr><td data-i18n="pricingPg.fAi">IA generativa en canvas</td><td data-i18n="pricingPg.limited">Limitada</td><td class="checkmark">✓</td><td class="checkmark">✓</td><td class="checkmark">✓</td></tr>
+              <tr><th class="feat-cat" colspan="5" data-i18n="pricingPg.catVector">Vector design</th></tr>
+              <tr><td data-i18n="pricingPg.fPen">Pen tool &amp; Bézier curves</td><td class="checkmark">✓</td><td class="checkmark">✓</td><td class="checkmark">✓</td><td class="checkmark">✓</td></tr>
+              <tr><td data-i18n="pricingPg.fPath">Boolean pathfinder</td><td class="checkmark">✓</td><td class="checkmark">✓</td><td class="checkmark">✓</td><td class="checkmark">✓</td></tr>
+              <tr><td data-i18n="pricingPg.fImport">AI / DXF / SVG / CDR import</td><td class="checkmark">✓</td><td class="checkmark">✓</td><td class="checkmark">✓</td><td class="checkmark">✓</td></tr>
+              <tr><td data-i18n="pricingPg.fAi">Generative AI on canvas</td><td data-i18n="pricingPg.limited">Limited</td><td class="checkmark">✓</td><td class="checkmark">✓</td><td class="checkmark">✓</td></tr>
 
-              <tr><th class="feat-cat" colspan="5" data-i18n="pricingPg.catCompliance">Compliance & ADA</th></tr>
-              <tr><td data-i18n="pricing.tier1F1">Validación ADA 703</td><td class="dash">—</td><td class="checkmark">✓</td><td class="checkmark">✓</td><td class="checkmark">✓</td></tr>
-              <tr><td data-i18n="pricingPg.fBraille">Braille UEB Grado 2</td><td class="dash">—</td><td class="checkmark">✓</td><td class="checkmark">✓</td><td class="checkmark">✓</td></tr>
-              <tr><td data-i18n="pricingPg.fReports">Reportes de cumplimiento</td><td class="dash">—</td><td data-i18n="pricingPg.basic">Básico</td><td class="checkmark">✓</td><td class="checkmark">✓</td></tr>
+              <tr><th class="feat-cat" colspan="5" data-i18n="pricingPg.catCompliance">Compliance &amp; ADA</th></tr>
+              <tr><td data-i18n="pricing.tier1F1">ADA 703 validation</td><td class="dash">—</td><td class="checkmark">✓</td><td class="checkmark">✓</td><td class="checkmark">✓</td></tr>
+              <tr><td data-i18n="pricingPg.fBraille">UEB Grade 2 Braille</td><td class="dash">—</td><td class="checkmark">✓</td><td class="checkmark">✓</td><td class="checkmark">✓</td></tr>
+              <tr><td data-i18n="pricingPg.fReports">Compliance reports</td><td class="dash">—</td><td data-i18n="pricingPg.basic">Basic</td><td class="checkmark">✓</td><td class="checkmark">✓</td></tr>
 
-              <tr><th class="feat-cat" colspan="5" data-i18n="pricingPg.catCnc">Producción CNC</th></tr>
-              <tr><td data-i18n="pricingPg.fGcode">Exportación G-Code</td><td class="dash">—</td><td data-i18n="pricingPg.standard">Estándar</td><td class="checkmark" data-i18n="pricingPg.advanced">Avanzado</td><td class="checkmark" data-i18n="pricingPg.advanced">Avanzado</td></tr>
-              <tr><td data-i18n="pricingPg.fSim">Simulación CNC 3D</td><td class="dash">—</td><td class="dash">—</td><td class="checkmark">✓</td><td class="checkmark">✓</td></tr>
-              <tr><td data-i18n="pricingPg.fProfiles">Perfiles de máquina</td><td class="dash">—</td><td>2</td><td>6</td><td data-i18n="pricingPg.unlimited">Ilimitado</td></tr>
+              <tr><th class="feat-cat" colspan="5" data-i18n="pricingPg.catCnc">CNC production</th></tr>
+              <tr><td data-i18n="pricingPg.fGcode">G-Code export</td><td class="dash">—</td><td data-i18n="pricingPg.standard">Standard</td><td class="checkmark" data-i18n="pricingPg.advanced">Advanced</td><td class="checkmark" data-i18n="pricingPg.advanced">Advanced</td></tr>
+              <tr><td data-i18n="pricingPg.fSim">3D CNC simulation</td><td class="dash">—</td><td class="dash">—</td><td class="checkmark">✓</td><td class="checkmark">✓</td></tr>
+              <tr><td data-i18n="pricingPg.fProfiles">Machine profiles</td><td class="dash">—</td><td>2</td><td>6</td><td data-i18n="pricingPg.unlimited">Unlimited</td></tr>
 
-              <tr><th class="feat-cat" colspan="5" data-i18n="pricingPg.catTeam">Equipo & soporte</th></tr>
-              <tr><td data-i18n="pricingPg.fProjects">Proyectos activos</td><td>3</td><td data-i18n="pricingPg.unlimitedFem">Ilimitados</td><td data-i18n="pricingPg.unlimitedFem">Ilimitados</td><td data-i18n="pricingPg.unlimitedFem">Ilimitados</td></tr>
-              <tr><td data-i18n="pricingPg.fSeats">Asientos / usuarios</td><td>1</td><td>1</td><td>1</td><td data-i18n="pricingPg.multipleSso">Múltiples (SSO)</td></tr>
-              <tr><td data-i18n="pricingPg.fLibraries">Librerías compartidas</td><td class="dash">—</td><td class="dash">—</td><td class="dash">—</td><td class="checkmark">✓</td></tr>
-              <tr><td data-i18n="pricingPg.fSupport">Soporte</td><td data-i18n="pricingPg.community">Comunidad</td><td data-i18n="pricingPg.email">Email</td><td data-i18n="pricingPg.priority">Prioritario</td><td data-i18n="pricingPg.dedicatedSla">Dedicado + SLA</td></tr>
+              <tr><th class="feat-cat" colspan="5" data-i18n="pricingPg.catTeam">Team &amp; support</th></tr>
+              <tr><td data-i18n="pricingPg.fProjects">Active projects</td><td>3</td><td data-i18n="pricingPg.unlimitedFem">Unlimited</td><td data-i18n="pricingPg.unlimitedFem">Unlimited</td><td data-i18n="pricingPg.unlimitedFem">Unlimited</td></tr>
+              <tr><td data-i18n="pricingPg.fSeats">Seats / users</td><td>1</td><td>1</td><td>1</td><td data-i18n="pricingPg.multipleSso">Multiple (SSO)</td></tr>
+              <tr><td data-i18n="pricingPg.fLibraries">Shared libraries</td><td class="dash">—</td><td class="dash">—</td><td class="dash">—</td><td class="checkmark">✓</td></tr>
+              <tr><td data-i18n="pricingPg.fSupport">Support</td><td data-i18n="pricingPg.community">Community</td><td data-i18n="pricingPg.email">Email</td><td data-i18n="pricingPg.priority">Priority</td><td data-i18n="pricingPg.dedicatedSla">Dedicated + SLA</td></tr>
             </tbody>
           </table>
         </div>
@@ -218,41 +218,41 @@
 
       <!-- ═══ FAQ ═══ -->
       <section class="faq-section">
-        <h2 data-i18n="pricingPg.faqTitle">Preguntas frecuentes</h2>
+        <h2 data-i18n="pricingPg.faqTitle">Frequently asked questions</h2>
 
         <details class="faq-item">
-          <summary data-i18n="pricingPg.faq1Q">¿El plan Estudiante es realmente gratis?</summary>
-          <p data-i18n="pricingPg.faq1A">Sí. Estamos definiendo el modelo final, pero la idea es que cualquier estudiante o maker pueda usar Engravity para aprender sin barreras. Es nuestra forma de devolverle algo a la comunidad que nos formó.</p>
+          <summary data-i18n="pricingPg.faq1Q">Is the Student plan really free?</summary>
+          <p data-i18n="pricingPg.faq1A">Yes. We're still finalizing the model, but the idea is that any student or maker can use Engravity to learn without barriers. It's our way of giving back to the community that shaped us.</p>
         </details>
 
         <details class="faq-item">
-          <summary data-i18n="pricingPg.faq2Q">¿Puedo cambiar de plan en cualquier momento?</summary>
-          <p data-i18n="pricingPg.faq2A">Sí. Subes o bajas de plan cuando lo necesites y solo te cobramos la diferencia prorrateada. No hay contratos largos ni penalizaciones.</p>
+          <summary data-i18n="pricingPg.faq2Q">Can I change plans at any time?</summary>
+          <p data-i18n="pricingPg.faq2A">Yes. Upgrade or downgrade whenever you need to and we'll only charge the prorated difference. No long contracts, no penalties.</p>
         </details>
 
         <details class="faq-item">
-          <summary data-i18n="pricingPg.faq3Q">¿Engravity reemplaza a Illustrator o CorelDRAW?</summary>
-          <p data-i18n="pricingPg.faq3A">No. Engravity los complementa. Importas tus archivos AI, CDR o DXF y agregas lo que esos programas no tienen: validación ADA, simulación 3D de materiales y producción directa a CNC. Donde tu diseño termina, Engravity empieza.</p>
+          <summary data-i18n="pricingPg.faq3Q">Does Engravity replace Illustrator or CorelDRAW?</summary>
+          <p data-i18n="pricingPg.faq3A">No. Engravity complements them. Import your AI, CDR, or DXF files and add what those programs don't have: ADA validation, 3D material simulation, and direct CNC production. Where your design ends, Engravity begins.</p>
         </details>
 
         <details class="faq-item">
-          <summary data-i18n="pricingPg.faq4Q">¿Qué máquinas CNC son compatibles?</summary>
-          <p data-i18n="pricingPg.faq4A">El plan Industrial incluye 6 perfiles industriales (Mach3, GRBL, LinuxCNC, Mastercam y dos formatos privados). El plan Estudio permite agregar perfiles personalizados. Si trabajas con una máquina específica, escríbenos y la validamos contigo.</p>
+          <summary data-i18n="pricingPg.faq4Q">Which CNC machines are supported?</summary>
+          <p data-i18n="pricingPg.faq4A">The Industrial plan includes 6 industrial profiles (Mach3, GRBL, LinuxCNC, Mastercam, and two proprietary formats). The Studio plan lets you add custom profiles. If you work with a specific machine, write to us and we'll validate it with you.</p>
         </details>
 
         <details class="faq-item">
-          <summary data-i18n="pricingPg.faq5Q">¿Hay periodo de prueba?</summary>
-          <p data-i18n="pricingPg.faq5A">Sí. Los planes Profesional e Industrial incluyen 14 días de prueba sin tarjeta. Al terminar puedes seguir con el plan Estudiante (gratis) si necesitas más tiempo para decidir.</p>
+          <summary data-i18n="pricingPg.faq5Q">Is there a trial period?</summary>
+          <p data-i18n="pricingPg.faq5A">Yes. The Professional and Industrial plans include a 14-day trial with no credit card required. When it ends, you can switch to the free Student plan if you need more time to decide.</p>
         </details>
 
         <details class="faq-item">
-          <summary data-i18n="pricingPg.faq6Q">¿Cómo funciona el descuento anual?</summary>
-          <p data-i18n="pricingPg.faq6A">Pagar anual te ahorra 20% sobre el precio mensual. Lo cobramos una sola vez al año y puedes cancelar con reembolso prorrateado en los primeros 30 días.</p>
+          <summary data-i18n="pricingPg.faq6Q">How does the annual discount work?</summary>
+          <p data-i18n="pricingPg.faq6A">Paying annually saves you 20% over the monthly price. We charge once a year and you can cancel with a prorated refund within the first 30 days.</p>
         </details>
 
         <details class="faq-item">
-          <summary data-i18n="pricingPg.faq7Q">¿Mis archivos quedan en Engravity si dejo de pagar?</summary>
-          <p data-i18n="pricingPg.faq7A">Tus archivos siempre son tuyos. Aunque canceles tu suscripción, mantienes acceso de solo lectura a tus proyectos durante 12 meses para que puedas exportarlos en los formatos estándar (AI, DXF, SVG).</p>
+          <summary data-i18n="pricingPg.faq7Q">Do my files stay in Engravity if I stop paying?</summary>
+          <p data-i18n="pricingPg.faq7A">Your files are always yours. Even if you cancel your subscription, you keep read-only access to your projects for 12 months so you can export them in standard formats (AI, DXF, SVG).</p>
         </details>
       </section>
 
@@ -263,32 +263,32 @@
       <div class="footer-grid">
         <div class="footer-brand">
           <h3 class="gradient-text pompous-gradient">ENGRAVITY</h3>
-          <p data-i18n="footer.desc">Una startup construida desde el taller. Herramientas profesionales hechas por fabricantes, para fabricantes — y para quienes están aprendiendo a serlo.</p>
+          <p data-i18n="footer.desc">A startup built from the workshop floor. Professional tools made by makers, for makers — and for those learning to be one.</p>
         </div>
         <div class="footer-col">
-          <h4 data-i18n="footer.colProduct">Producto</h4>
-          <a href="../index.html#features" data-i18n="nav.features">Características</a>
-          <a href="../pricing/index.html" data-i18n="nav.pricing">Precios</a>
-          <a href="../download/index.html" data-i18n="footer.download">Descargar</a>
+          <h4 data-i18n="footer.colProduct">Product</h4>
+          <a href="../index.html#features" data-i18n="nav.features">Features</a>
+          <a href="../pricing/index.html" data-i18n="nav.pricing">Pricing</a>
+          <a href="../download/index.html" data-i18n="footer.download">Download</a>
           <a href="../changelog/index.html" data-i18n="footer.changelog">Changelog</a>
         </div>
         <div class="footer-col">
-          <h4 data-i18n="footer.colResources">Recursos</h4>
-          <a href="../docs/index.html" data-i18n="footer.docs">Documentación</a>
+          <h4 data-i18n="footer.colResources">Resources</h4>
+          <a href="../docs/index.html" data-i18n="footer.docs">Documentation</a>
           <a href="../blog/index.html" data-i18n="nav.blog">Blog</a>
-          <a href="../blog/ada-compliance.html" data-i18n="footer.adaGuide">Guía ADA</a>
-          <a href="../blog/cnc-routing.html" data-i18n="footer.cncGuide">Guía CNC</a>
+          <a href="../blog/ada-compliance.html" data-i18n="footer.adaGuide">ADA Guide</a>
+          <a href="../blog/cnc-routing.html" data-i18n="footer.cncGuide">CNC Guide</a>
         </div>
         <div class="footer-col">
-          <h4 data-i18n="footer.colCompany">Compañía</h4>
-          <a href="../about/index.html" data-i18n="nav.about">Nosotros</a>
-          <a href="mailto:hola@engravitysigns.com" data-i18n="footer.contact">Contacto</a>
+          <h4 data-i18n="footer.colCompany">Company</h4>
+          <a href="../about/index.html" data-i18n="nav.about">About</a>
+          <a href="mailto:hola@engravitysigns.com" data-i18n="footer.contact">Contact</a>
           <a href="https://github.com/engravity" target="_blank" rel="noopener">GitHub</a>
         </div>
       </div>
       <div class="footer-divider">
-        <span data-i18n="footer.copyright">&copy; 2026 Engravitysigns.com — Todos los derechos reservados.</span>
-        <span data-i18n="footer.startupNote">Primer producto · Aprendiendo y creciendo con la industria</span>
+        <span data-i18n="footer.copyright">&copy; 2026 Engravitysigns.com — All rights reserved.</span>
+        <span data-i18n="footer.startupNote">First product · Learning and growing with the industry</span>
       </div>
     </footer>
 
