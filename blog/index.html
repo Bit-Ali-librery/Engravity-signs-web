@@ -32,24 +32,24 @@
       <div class="nav-container">
         <a href="../index.html" class="logo"><span class="logo-icon"></span> ENGRAVITY</a>
         <div class="nav-links">
-          <a href="../index.html#features" data-i18n="nav.features">Características</a>
-          <a href="../index.html#audience" data-i18n="nav.audience">Para quién</a>
+          <a href="../index.html#features" data-i18n="nav.features">Features</a>
+          <a href="../index.html#audience" data-i18n="nav.audience">For Whom</a>
           <a href="../index.html#ada-braille" data-i18n="nav.compliance">ADA & Braille</a>
-          <a href="../pricing/index.html" data-i18n="nav.pricing">Precios</a>
+          <a href="../pricing/index.html" data-i18n="nav.pricing">Pricing</a>
           <a href="../docs/index.html" data-i18n="nav.docs">Docs</a>
           <a href="../blog/index.html" data-i18n="nav.blog">Blog</a>
         </div>
         <div class="nav-actions">
           <div class="lang-dropdown">
-            <button class="lang-btn" id="langToggle">ES ▾</button>
+            <button class="lang-btn" id="langToggle">EN ▾</button>
             <div class="lang-menu" id="langMenu">
-              <a href="#" onclick="changeLanguage('es')">Español (ES)</a>
-              <a href="#" onclick="changeLanguage('en')">English (EN)</a>
-              <a href="#" onclick="changeLanguage('fr')">Français (FR)</a>
+              <a href="#" data-lang="en" onclick="event.preventDefault();changeLanguage('en')">🇺🇸 English</a>
+              <a href="#" data-lang="es" onclick="event.preventDefault();changeLanguage('es')">🇪🇸 Español</a>
+              <a href="#" data-lang="fr" onclick="event.preventDefault();changeLanguage('fr')">🇫🇷 Français</a>
             </div>
           </div>
           <button class="btn btn-secondary login-btn" onclick="openModal('loginModal')" data-i18n="nav.login">Log In</button>
-          <button class="btn btn-primary" onclick="openModal('signupModal')" data-i18n="nav.signup">Empieza Gratis</button>
+          <button class="btn btn-primary" onclick="openModal('signupModal')" data-i18n="nav.signup">Start Free</button>
         </div>
       </div>
     </nav>
@@ -57,10 +57,10 @@
     <div class="modal-overlay" id="loginModal">
       <div class="modal-content glass-panel">
         <button class="modal-close" onclick="closeModal('loginModal')">&times;</button>
-        <h2 data-i18n="auth.loginTitle">Bienvenido de nuevo</h2>
+        <h2 data-i18n="auth.loginTitle">Welcome back</h2>
         <form onsubmit="handleAuth(event)">
           <div class="form-group"><label data-i18n="auth.email">Email</label><input type="email" required /></div>
-          <div class="form-group"><label data-i18n="auth.password">Contraseña</label><input type="password" required /></div>
+          <div class="form-group"><label data-i18n="auth.password">Password</label><input type="password" required /></div>
           <button type="submit" class="btn btn-primary btn-block" data-i18n="nav.login">Log In</button>
         </form>
       </div>
@@ -68,12 +68,12 @@
     <div class="modal-overlay" id="signupModal">
       <div class="modal-content glass-panel">
         <button class="modal-close" onclick="closeModal('signupModal')">&times;</button>
-        <h2 data-i18n="auth.signupTitle2">Crea tu cuenta</h2>
+        <h2 data-i18n="auth.signupTitle2">Create your account</h2>
         <form onsubmit="handleAuth(event)">
-          <div class="form-group"><label data-i18n="auth.name">Nombre</label><input type="text" required /></div>
+          <div class="form-group"><label data-i18n="auth.name">Name</label><input type="text" required /></div>
           <div class="form-group"><label data-i18n="auth.email">Email</label><input type="email" required /></div>
-          <div class="form-group"><label data-i18n="auth.password">Contraseña</label><input type="password" required /></div>
-          <button type="submit" class="btn btn-primary btn-block" data-i18n="auth.createAccount">Crear cuenta</button>
+          <div class="form-group"><label data-i18n="auth.password">Password</label><input type="password" required /></div>
+          <button type="submit" class="btn btn-primary btn-block" data-i18n="auth.createAccount">Create account</button>
         </form>
       </div>
     </div>
@@ -83,32 +83,32 @@
       <section class="blog-hero-feat">
         <div style="text-align:center; margin-bottom: 2rem;">
           <div class="badge" data-i18n="blogIdx.badge">BLOG</div>
-          <h1 style="font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 0.75rem;" data-i18n="blogIdx.title">Aprende a diseñar y producir mejor.</h1>
-          <p style="color: var(--text-muted); max-width: 600px; margin: 0 auto;" data-i18n="blogIdx.lead">Guías, tutoriales y reflexiones de un equipo que vive entre el diseño digital y el polvo del taller.</p>
+          <h1 style="font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 0.75rem;" data-i18n="blogIdx.title">Learn to design and produce better.</h1>
+          <p style="color: var(--text-muted); max-width: 600px; margin: 0 auto;" data-i18n="blogIdx.lead">Guides, tutorials, and notes from a team that lives between digital design and workshop dust.</p>
         </div>
 
         <a href="ada-compliance.html" class="blog-hero-feat-card">
           <div class="blog-feat-img" style="background-image: url('../assets/images/ada-sign.png'); background-size: cover; background-position: center;"></div>
           <div>
             <div class="blog-feat-meta">
-              <span class="blog-tag" data-i18n="blogIdx.featured">Destacado</span>
+              <span class="blog-tag" data-i18n="blogIdx.featured">Featured</span>
               <span class="blog-tag">ADA</span>
-              <span class="blog-date-v2" data-i18n="blogIdx.date1">Marzo 2026 · 12 min</span>
+              <span class="blog-date-v2" data-i18n="blogIdx.date1">March 2026 · 12 min</span>
             </div>
-            <h2 class="blog-feat-title" data-i18n="blogIdx.featTitle">Guía definitiva de cumplimiento ADA 703 (2026)</h2>
-            <p class="blog-feat-excerpt" data-i18n="blogIdx.featExcerpt">Todo lo que necesitas saber sobre contraste, alturas de montaje, Braille domado y por qué el 40% de los letreros industriales sufren rechazo en inspección. Si haces un solo letrero ADA al año, esta guía te ahorrará horas de retrabajo.</p>
-            <span class="blog-read-more" data-i18n="blogIdx.readFull">Leer artículo completo →</span>
+            <h2 class="blog-feat-title" data-i18n="blogIdx.featTitle">The definitive ADA 703 compliance guide (2026)</h2>
+            <p class="blog-feat-excerpt" data-i18n="blogIdx.featExcerpt">Everything you need to know about contrast, mounting heights, domed Braille, and why 40% of industrial signs get rejected on inspection. If you make even one ADA sign a year, this guide will save you hours of rework.</p>
+            <span class="blog-read-more" data-i18n="blogIdx.readFull">Read the full article →</span>
           </div>
         </a>
       </section>
 
       <div class="blog-filters" id="blogFilters">
-        <button class="blog-filter-btn active" data-filter="all" data-i18n="blogIdx.fAll">Todos</button>
+        <button class="blog-filter-btn active" data-filter="all" data-i18n="blogIdx.fAll">All</button>
         <button class="blog-filter-btn" data-filter="ada" data-i18n="blogIdx.fAda">ADA & Compliance</button>
-        <button class="blog-filter-btn" data-filter="cnc" data-i18n="blogIdx.fCnc">CNC & Producción</button>
-        <button class="blog-filter-btn" data-filter="design" data-i18n="blogIdx.fDesign">Diseño vectorial</button>
-        <button class="blog-filter-btn" data-filter="students" data-i18n="blogIdx.fStudents">Para estudiantes</button>
-        <button class="blog-filter-btn" data-filter="news" data-i18n="blogIdx.fNews">Novedades</button>
+        <button class="blog-filter-btn" data-filter="cnc" data-i18n="blogIdx.fCnc">CNC & Production</button>
+        <button class="blog-filter-btn" data-filter="design" data-i18n="blogIdx.fDesign">Vector design</button>
+        <button class="blog-filter-btn" data-filter="students" data-i18n="blogIdx.fStudents">For students</button>
+        <button class="blog-filter-btn" data-filter="news" data-i18n="blogIdx.fNews">News</button>
       </div>
 
       <section class="blog-grid-v2" id="blogGrid">
@@ -117,9 +117,9 @@
           <div class="blog-card-img" style="background-image: url('../assets/images/ada-sign.png'); background-size: cover; background-position: center;"></div>
           <div class="blog-card-body">
             <div class="blog-feat-meta"><span class="blog-tag">ADA</span><span class="blog-date-v2" data-i18n="blogIdx.date2">Mar 2026 · 12 min</span></div>
-            <h3 data-i18n="blogIdx.c1Title">Guía definitiva de cumplimiento ADA 703</h3>
-            <p data-i18n="blogIdx.c1Desc">Contraste, alturas, Braille y los errores más comunes que llevan a rechazos en inspección.</p>
-            <span class="blog-read-more" data-i18n="blogIdx.read">Leer →</span>
+            <h3 data-i18n="blogIdx.c1Title">The definitive ADA 703 compliance guide</h3>
+            <p data-i18n="blogIdx.c1Desc">Contrast, heights, Braille, and the most common mistakes that lead to inspection rejection.</p>
+            <span class="blog-read-more" data-i18n="blogIdx.read">Read →</span>
           </div>
         </a>
 
@@ -127,39 +127,39 @@
           <div class="blog-card-img" style="background-image: url('../assets/images/cnc-carving.png?v=2'); background-size: cover; background-position: center;"></div>
           <div class="blog-card-body">
             <div class="blog-feat-meta"><span class="blog-tag">CNC</span><span class="blog-date-v2" data-i18n="blogIdx.date3">Feb 2026 · 8 min</span></div>
-            <h3 data-i18n="blogIdx.c2Title">Dominando el CNC: parámetros óptimos para acrílico y madera</h3>
-            <p data-i18n="blogIdx.c2Desc">Cómo evitar tear-out y derretido del material. RPM exactos, fresas O-flute y velocidades de avance.</p>
-            <span class="blog-read-more" data-i18n="blogIdx.read">Leer →</span>
+            <h3 data-i18n="blogIdx.c2Title">Mastering CNC: optimal parameters for acrylic and wood</h3>
+            <p data-i18n="blogIdx.c2Desc">How to avoid tear-out and melting. Exact RPM, O-flute bits, and feed rates.</p>
+            <span class="blog-read-more" data-i18n="blogIdx.read">Read →</span>
           </div>
         </a>
 
         <a href="illustrator-a-engravity.html" class="blog-card-v2" data-cat="students">
           <div class="blog-card-img" style="background-image: url('../assets/images/software-ui.png'); background-size: cover; background-position: center;"></div>
           <div class="blog-card-body">
-            <div class="blog-feat-meta"><span class="blog-tag" data-i18n="blogIdx.fStudents">Estudiantes</span><span class="blog-date-v2">May 2026 · 7 min</span></div>
-            <h3 data-i18n="blogIdx.c3Title">De Illustrator a Engravity: tu primer proyecto académico</h3>
-            <p data-i18n="blogIdx.c3Desc">Si vienes de la escuela de diseño y nunca tocaste un CNC, este es tu punto de partida.</p>
-            <span class="blog-read-more" data-i18n="blogIdx.read">Leer →</span>
+            <div class="blog-feat-meta"><span class="blog-tag" data-i18n="blogIdx.fStudents">Students</span><span class="blog-date-v2">May 2026 · 7 min</span></div>
+            <h3 data-i18n="blogIdx.c3Title">From Illustrator to Engravity: your first academic project</h3>
+            <p data-i18n="blogIdx.c3Desc">If you come from design school and have never touched a CNC, this is your starting point.</p>
+            <span class="blog-read-more" data-i18n="blogIdx.read">Read →</span>
           </div>
         </a>
 
         <a href="tipografia-vectorizada.html" class="blog-card-v2" data-cat="design">
           <div class="blog-card-img" style="background-image: url('../assets/images/vinyl-cutting.png'); background-size: cover; background-position: center;"></div>
           <div class="blog-card-body">
-            <div class="blog-feat-meta"><span class="blog-tag" data-i18n="blogIdx.tagDesign">Diseño</span><span class="blog-date-v2">May 2026 · 6 min</span></div>
-            <h3 data-i18n="blogIdx.c4Title">Tipografía vectorizada: cuándo expandir y cuándo no</h3>
-            <p data-i18n="blogIdx.c4Desc">Decisiones que parecen pequeñas pero cambian todo cuando exportas a la máquina.</p>
-            <span class="blog-read-more" data-i18n="blogIdx.read">Leer →</span>
+            <div class="blog-feat-meta"><span class="blog-tag" data-i18n="blogIdx.tagDesign">Design</span><span class="blog-date-v2">May 2026 · 6 min</span></div>
+            <h3 data-i18n="blogIdx.c4Title">Vectorized typography: when to expand and when not to</h3>
+            <p data-i18n="blogIdx.c4Desc">Decisions that look small but change everything when you export to the machine.</p>
+            <span class="blog-read-more" data-i18n="blogIdx.read">Read →</span>
           </div>
         </a>
 
         <a href="roadmap-2026.html" class="blog-card-v2" data-cat="news">
           <div class="blog-card-img" style="background-image: url('../assets/images/workshop.png?v=2'); background-size: cover; background-position: center;"></div>
           <div class="blog-card-body">
-            <div class="blog-feat-meta"><span class="blog-tag" data-i18n="blogIdx.tagNews">Novedades</span><span class="blog-date-v2">May 2026 · 5 min</span></div>
-            <h3 data-i18n="blogIdx.c5Title">Roadmap 2026: lo que viene en Engravity</h3>
-            <p data-i18n="blogIdx.c5Desc">Las features que estamos construyendo y cómo decidimos en qué orden lanzarlas.</p>
-            <span class="blog-read-more" data-i18n="blogIdx.read">Leer →</span>
+            <div class="blog-feat-meta"><span class="blog-tag" data-i18n="blogIdx.tagNews">News</span><span class="blog-date-v2">May 2026 · 5 min</span></div>
+            <h3 data-i18n="blogIdx.c5Title">2026 Roadmap: what's coming next in Engravity</h3>
+            <p data-i18n="blogIdx.c5Desc">The features we're building and how we decide what order to ship them in.</p>
+            <span class="blog-read-more" data-i18n="blogIdx.read">Read →</span>
           </div>
         </a>
 
@@ -167,9 +167,9 @@
           <div class="blog-card-img" style="background-image: url('../assets/images/wood-metal-sign.png?v=2'); background-size: cover; background-position: center;"></div>
           <div class="blog-card-body">
             <div class="blog-feat-meta"><span class="blog-tag">CNC</span><span class="blog-date-v2">May 2026 · 8 min</span></div>
-            <h3 data-i18n="blogIdx.c6Title">Cuando combinar madera y metal: 5 letreros que aprendimos a hacer</h3>
-            <p data-i18n="blogIdx.c6Desc">Casos reales del taller y los problemas que solo ves cuando ya estás cortando.</p>
-            <span class="blog-read-more" data-i18n="blogIdx.read">Leer →</span>
+            <h3 data-i18n="blogIdx.c6Title">When wood meets metal: 5 signs we learned to make</h3>
+            <p data-i18n="blogIdx.c6Desc">Real shop cases and the problems you only see once you're already cutting.</p>
+            <span class="blog-read-more" data-i18n="blogIdx.read">Read →</span>
           </div>
         </a>
 
@@ -181,36 +181,36 @@
       <div class="footer-grid">
         <div class="footer-brand">
           <h3 class="gradient-text pompous-gradient">ENGRAVITY</h3>
-          <p data-i18n="footer.desc">Una startup construida desde el taller. Herramientas profesionales hechas por fabricantes, para fabricantes — y para quienes están aprendiendo a serlo.</p>
+          <p data-i18n="footer.desc">A startup built from the workshop floor. Professional tools made by makers, for makers — and for those learning to be one.</p>
         </div>
         <div class="footer-col">
-          <h4 data-i18n="footer.colProduct">Producto</h4>
-          <a href="../index.html#features" data-i18n="nav.features">Características</a>
-          <a href="../pricing/index.html" data-i18n="nav.pricing">Precios</a>
-          <a href="../download/index.html" data-i18n="footer.download">Descargar</a>
+          <h4 data-i18n="footer.product">Product</h4>
+          <a href="../index.html#features" data-i18n="footer.features">Features</a>
+          <a href="../pricing/index.html" data-i18n="footer.pricing">Pricing</a>
+          <a href="../download/index.html" data-i18n="footer.download">Download</a>
           <a href="../changelog/index.html" data-i18n="footer.changelog">Changelog</a>
         </div>
         <div class="footer-col">
-          <h4 data-i18n="footer.colResources">Recursos</h4>
-          <a href="../docs/index.html" data-i18n="footer.docs">Documentación</a>
-          <a href="../blog/index.html" data-i18n="nav.blog">Blog</a>
-          <a href="../blog/ada-compliance.html" data-i18n="footer.adaGuide">Guía ADA</a>
-          <a href="../blog/cnc-routing.html" data-i18n="footer.cncGuide">Guía CNC</a>
+          <h4 data-i18n="footer.resources">Resources</h4>
+          <a href="../docs/index.html" data-i18n="footer.docs">Documentation</a>
+          <a href="../blog/index.html" data-i18n="footer.blog">Blog</a>
+          <a href="../blog/ada-compliance.html" data-i18n="footer.adaGuide">ADA Guide</a>
+          <a href="../blog/cnc-routing.html" data-i18n="footer.cncGuide">CNC Guide</a>
         </div>
         <div class="footer-col">
-          <h4 data-i18n="footer.colCompany">Compañía</h4>
-          <a href="../about/index.html" data-i18n="nav.about">Nosotros</a>
-          <a href="mailto:hola@engravitysigns.com" data-i18n="footer.contact">Contacto</a>
-          <a href="https://github.com/engravity" target="_blank" rel="noopener">GitHub</a>
+          <h4 data-i18n="footer.company">Company</h4>
+          <a href="../about/index.html" data-i18n="footer.about">About</a>
+          <a href="mailto:hola@engravitysigns.com" data-i18n="footer.contact">Contact</a>
+          <a href="https://github.com/engravity" target="_blank" rel="noopener" data-i18n="footer.github">GitHub</a>
         </div>
       </div>
       <div class="footer-divider">
-        <span data-i18n="footer.copyright">&copy; 2026 Engravitysigns.com — Todos los derechos reservados.</span>
-        <span data-i18n="footer.startupNote">Primer producto · Aprendiendo y creciendo con la industria</span>
+        <span data-i18n="footer.copyright">&copy; 2026 Engravitysigns.com — All rights reserved.</span>
+        <span data-i18n="footer.startup">First product · Learning and growing with the industry</span>
       </div>
     </footer>
 
-    <script src="../src/js/main.js?v=5"></script>
+    <script src="../src/js/main.js?v=6"></script>
     <script type="module" src="../src/js/auth.js"></script>
     <script>
       const filterBtns = document.querySelectorAll('.blog-filter-btn');
