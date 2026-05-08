@@ -59,26 +59,26 @@
 
       <img class="hero-img" src="../assets/images/vinyl-cutting.png" alt="Vectorized typography ready to cut" />
 
-      <p>There's a quiet decision in every signage project that rarely gets discussed: the moment you convert your text into outlines (or "expand" the typography). It looks like a trivial click, but that decision determines whether your file will produce cleanly or whether you'll spend the night fixing errors with the machine sitting idle.</p>
+      <p>There's a quiet decision in every signage project that rarely gets discussed: the moment you convert your text into outlines (or "expand" the typography). It looks like a trivial click, but that one decision determines whether your file produces cleanly or whether you spend the night fixing errors with the machine sitting idle.</p>
 
       <p>Here's how we think about it in real production.</p>
 
       <h2>What "expanding" typography means</h2>
 
-      <p>While your text is still text, the file holds references to the font: name, weight, kerning. When you expand it (Type → Create Outlines in Illustrator, or Convert to Curves in Corel), the text stops being text and becomes pure vector shapes. Lines. Bézier curves. Geometry the machine can cut.</p>
+      <p>While your text is still text, the file holds references to the font: name, weight, kerning. When you expand it (Type → Create Outlines in Illustrator, or Convert to Curves in Corel), the text stops being text and becomes pure vector shapes. Lines. Bézier curves. Geometry a machine can cut.</p>
 
-      <p>It's a one-way road: once expanded, you can no longer edit it as text.</p>
+      <p>It's a one-way street: once expanded, you can no longer edit it as text.</p>
 
       <h2>When you SHOULD expand</h2>
 
-      <p>These are the scenarios where expanding is mandatory or strongly recommended:</p>
+      <p>The scenarios where expanding is mandatory or strongly recommended:</p>
 
       <ul>
-        <li><strong>Before sending to production.</strong> The CNC doesn't understand fonts. If your final file has live text and the machine doesn't have the font installed, it will substitute it with Arial or something worse. Always expand before exporting G-Code.</li>
-        <li><strong>When you're going to do pathfinder or boolean operations.</strong> Operations like union, subtraction, or intersection require real geometry. Live text can't be combined with other paths.</li>
-        <li><strong>When you're going to edit individual letters.</strong> Stylizing a "G" to make a logotype, deforming an "S" along a curve — all of that needs outlines.</li>
-        <li><strong>When you hand the file to someone without the font.</strong> If you send your .ai to a client or to another part of the workshop, expand first. Keeps the file from looking different on different computers.</li>
-        <li><strong>When the text is finalized.</strong> If the copy is approved and nobody's going to change it, you can expand. Reduces font-error risk.</li>
+        <li><strong>Before sending to production.</strong> The CNC doesn't understand fonts. If your final file has live text and the machine doesn't have the font installed, it'll substitute Arial or something worse. Always expand before exporting G-Code.</li>
+        <li><strong>Before pathfinder or boolean operations.</strong> Operations like union, subtraction, or intersection need real geometry. Live text can't be combined with other paths.</li>
+        <li><strong>Before editing individual letters.</strong> Stylizing a "G" for a logotype, bending an "S" along a curve — all of that needs outlines.</li>
+        <li><strong>When you hand the file to someone without the font.</strong> If you send your .ai to a client or to another part of the shop, expand first. Keeps the file from looking different on different computers.</li>
+        <li><strong>When the text is finalized.</strong> If the copy is approved and nobody's going to change it, expand. It reduces font-error risk.</li>
       </ul>
 
       <h2>When NOT to expand (yet)</h2>
@@ -86,10 +86,10 @@
       <p>This is where most people get it wrong:</p>
 
       <ul>
-        <li><strong>While you're still revising with the client.</strong> If you expand and then they ask to change "Restroom" to "Bathroom", you have to retype from scratch, fix kerning, and redo the layout. Keep text live until final approval.</li>
-        <li><strong>Before validating ADA.</strong> Engravity can read live text and detect height, contrast, and non-ADA-compliant typography problems. Once expanded, the validator treats it as generic geometry and loses precision.</li>
-        <li><strong>If you're going to auto-generate Braille.</strong> The UEB Grade 2 Braille translator needs the live text to know what to translate. Once expanded, Braille would have to be generated manually.</li>
-        <li><strong>When working with a multilingual system.</strong> If your sign has Spanish, English, and French versions, keeping text live lets you swap languages without redrawing anything.</li>
+        <li><strong>While you're still revising with the client.</strong> Expand, then get asked to change "Restroom" to "Bathroom" — and you have to retype, refix kerning, and redo the layout. Keep text live until final approval.</li>
+        <li><strong>Before validating ADA.</strong> Engravity can read live text and catch height, contrast, and non-compliant-typography problems. Once expanded, the validator treats it as generic geometry and loses precision.</li>
+        <li><strong>If you're going to auto-generate Braille.</strong> The UEB Grade 2 translator needs live text to know what to translate. Once expanded, you'd have to generate the Braille manually.</li>
+        <li><strong>When you're working multilingual.</strong> If your sign has Spanish, English, and French versions, keeping text live lets you swap languages without redrawing anything.</li>
       </ul>
 
       <h2>The professional workflow: two files</h2>
@@ -98,26 +98,26 @@
 
       <ol>
         <li><strong>Working file</strong> with live text. The one you edit, validate, translate, and show to the client.</li>
-        <li><strong>Production file</strong> with everything expanded. Generated at the end, just before exporting G-Code or sending to cut. Never edited.</li>
+        <li><strong>Production file</strong> with everything expanded. Generated at the end, right before exporting G-Code or sending to cut. Never edited.</li>
       </ol>
 
       <div class="callout">
-        <strong>How Engravity handles it:</strong> the "Export to production" button automatically expands typography on an internal copy only, without modifying your original file. So you can keep editing text while keeping clean files ready for CNC.
+        <strong>How Engravity handles it:</strong> the "Export to production" button expands typography on an internal copy only, without touching your original file. So you can keep editing text while you keep clean files ready for CNC.
       </div>
 
       <h2>Three mistakes we see every week</h2>
 
       <ol>
-        <li><strong>Expanding before validating ADA.</strong> The report comes out with phantom errors because the validator doesn't recognize the letters as typography.</li>
+        <li><strong>Expanding before validating ADA.</strong> The report comes out with phantom errors because the validator no longer recognizes the letters as typography.</li>
         <li><strong>Forgetting to expand before G-Code.</strong> The machine substitutes the font and the client receives a sign with the wrong typography.</li>
-        <li><strong>Expanding and then "un-expanding" by adding text on top.</strong> You end up with two different typography layers in the same file. The machine cuts both.</li>
+        <li><strong>Expanding, then "un-expanding" by adding live text on top.</strong> You end up with two different typography layers in the same file. The machine cuts both.</li>
       </ol>
 
       <h2>Closing</h2>
 
-      <p>Expanding typography is like saving a file in a different format: once it's done, there's no easy going back. The mental rule we use is simple: <strong>edit with live text, produce with outlines.</strong> And those two steps shouldn't happen at the same time.</p>
+      <p>Expanding typography is like saving a file in a different format: once it's done, there's no easy way back. The mental rule we use is simple: <strong>edit with live text, produce with outlines.</strong> And those two steps shouldn't happen at the same time.</p>
 
-      <p>A small decision, but it defines the difference between a calm workflow and a night fixing things in the workshop.</p>
+      <p>A small decision, but it's the difference between a calm workflow and a night fixing things in the shop.</p>
 
       <p style="margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--glass-border); display:flex; justify-content: space-between; flex-wrap: wrap; gap:1rem;">
         <a href="../blog/index.html" class="btn btn-secondary">← Back to Blog</a>
