@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <title>CNC Routing for Sign Makers | Engravity Blog</title>
+    <meta name="description" content="CNC routing fundamentals for sign production: toolpaths, V-carve, pocketing, and machine profiles.">
     <link rel="stylesheet" href="../src/styles/global.css?v=10" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <style>
@@ -25,80 +26,80 @@
       <div class="nav-container">
         <a href="../index.html" class="logo"><span class="logo-icon"></span> ENGRAVITY</a>
         <div class="nav-links">
-          <a href="../index.html#features" data-i18n="nav.features">Características</a>
-          <a href="../pricing/index.html" data-i18n="nav.pricing">Precios</a>
+          <a href="../index.html#features" data-i18n="nav.features">Features</a>
+          <a href="../pricing/index.html" data-i18n="nav.pricing">Pricing</a>
           <a href="../docs/index.html" data-i18n="nav.docs">Docs</a>
           <a href="../blog/index.html" data-i18n="nav.blog">Blog</a>
         </div>
         <div class="nav-actions">
           <div class="lang-dropdown">
-            <button class="lang-btn" id="langToggle">ES ▾</button>
+            <button class="lang-btn" id="langToggle">EN ▾</button>
             <div class="lang-menu" id="langMenu">
-              <a href="#" onclick="changeLanguage('es')">Español (ES)</a>
-              <a href="#" onclick="changeLanguage('en')">English (EN)</a>
-              <a href="#" onclick="changeLanguage('fr')">Français (FR)</a>
+              <a href="#" data-lang="en" onclick="event.preventDefault();changeLanguage('en')">🇺🇸 English</a>
+              <a href="#" data-lang="es" onclick="event.preventDefault();changeLanguage('es')">🇪🇸 Español</a>
+              <a href="#" data-lang="fr" onclick="event.preventDefault();changeLanguage('fr')">🇫🇷 Français</a>
             </div>
           </div>
-          <a href="../blog/index.html" class="btn btn-secondary" data-i18n="blogPost.backBlog">← Volver al Blog</a>
+          <a href="../blog/index.html" class="btn btn-secondary">← Back to Blog</a>
         </div>
       </div>
     </nav>
 
     <main class="blog-article">
       <div class="stars">★★★★★</div>
-      <h1 data-i18n="blogCnc.title">Dominando el CNC: Parámetros Óptimos para Acrílico y Madera</h1>
+      <h1>Mastering CNC: Optimal Parameters for Acrylic and Wood</h1>
       <div class="meta">
-        <span class="author" data-i18n="blogCnc.author">Por el Equipo Fundador Engravity (25 Años de Experiencia)</span>
-        <span data-i18n="blogCnc.readTime">Tiempo de lectura: 4 minutos</span>
+        <span class="author">By the Engravity founding team (25 years of experience)</span>
+        <span>Reading time: 4 minutes</span>
       </div>
 
       <img class="hero-img" src="../assets/images/cnc-carving.png?v=2" alt="CNC Wood Router" />
 
-      <p data-i18n="blogCnc.intro">Tras décadas en la industria, vemos que el problema principal no son las máquinas CNC en sí, sino los parámetros (Feeds and Speeds) que el software envía al controlador. Cortar Acrílico y Madera requiere cálculos térmicos totalmente opuestos.</p>
+      <p>After decades in the industry, we see that the main problem isn't the CNC machines themselves but the parameters (feeds and speeds) the software sends to the controller. Cutting acrylic and wood requires completely opposite thermal calculations.</p>
 
-      <h2 data-i18n="blogCnc.h1">Ruteando Acrílico Cast y Extruido</h2>
-      <p data-i18n="blogCnc.h1P">El desafío no es cortar, es evitar que el material se derrita y las virutas se vuelvan a soldar al corte trasero. Si el borde te queda nublado o áspero, la fricción (temperatura) es demasiado alta.</p>
+      <h2>Routing Cast and Extruded Acrylic</h2>
+      <p>The challenge isn't cutting — it's preventing the material from melting and the chips from welding back into the rear cut. If your edge comes out cloudy or rough, the friction (temperature) is too high.</p>
       <ul>
-        <li data-i18n="blogCnc.h1L1"><strong>Herramienta (Tooling):</strong> Brocas "O-Flute" de carburo sólido de un solo filo (Single-flute) son obligatorias. Maximizan la evacuación de la viruta alejándola del calor central.</li>
-        <li data-i18n="blogCnc.h1L2"><strong>Velocidad del Husillo (RPM):</strong> Mantente entre 12,000–18,000 RPM. Superar esto casi garantiza que el acrílico se derretirá a menos que tengas aire forzado de altísima presión.</li>
-        <li data-i18n="blogCnc.h1L3"><strong>Avance (Feed Rate):</strong> Apunta a entre 75 y 300 Pulgadas por Minuto (IPM). Si las virutas son polvo, vas muy lento (o el RPM es muy alto). Busca la "viruta estilo escama".</li>
+        <li><strong>Tooling:</strong> Solid carbide single-flute "O-flute" bits are mandatory. They maximize chip evacuation, pulling debris away from the central heat.</li>
+        <li><strong>Spindle speed (RPM):</strong> Stay between 12,000–18,000 RPM. Going higher almost guarantees the acrylic will melt unless you have very high-pressure forced air.</li>
+        <li><strong>Feed rate:</strong> Aim for 75 to 300 inches per minute (IPM). If the chips look like dust, you're going too slow (or the RPM is too high). Look for the "flake-style chip".</li>
       </ul>
 
-      <h2 data-i18n="blogCnc.h2">Grabado y Ruteado en Maderas Duras</h2>
-      <p data-i18n="blogCnc.h2P">A diferencia del acrílico que se derrite, la madera padece del temible "Tear-out" (astillado en la capa superior o inferior del material). El juego aquí es limpieza y acabado superficial.</p>
+      <h2>Engraving and Routing in Hardwoods</h2>
+      <p>Unlike acrylic which melts, wood suffers from the dreaded "tear-out" (splintering on the top or bottom layer of the material). The game here is cleanliness and surface finish.</p>
       <ul>
-        <li data-i18n="blogCnc.h2L1"><strong>Herramienta:</strong> Brocas de Compresión (Compression Bits). Estas brocas combinan cortes "Up-cut" en la mitad inferior y "Down-cut" en la superior. Halan el material hacia su centro, evitando despostilladuras en ambas caras de la tabla.</li>
-        <li data-i18n="blogCnc.h2L2"><strong>RPM:</strong> La madera tolera muy bien las altas revoluciones. 18,000 a 24,000 RPM es ideal dependiendo de la dureza (Nogal vs Pino).</li>
+        <li><strong>Tooling:</strong> Compression bits. These combine "up-cut" geometry on the lower half and "down-cut" geometry on the upper half. They pull material toward the center, preventing chip-out on both faces of the board.</li>
+        <li><strong>RPM:</strong> Wood tolerates high revolutions very well. 18,000 to 24,000 RPM is ideal depending on the hardness (walnut vs. pine).</li>
       </ul>
 
-      <p data-i18n="blogCnc.outro"><em>Dentro de <strong>Engravity</strong>, nuestro calculador CAM evalúa automáticamente la densidad del material que seleccionaste en el menú de entorno, generando perfiles G-Code con "Chip Loads" perfectos, para que no rompas brocas ni tengas que lijar bordes quemados.</em></p>
+      <p><em>Inside <strong>Engravity</strong>, our CAM calculator automatically evaluates the material density you selected in the environment menu, generating G-Code profiles with perfect chip loads — so you don't break bits or have to sand burned edges.</em></p>
     </main>
     <footer class="footer-unified">
       <div class="footer-grid">
         <div class="footer-brand">
           <h3 class="gradient-text pompous-gradient">ENGRAVITY</h3>
-          <p data-i18n="footer.desc">Una startup construida desde el taller. Herramientas profesionales hechas por fabricantes, para fabricantes — y para quienes están aprendiendo a serlo.</p>
+          <p data-i18n="footer.desc">A startup built from the workshop floor. Professional tools made by makers, for makers — and for those learning to be one.</p>
         </div>
         <div class="footer-col">
-          <h4 data-i18n="footer.colProduct">Producto</h4>
-          <a href="../index.html#features" data-i18n="nav.features">Características</a>
-          <a href="../pricing/index.html" data-i18n="nav.pricing">Precios</a>
-          <a href="../download/index.html" data-i18n="footer.download">Descargar</a>
+          <h4 data-i18n="footer.product">Product</h4>
+          <a href="../index.html#features" data-i18n="footer.features">Features</a>
+          <a href="../pricing/index.html" data-i18n="footer.pricing">Pricing</a>
+          <a href="../download/index.html" data-i18n="footer.download">Download</a>
           <a href="../changelog/index.html" data-i18n="footer.changelog">Changelog</a>
         </div>
         <div class="footer-col">
-          <h4 data-i18n="footer.colResources">Recursos</h4>
-          <a href="../docs/index.html" data-i18n="footer.docs">Documentación</a>
-          <a href="../blog/index.html" data-i18n="nav.blog">Blog</a>
+          <h4 data-i18n="footer.resources">Resources</h4>
+          <a href="../docs/index.html" data-i18n="footer.docs">Documentation</a>
+          <a href="../blog/index.html" data-i18n="footer.blog">Blog</a>
         </div>
         <div class="footer-col">
-          <h4 data-i18n="footer.colCompany">Compañía</h4>
-          <a href="../about/index.html" data-i18n="nav.about">Nosotros</a>
-          <a href="mailto:hola@engravitysigns.com" data-i18n="footer.contact">Contacto</a>
+          <h4 data-i18n="footer.company">Company</h4>
+          <a href="../about/index.html" data-i18n="footer.about">About</a>
+          <a href="mailto:hola@engravitysigns.com" data-i18n="footer.contact">Contact</a>
         </div>
       </div>
       <div class="footer-divider">
-        <span data-i18n="footer.copyright">&copy; 2026 Engravitysigns.com — Todos los derechos reservados.</span>
+        <span data-i18n="footer.copyright">&copy; 2026 Engravitysigns.com — All rights reserved.</span>
       </div>
     </footer>
     <script src="../src/js/main.js?v=5"></script>

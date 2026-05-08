@@ -9,8 +9,8 @@
     <link rel="canonical" href="https://engravitysigns.com/blog/tipografia-vectorizada.html">
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://engravitysigns.com/blog/tipografia-vectorizada.html">
-    <meta property="og:title" content="Tipografía vectorizada: cuándo expandir y cuándo no">
-    <meta property="og:description" content="Edita con texto vivo, produce con outlines. La regla de oro del workflow profesional.">
+    <meta property="og:title" content="Vectorized typography: when to expand and when not to">
+    <meta property="og:description" content="Edit with live text, produce with outlines. The golden rule of professional workflow.">
     <meta property="og:image" content="https://engravitysigns.com/assets/images/vinyl-cutting.png">
     <meta property="og:locale" content="en_US">
     <meta property="og:site_name" content="Engravity">
@@ -38,90 +38,90 @@
       <div class="nav-container">
         <a href="../index.html" class="logo"><span class="logo-icon"></span> ENGRAVITY</a>
         <div class="nav-links">
-          <a href="../index.html#features">Características</a>
-          <a href="../pricing/index.html">Precios</a>
-          <a href="../docs/index.html">Docs</a>
-          <a href="../blog/index.html">Blog</a>
+          <a href="../index.html#features" data-i18n="nav.features">Features</a>
+          <a href="../pricing/index.html" data-i18n="nav.pricing">Pricing</a>
+          <a href="../docs/index.html" data-i18n="nav.docs">Docs</a>
+          <a href="../blog/index.html" data-i18n="nav.blog">Blog</a>
         </div>
         <div class="nav-actions">
-          <a href="../blog/index.html" class="btn btn-secondary">← Volver al Blog</a>
+          <a href="../blog/index.html" class="btn btn-secondary">← Back to Blog</a>
         </div>
       </div>
     </nav>
 
     <main class="blog-article">
       <div class="meta">
-        <span class="author">Por el Equipo Fundador Engravity</span>
-        <span>Tiempo de lectura: 6 minutos · Mayo 2026</span>
+        <span class="author">By the Engravity founding team</span>
+        <span>Reading time: 6 minutes · May 2026</span>
       </div>
 
-      <h1>Tipografía vectorizada: cuándo expandir y cuándo no</h1>
+      <h1>Vectorized typography: when to expand and when not to</h1>
 
-      <img class="hero-img" src="../assets/images/vinyl-cutting.png" alt="Tipografía vectorizada para corte" />
+      <img class="hero-img" src="../assets/images/vinyl-cutting.png" alt="Vectorized typography ready to cut" />
 
-      <p>Hay una decisión silenciosa que se toma en todo proyecto de letrero y que rara vez se discute: el momento en el que conviertes tu texto en outlines (o "expandes" la tipografía). Parece un click trivial, pero esa decisión define si tu archivo va a producir bien o si vas a pasar la noche corrigiendo errores con la máquina parada.</p>
+      <p>There's a quiet decision in every signage project that rarely gets discussed: the moment you convert your text into outlines (or "expand" the typography). It looks like a trivial click, but that decision determines whether your file will produce cleanly or whether you'll spend the night fixing errors with the machine sitting idle.</p>
 
-      <p>Aquí está cómo lo pensamos en producción real.</p>
+      <p>Here's how we think about it in real production.</p>
 
-      <h2>Qué significa "expandir" tipografía</h2>
+      <h2>What "expanding" typography means</h2>
 
-      <p>Mientras tu texto sigue siendo texto, el archivo guarda referencias a la fuente: nombre, peso, kerning. Cuando lo expandes (Type → Create Outlines en Illustrator, o Convert to Curves en Corel), el texto deja de ser texto y se convierte en formas vectoriales puras. Líneas. Curvas Bézier. Geometría que la máquina puede cortar.</p>
+      <p>While your text is still text, the file holds references to the font: name, weight, kerning. When you expand it (Type → Create Outlines in Illustrator, or Convert to Curves in Corel), the text stops being text and becomes pure vector shapes. Lines. Bézier curves. Geometry the machine can cut.</p>
 
-      <p>Es un camino de un solo sentido: una vez expandido, ya no se edita como texto.</p>
+      <p>It's a one-way road: once expanded, you can no longer edit it as text.</p>
 
-      <h2>Cuándo SÍ expandir</h2>
+      <h2>When you SHOULD expand</h2>
 
-      <p>Estos son los escenarios donde expandir es obligatorio o muy recomendado:</p>
-
-      <ul>
-        <li><strong>Antes de mandar a producción.</strong> El CNC no entiende fuentes. Si tu archivo final tiene texto vivo y la máquina no tiene la fuente instalada, va a sustituirla por Arial o algo peor. Expande siempre antes de exportar G-Code.</li>
-        <li><strong>Cuando vas a hacer pathfinder o booleanos.</strong> Operaciones como unión, sustracción o intersección requieren geometría real. El texto vivo no se puede combinar con otros paths.</li>
-        <li><strong>Cuando vas a editar letras individualmente.</strong> Estilizar una "G" para hacer un logotipo, deformar una "S" siguiendo una curva — todo eso necesita outlines.</li>
-        <li><strong>Cuando entregas el archivo a alguien sin la fuente.</strong> Si mandas tu .ai a un cliente o a otra parte del taller, expande primero. Evita que el archivo se vea distinto de un computador a otro.</li>
-        <li><strong>Cuando el texto ya está finalizado.</strong> Si el copy está aprobado y nadie lo va a cambiar, puedes expandir. Reduce el riesgo de errores de fuente.</li>
-      </ul>
-
-      <h2>Cuándo NO expandir (todavía)</h2>
-
-      <p>Aquí es donde mucha gente se equivoca:</p>
+      <p>These are the scenarios where expanding is mandatory or strongly recommended:</p>
 
       <ul>
-        <li><strong>Mientras todavía revisas con el cliente.</strong> Si expandes y luego te piden cambiar "Restroom" por "Bathroom", tienes que volver a tipografiar desde cero, ajustar kerning y rehacer el diseño. Mantén el texto vivo hasta la aprobación final.</li>
-        <li><strong>Antes de validar ADA.</strong> Engravity puede leer texto vivo y detectar problemas de altura, contraste y tipografía no apta para ADA. Si ya está expandido, el validador lo trata como geometría genérica y pierde precisión.</li>
-        <li><strong>Si vas a generar Braille automáticamente.</strong> El traductor a Braille UEB Grado 2 necesita el texto vivo para saber qué traducir. Una vez expandido, el Braille tendría que generarse manualmente.</li>
-        <li><strong>Cuando trabajas con un sistema multilingüe.</strong> Si tu letrero tiene versiones en español, inglés y francés, mantener el texto vivo te permite intercambiar idiomas sin redibujar nada.</li>
+        <li><strong>Before sending to production.</strong> The CNC doesn't understand fonts. If your final file has live text and the machine doesn't have the font installed, it will substitute it with Arial or something worse. Always expand before exporting G-Code.</li>
+        <li><strong>When you're going to do pathfinder or boolean operations.</strong> Operations like union, subtraction, or intersection require real geometry. Live text can't be combined with other paths.</li>
+        <li><strong>When you're going to edit individual letters.</strong> Stylizing a "G" to make a logotype, deforming an "S" along a curve — all of that needs outlines.</li>
+        <li><strong>When you hand the file to someone without the font.</strong> If you send your .ai to a client or to another part of the workshop, expand first. Keeps the file from looking different on different computers.</li>
+        <li><strong>When the text is finalized.</strong> If the copy is approved and nobody's going to change it, you can expand. Reduces font-error risk.</li>
       </ul>
 
-      <h2>El workflow profesional: dos archivos</h2>
+      <h2>When NOT to expand (yet)</h2>
 
-      <p>Lo que hacemos en producción es mantener <strong>dos versiones</strong> del mismo proyecto:</p>
+      <p>This is where most people get it wrong:</p>
+
+      <ul>
+        <li><strong>While you're still revising with the client.</strong> If you expand and then they ask to change "Restroom" to "Bathroom", you have to retype from scratch, fix kerning, and redo the layout. Keep text live until final approval.</li>
+        <li><strong>Before validating ADA.</strong> Engravity can read live text and detect height, contrast, and non-ADA-compliant typography problems. Once expanded, the validator treats it as generic geometry and loses precision.</li>
+        <li><strong>If you're going to auto-generate Braille.</strong> The UEB Grade 2 Braille translator needs the live text to know what to translate. Once expanded, Braille would have to be generated manually.</li>
+        <li><strong>When working with a multilingual system.</strong> If your sign has Spanish, English, and French versions, keeping text live lets you swap languages without redrawing anything.</li>
+      </ul>
+
+      <h2>The professional workflow: two files</h2>
+
+      <p>What we do in production is keep <strong>two versions</strong> of the same project:</p>
 
       <ol>
-        <li><strong>Archivo de trabajo</strong> con texto vivo. Es el que editas, validas, traduces y muestras al cliente.</li>
-        <li><strong>Archivo de producción</strong> con todo expandido. Se genera al final, justo antes de exportar G-Code o mandar a corte. Nunca se edita.</li>
+        <li><strong>Working file</strong> with live text. The one you edit, validate, translate, and show to the client.</li>
+        <li><strong>Production file</strong> with everything expanded. Generated at the end, just before exporting G-Code or sending to cut. Never edited.</li>
       </ol>
 
       <div class="callout">
-        <strong>Cómo lo hace Engravity:</strong> el botón "Exportar a producción" automáticamente expande la tipografía solo en una copia interna, sin modificar tu archivo original. Así puedes seguir editando texto mientras mantienes archivos limpios listos para CNC.
+        <strong>How Engravity handles it:</strong> the "Export to production" button automatically expands typography on an internal copy only, without modifying your original file. So you can keep editing text while keeping clean files ready for CNC.
       </div>
 
-      <h2>Tres errores que vemos cada semana</h2>
+      <h2>Three mistakes we see every week</h2>
 
       <ol>
-        <li><strong>Expandir antes de validar ADA.</strong> El reporte sale con errores fantasmas porque el validador no reconoce las letras como tipografía.</li>
-        <li><strong>Olvidar expandir antes del G-Code.</strong> La máquina sustituye la fuente y el cliente recibe un letrero con la tipografía equivocada.</li>
-        <li><strong>Expandir y luego "des-expandir" agregando texto encima.</strong> Termina con dos capas de tipografía distintas en el mismo archivo. La máquina corta ambas.</li>
+        <li><strong>Expanding before validating ADA.</strong> The report comes out with phantom errors because the validator doesn't recognize the letters as typography.</li>
+        <li><strong>Forgetting to expand before G-Code.</strong> The machine substitutes the font and the client receives a sign with the wrong typography.</li>
+        <li><strong>Expanding and then "un-expanding" by adding text on top.</strong> You end up with two different typography layers in the same file. The machine cuts both.</li>
       </ol>
 
-      <h2>Cierre</h2>
+      <h2>Closing</h2>
 
-      <p>Expandir tipografía es como guardar un archivo en otro formato: una vez hecho, no hay vuelta atrás fácil. La regla mental que usamos es simple: <strong>edita con texto vivo, produce con outlines</strong>. Y esos dos pasos no deben ocurrir al mismo tiempo.</p>
+      <p>Expanding typography is like saving a file in a different format: once it's done, there's no easy going back. The mental rule we use is simple: <strong>edit with live text, produce with outlines.</strong> And those two steps shouldn't happen at the same time.</p>
 
-      <p>Una decisión chica, pero define la diferencia entre un workflow tranquilo y una noche corrigiendo en el taller.</p>
+      <p>A small decision, but it defines the difference between a calm workflow and a night fixing things in the workshop.</p>
 
       <p style="margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--glass-border); display:flex; justify-content: space-between; flex-wrap: wrap; gap:1rem;">
-        <a href="../blog/index.html" class="btn btn-secondary">← Volver al Blog</a>
-        <a href="../docs/quick-start.html" class="btn btn-primary">Ver Quick Start →</a>
+        <a href="../blog/index.html" class="btn btn-secondary">← Back to Blog</a>
+        <a href="../docs/quick-start.html" class="btn btn-primary">See Quick Start →</a>
       </p>
     </main>
 
@@ -129,31 +129,31 @@
       <div class="footer-grid">
         <div class="footer-brand">
           <h3 class="gradient-text pompous-gradient">ENGRAVITY</h3>
-          <p>Una startup construida desde el taller. Herramientas profesionales hechas por fabricantes, para fabricantes — y para quienes están aprendiendo a serlo.</p>
+          <p data-i18n="footer.desc">A startup built from the workshop floor. Professional tools made by makers, for makers — and for those learning to be one.</p>
         </div>
         <div class="footer-col">
-          <h4>Producto</h4>
-          <a href="../index.html#features">Características</a>
-          <a href="../pricing/index.html">Precios</a>
-          <a href="../download/index.html">Descargar</a>
-          <a href="../changelog/index.html">Changelog</a>
+          <h4 data-i18n="footer.product">Product</h4>
+          <a href="../index.html#features" data-i18n="footer.features">Features</a>
+          <a href="../pricing/index.html" data-i18n="footer.pricing">Pricing</a>
+          <a href="../download/index.html" data-i18n="footer.download">Download</a>
+          <a href="../changelog/index.html" data-i18n="footer.changelog">Changelog</a>
         </div>
         <div class="footer-col">
-          <h4>Recursos</h4>
-          <a href="../docs/index.html">Documentación</a>
-          <a href="../blog/index.html">Blog</a>
+          <h4 data-i18n="footer.resources">Resources</h4>
+          <a href="../docs/index.html" data-i18n="footer.docs">Documentation</a>
+          <a href="../blog/index.html" data-i18n="footer.blog">Blog</a>
         </div>
         <div class="footer-col">
-          <h4>Compañía</h4>
-          <a href="../about/index.html">Nosotros</a>
-          <a href="mailto:hola@engravitysigns.com">Contacto</a>
+          <h4 data-i18n="footer.company">Company</h4>
+          <a href="../about/index.html" data-i18n="footer.about">About</a>
+          <a href="mailto:hola@engravitysigns.com" data-i18n="footer.contact">Contact</a>
         </div>
       </div>
       <div class="footer-divider">
-        <span>&copy; 2026 Engravitysigns.com — Todos los derechos reservados.</span>
+        <span data-i18n="footer.copyright">&copy; 2026 Engravitysigns.com — All rights reserved.</span>
       </div>
     </footer>
 
-    <script src="../src/js/main.js"></script>
+    <script src="../src/js/main.js?v=5"></script>
   </body>
 </html>
