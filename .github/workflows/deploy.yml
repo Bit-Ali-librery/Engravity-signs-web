@@ -1,0 +1,37 @@
+name: Deploy to Hostinger via FTP
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Deploy via FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: 88.223.84.26
+          username: u316645299
+          password: ${{ secrets.FTP_PASSWORD }}
+          server-dir: /public_html/
+          local-dir: ./
+          exclude: |
+            **/.git*
+            **/.git*/**
+            **/node_modules/**
+            package*.json
+            vite.config.js
+            copiar-imagenes.bat
+            setup-images.ps1
+            DEPLOY-HOSTINGER.md
+            FIREBASE-SETUP.md
+            FIRESTORE-STRUCTURE.md
+            firestore.rules
+            ima/
