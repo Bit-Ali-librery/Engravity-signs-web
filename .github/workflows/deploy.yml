@@ -1,3 +1,45 @@
+name: Deploy to Hostinger via SFTP
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install lftp
+        run: sudo apt-get install -y lftp
+
+      - name: Deploy via SFTP
+        env:
+          SFTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
+        run: |
+          lftp -u u316645299,${SFTP_PASSWORD} sftp://88.223.84.26 <<'LFTP_COMMANDS'
+          set sftp:auto-confirm yes
+          set net:max-retries 3
+          mirror --reverse --delete --verbose \
+            --exclude-glob .git/ \
+            --exclude-glob .github/ \
+            --exclude-glob node_modules/ \
+            --exclude-glob package*.json \
+            --exclude-glob vite.config.js \
+            --exclude-glob copiar-imagenes.bat \
+            --exclude-glob setup-images.ps1 \
+            --exclude-glob DEPLOY-HOSTINGER.md \
+            --exclude-glob FIREBASE-SETUP.md \
+            --exclude-glob FIRESTORE-STRUCTURE.md \
+            --exclude-glob firestore.rules \
+            --exclude-glob ima/ \
+            ./ /public_html/
+          bye
+          LFTP_COMMANDS
 name: Deploy to Hostinger via FTP
 
 on:
