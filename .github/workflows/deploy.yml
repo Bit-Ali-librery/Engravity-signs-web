@@ -21,9 +21,10 @@ jobs:
         env:
           SFTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
         run: |
-          lftp -u u316645299,${SFTP_PASSWORD} sftp://88.223.84.26 <<'LFTP_COMMANDS'
+          lftp -u u316645299,${SFTP_PASSWORD} -p 65002 sftp://88.223.84.26 <<'LFTP_COMMANDS'
           set sftp:auto-confirm yes
           set net:max-retries 3
+          set net:timeout 15
           mirror --reverse --delete --verbose \
             --exclude-glob .git/ \
             --exclude-glob .github/ \
