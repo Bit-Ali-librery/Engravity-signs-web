@@ -1,581 +1,255 @@
 <!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <title>Engravity | AI-Powered Sign Design Platform</title>
-    <meta name="description" content="Engravity: AI design platform for sign makers, ADA compliance and CNC tools. Design smarter.">
-    <link rel="canonical" href="https://engravitysigns.com/">
-
-    <!-- Open Graph -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://engravitysigns.com/">
-    <meta property="og:title" content="Engravity | AI-Powered Sign Design Platform">
-    <meta property="og:description" content="Professional vector design, automatic ADA validation, and unified CNC production. The tool built by makers, for makers.">
-    <meta property="og:image" content="https://engravitysigns.com/assets/images/software-ui.png">
-    <meta property="og:locale" content="en_US">
-    <meta property="og:locale:alternate" content="en_US">
-    <meta property="og:locale:alternate" content="fr_FR">
-    <meta property="og:site_name" content="Engravity">
-
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:url" content="https://engravitysigns.com/">
-    <meta name="twitter:title" content="Engravity | AI-Powered Sign Design Platform">
-    <meta name="twitter:description" content="Professional vector design, automatic ADA validation, and unified CNC production.">
-    <meta name="twitter:image" content="https://engravitysigns.com/assets/images/software-ui.png">
-
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="./assets/images/ada-sign.png">
-
-    <link rel="stylesheet" href="./src/styles/global.css?v=11" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-    <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
-  </head>
-  <body>
-    <!-- ═══ LAUNCH ANNOUNCEMENT BANNER ═══ -->
-    <div class="launch-banner" id="launchBanner" role="status">
-      <span class="launch-banner-pulse" aria-hidden="true"></span>
-      <span class="launch-banner-text" data-i18n="banner.launching">Launch coming soon — Engravity is gearing up for its public release.</span>
-      <a href="#videos" class="launch-banner-cta" data-i18n="banner.cta">Watch the demos →</a>
+<html lang="es" data-theme="dark">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Engravity — Diseño vectorial todo en uno</title>
+<meta name="description" content="Engravity es el software de diseño vectorial todo en uno: ilustración, tipografía, trazado para grabado y corte láser, todo en una sola app rápida y moderna." />
+<style>
+  :root{
+    --bg:#0d0f14; --bg-2:#13161d; --card:#191d27; --line:#262b37;
+    --txt:#e8eaf0; --muted:#9aa3b2; --brand:#2563eb; --brand-2:#3b82f6;
+    --accent:#22d3ee; --radius:16px; --max:1180px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:'Segoe UI',system-ui,-apple-system,sans-serif;background:var(--bg);color:var(--txt);line-height:1.6;-webkit-font-smoothing:antialiased}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
+  .btn{display:inline-block;padding:13px 26px;border-radius:10px;font-weight:600;font-size:15px;transition:.2s;cursor:pointer;border:none}
+  .btn-primary{background:var(--brand);color:#fff}
+  .btn-primary:hover{background:var(--brand-2);transform:translateY(-2px);box-shadow:0 10px 30px rgba(37,99,235,.35)}
+  .btn-ghost{background:transparent;color:var(--txt);border:1px solid var(--line)}
+  .btn-ghost:hover{border-color:var(--brand);color:var(--brand-2)}
+  header{position:sticky;top:0;z-index:50;background:rgba(13,15,20,.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+  nav{display:flex;align-items:center;justify-content:space-between;height:68px}
+  .logo{display:flex;align-items:center;gap:10px;font-weight:700;font-size:20px}
+  .logo .mark{width:34px;height:34px;border-radius:9px;background:linear-gradient(135deg,var(--brand),var(--accent));display:grid;place-items:center;color:#fff;font-weight:800}
+  .nav-links{display:flex;gap:28px;font-size:15px;color:var(--muted)}
+  .nav-links a:hover{color:var(--txt)}
+  .nav-cta{display:flex;gap:12px;align-items:center}
+  .burger{display:none;background:none;border:none;color:var(--txt);font-size:26px;cursor:pointer}
+  .hero{position:relative;padding:90px 0 80px;text-align:center;overflow:hidden}
+  .hero::before{content:"";position:absolute;inset:0;background:radial-gradient(600px 300px at 50% -10%,rgba(37,99,235,.25),transparent 70%),radial-gradient(500px 300px at 80% 20%,rgba(34,211,238,.12),transparent 70%);pointer-events:none}
+  .badge{display:inline-block;font-size:13px;font-weight:600;color:var(--accent);background:rgba(34,211,238,.1);border:1px solid rgba(34,211,238,.25);padding:6px 14px;border-radius:30px;margin-bottom:22px}
+  .hero h1{font-size:clamp(34px,6vw,60px);line-height:1.1;font-weight:800;letter-spacing:-1px;max-width:880px;margin:0 auto 20px}
+  .hero h1 span{background:linear-gradient(120deg,var(--brand-2),var(--accent));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .hero p.sub{font-size:clamp(16px,2.5vw,20px);color:var(--muted);max-width:640px;margin:0 auto 34px}
+  .hero-cta{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-bottom:14px}
+  .hero small{color:var(--muted);font-size:13px}
+  .hero-shot{margin:54px auto 0;max-width:920px;border:1px solid var(--line);border-radius:var(--radius);background:linear-gradient(180deg,#161a23,#0f1218);height:380px;display:grid;place-items:center;color:var(--muted);position:relative;box-shadow:0 30px 80px rgba(0,0,0,.5)}
+  .hero-shot .canvas-grid{position:absolute;inset:0;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:32px 32px;opacity:.25;border-radius:var(--radius)}
+  .trust{padding:30px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);text-align:center}
+  .trust p{color:var(--muted);font-size:14px;letter-spacing:.5px;text-transform:uppercase;margin-bottom:16px}
+  .trust-logos{display:flex;gap:40px;justify-content:center;flex-wrap:wrap;opacity:.6;font-weight:700;font-size:18px}
+  section.block{padding:84px 0}
+  .sec-head{text-align:center;max-width:680px;margin:0 auto 54px}
+  .sec-head .tag{color:var(--brand-2);font-weight:700;font-size:14px;text-transform:uppercase;letter-spacing:1px}
+  .sec-head h2{font-size:clamp(28px,4vw,42px);font-weight:800;margin:10px 0 14px;letter-spacing:-.5px}
+  .sec-head p{color:var(--muted);font-size:17px}
+  .grid{display:grid;gap:22px}
+  .grid-3{grid-template-columns:repeat(3,1fr)}
+  .grid-2{grid-template-columns:repeat(2,1fr)}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:28px;transition:.25s}
+  .card:hover{border-color:var(--brand);transform:translateY(-4px)}
+  .card .ico{width:46px;height:46px;border-radius:11px;background:rgba(37,99,235,.12);display:grid;place-items:center;margin-bottom:16px;font-size:22px}
+  .card h3{font-size:19px;margin-bottom:8px}
+  .card p{color:var(--muted);font-size:15px}
+  .split{display:grid;grid-template-columns:1fr 1fr;gap:54px;align-items:center;padding:60px 0;border-top:1px solid var(--line)}
+  .split:first-of-type{border-top:none}
+  .split.rev .visual{order:-1}
+  .split h3{font-size:clamp(24px,3vw,32px);font-weight:800;margin-bottom:14px;letter-spacing:-.5px}
+  .split p{color:var(--muted);font-size:16px;margin-bottom:18px}
+  .split ul{list-style:none;display:grid;gap:10px}
+  .split ul li{display:flex;gap:10px;font-size:15px;color:var(--txt)}
+  .split ul li::before{content:"✦";color:var(--accent)}
+  .visual{height:300px;border:1px solid var(--line);border-radius:var(--radius);background:linear-gradient(180deg,#161a23,#0f1218);position:relative;overflow:hidden;display:grid;place-items:center;color:var(--muted)}
+  .visual .canvas-grid{position:absolute;inset:0;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:28px 28px;opacity:.22}
+  .pricing{background:var(--bg-2)}
+  .price-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;max-width:1000px;margin:0 auto}
+  .plan{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:32px;display:flex;flex-direction:column}
+  .plan.featured{border-color:var(--brand);box-shadow:0 20px 60px rgba(37,99,235,.18);position:relative}
+  .plan.featured::before{content:"Más popular";position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--brand);color:#fff;font-size:12px;font-weight:700;padding:4px 14px;border-radius:20px}
+  .plan .name{font-size:14px;text-transform:uppercase;letter-spacing:1px;color:var(--muted);font-weight:700}
+  .plan .price{font-size:42px;font-weight:800;margin:12px 0 4px}
+  .plan .price span{font-size:15px;color:var(--muted);font-weight:500}
+  .plan .desc{color:var(--muted);font-size:14px;margin-bottom:22px;min-height:40px}
+  .plan ul{list-style:none;display:grid;gap:11px;margin-bottom:26px;flex:1}
+  .plan ul li{font-size:14px;color:var(--txt);display:flex;gap:9px}
+  .plan ul li::before{content:"✓";color:var(--accent);font-weight:700}
+  .plan .btn{width:100%;text-align:center}
+  .quote{text-align:center;max-width:760px;margin:0 auto}
+  .quote blockquote{font-size:clamp(20px,3vw,28px);font-weight:600;line-height:1.4;margin-bottom:22px}
+  .quote .who{color:var(--muted)}
+  .quote .who strong{color:var(--txt);display:block}
+  .cta-banner{text-align:center;background:linear-gradient(135deg,rgba(37,99,235,.18),rgba(34,211,238,.1));border:1px solid var(--line);border-radius:24px;padding:64px 28px;margin:0 24px}
+  .cta-banner h2{font-size:clamp(28px,4vw,40px);font-weight:800;margin-bottom:14px}
+  .cta-banner p{color:var(--muted);margin-bottom:28px;font-size:17px}
+  footer{border-top:1px solid var(--line);padding:54px 0 30px;color:var(--muted);font-size:14px}
+  .foot-grid{display:grid;grid-template-columns:1.5fr repeat(3,1fr);gap:34px;margin-bottom:40px}
+  .foot-grid h4{color:var(--txt);font-size:14px;margin-bottom:14px;text-transform:uppercase;letter-spacing:.5px}
+  .foot-grid ul{list-style:none;display:grid;gap:9px}
+  .foot-grid a:hover{color:var(--txt)}
+  .foot-bottom{border-top:1px solid var(--line);padding-top:22px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+  @media(max-width:860px){
+    .nav-links{display:none}
+    .burger{display:block}
+    .grid-3,.price-grid{grid-template-columns:1fr}
+    .grid-2,.split{grid-template-columns:1fr}
+    .split.rev .visual{order:0}
+    .foot-grid{grid-template-columns:1fr 1fr}
+  }
+</style>
+</head>
+<body>
+<header>
+  <nav class="wrap">
+    <div class="logo"><span class="mark">E</span>Engravity</div>
+    <div class="nav-links">
+      <a href="#features">Características</a>
+      <a href="#workflow">Flujo de trabajo</a>
+      <a href="#pricing">Precios</a>
+      <a href="#download">Descargar</a>
     </div>
-
-    <!-- ═══ NAVBAR ═══ -->
-    <nav class="navbar">
-      <div class="nav-container">
-        <a href="index.html" class="logo"><span class="logo-icon"></span> ENGRAVITY</a>
-        <div class="nav-links">
-          <a href="#features" data-i18n="nav.features">Features</a>
-          <a href="#audience" data-i18n="nav.audience">For Whom</a>
-          <a href="#ada-braille" data-i18n="nav.compliance">ADA & Braille</a>
-          <a href="#videos" data-i18n="nav.videos">Videos</a>
-          <a href="./pricing/index.html" data-i18n="nav.pricing">Pricing</a>
-          <a href="./docs/index.html" data-i18n="nav.docs">Docs</a>
-          <a href="./blog/index.html" data-i18n="nav.blog">Blog</a>
-          <a href="./showcase/index.html" data-i18n="nav.showcase">Showcase</a>
-          <a href="./about/index.html" data-i18n="nav.about">About</a>
-        </div>
-        <div class="nav-actions">
-          <div class="lang-dropdown">
-            <button class="lang-btn" id="langToggle">ES ▾</button>
-            <div class="lang-menu" id="langMenu">
-              <a href="#" onclick="changeLanguage('es')">Español (ES)</a>
-              <a href="#" onclick="changeLanguage('en')">English (EN)</a>
-              <a href="#" onclick="changeLanguage('fr')">Français (FR)</a>
-            </div>
-          </div>
-          <button class="btn btn-secondary login-btn" onclick="openModal('loginModal')" data-i18n="nav.login">Log In</button>
-          <button class="btn btn-primary" onclick="openModal('signupModal')" data-i18n="nav.signup">Start Free</button>
-        </div>
+    <div class="nav-cta">
+      <a href="#download" class="btn btn-ghost">Iniciar sesión</a>
+      <a href="#download" class="btn btn-primary">Probar gratis</a>
+    </div>
+    <button class="burger" onclick="var n=document.querySelector('.nav-links');n.style.display=this.dataset.o?'':'flex';this.dataset.o=this.dataset.o?'':'1';">☰</button>
+  </nav>
+</header>
+<section class="hero">
+  <div class="wrap">
+    <span class="badge">● Nuevo · Engravity 2026</span>
+    <h1>El diseño vectorial <span>todo en uno</span> para crear, grabar y producir</h1>
+    <p class="sub">Ilustración, tipografía y trazado de precisión en una sola aplicación rápida y moderna. Del boceto al archivo listo para grabado láser o corte, sin saltar entre programas.</p>
+    <div class="hero-cta">
+      <a href="#download" class="btn btn-primary">Descargar gratis</a>
+      <a href="#features" class="btn btn-ghost">Ver características</a>
+    </div>
+    <small>Sin tarjeta de crédito · Windows, macOS y Linux</small>
+    <div class="hero-shot"><div class="canvas-grid"></div><span>Captura de la interfaz de Engravity</span></div>
+  </div>
+</section>
+<div class="trust">
+  <div class="wrap">
+    <p>Usado por creadores, talleres y estudios en todo el mundo</p>
+    <div class="trust-logos"><span>SignWorks</span><span>LaserLab</span><span>NovaStudio</span><span>VectorHaus</span><span>Makerly</span></div>
+  </div>
+</div>
+<section class="block" id="features">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="tag">Características</span>
+      <h2>Todo lo que necesitas, en un solo lienzo</h2>
+      <p>Herramientas profesionales pensadas para ilustradores, diseñadores y talleres de grabado y corte.</p>
+    </div>
+    <div class="grid grid-3">
+      <div class="card"><div class="ico">✏️</div><h3>Herramientas vectoriales</h3><p>Curvas Bézier, nodos editables, operaciones booleanas y trazado preciso basado en SVG.</p></div>
+      <div class="card"><div class="ico">🔤</div><h3>Tipografía avanzada</h3><p>Texto en trayectoria, kerning fino, OpenType y conversión a curvas para grabado.</p></div>
+      <div class="card"><div class="ico">🗂️</div><h3>Capas inteligentes</h3><p>Capas de vector, imagen, grupo y filtro. Organiza, combina y bloquea con un clic.</p></div>
+      <div class="card"><div class="ico">🎨</div><h3>Gestión de color</h3><p>Soporte ICC, paletas tipo Pantone, CMYK y RGB para impresión y pantalla.</p></div>
+      <div class="card"><div class="ico">⚡</div><h3>Acelerado por GPU</h3><p>Zoom, rotación y render del lienzo fluidos incluso en archivos complejos.</p></div>
+      <div class="card"><div class="ico">🧩</div><h3>Extensible con scripts</h3><p>API de automatización y plugins para crear tus propias herramientas y flujos.</p></div>
+      <div class="card"><div class="ico">📐</div><h3>Asistentes de dibujo</h3><p>Guías de perspectiva, puntos de fuga, rejillas y simetría para trazos perfectos.</p></div>
+      <div class="card"><div class="ico">🔁</div><h3>Patrones sin costura</h3><p>Modo wrap-around para crear texturas y mosaicos repetibles al instante.</p></div>
+      <div class="card"><div class="ico">📦</div><h3>Compatibilidad total</h3><p>Importa y exporta SVG, PDF, AI, EPS, DXF, PNG y formatos de corte láser.</p></div>
+    </div>
+  </div>
+</section>
+<section class="block" id="workflow" style="background:var(--bg-2)">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="tag">Flujo de trabajo</span>
+      <h2>Del concepto a la producción, sin fricción</h2>
+    </div>
+    <div class="split">
+      <div>
+        <h3>Una interfaz que se adapta a ti</h3>
+        <p>Paneles acoplables, espacios de trabajo guardables y atajos personalizables. Configura Engravity una vez y trabaja a tu manera para siempre.</p>
+        <ul><li>Más de 25 paneles configurables</li><li>Temas claro y oscuro</li><li>Espacios de trabajo guardados por proyecto</li></ul>
       </div>
-    </nav>
-
-    <!-- ═══ AUTH MODALS ═══ -->
-    <div class="modal-overlay" id="loginModal">
-      <div class="modal-content glass-panel">
-        <button class="modal-close" onclick="closeModal('loginModal')">&times;</button>
-        <h2 data-i18n="auth.loginTitle">Welcome back</h2>
-        <p data-i18n="auth.loginSub">Sign in to keep designing.</p>
-        <form onsubmit="handleAuth(event)">
-          <div class="form-group"><label data-i18n="auth.email">Email</label><input type="email" required placeholder="name@workshop.com" /></div>
-          <div class="form-group"><label data-i18n="auth.password">Password</label><input type="password" required placeholder="••••••••" /></div>
-          <button type="submit" class="btn btn-primary btn-block" data-i18n="nav.login">Log In</button>
-        </form>
+      <div class="visual"><div class="canvas-grid"></div><span>Interfaz personalizable</span></div>
+    </div>
+    <div class="split rev">
+      <div>
+        <h3>Diseñado para grabado y corte</h3>
+        <p>Genera trazados de precisión, define capas de corte y grabado, controla potencia y velocidad, y exporta directo a tu máquina láser o de corte.</p>
+        <ul><li>Capas de corte / grabado / marcado</li><li>Exportación a DXF y G-code</li><li>Vista previa de recorrido de herramienta</li></ul>
+      </div>
+      <div class="visual"><div class="canvas-grid"></div><span>Salida para grabado láser</span></div>
+    </div>
+    <div class="split">
+      <div>
+        <h3>Vector e imagen, juntos</h3>
+        <p>Combina ilustración vectorial con edición de mapa de bits en el mismo documento. Vectoriza fotos, aplica filtros y mantén todo no destructivo.</p>
+        <ul><li>Vectorización automática (trace)</li><li>Filtros y efectos no destructivos</li><li>Soporte de máscaras y transparencias</li></ul>
+      </div>
+      <div class="visual"><div class="canvas-grid"></div><span>Vector + bitmap</span></div>
+    </div>
+  </div>
+</section>
+<section class="block pricing" id="pricing">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="tag">Precios</span>
+      <h2>Un plan para cada creador</h2>
+      <p>Empieza gratis y escala cuando lo necesites. Sin contratos ocultos.</p>
+    </div>
+    <div class="price-grid">
+      <div class="plan">
+        <span class="name">Free</span>
+        <div class="price">$0<span>/siempre</span></div>
+        <p class="desc">Para empezar a explorar el diseño vectorial.</p>
+        <ul><li>Herramientas vectoriales esenciales</li><li>Exportación SVG y PNG</li><li>Proyectos ilimitados locales</li><li>Comunidad de soporte</li></ul>
+        <a href="#download" class="btn btn-ghost">Descargar</a>
+      </div>
+      <div class="plan featured">
+        <span class="name">Pro</span>
+        <div class="price">$12<span>/mes</span></div>
+        <p class="desc">Para diseñadores y talleres profesionales.</p>
+        <ul><li>Todo lo de Free</li><li>Salida para grabado y corte láser</li><li>Gestión de color ICC / CMYK</li><li>Exportación AI, EPS, DXF, PDF</li><li>Soporte prioritario</li></ul>
+        <a href="#download" class="btn btn-primary">Probar 14 días gratis</a>
+      </div>
+      <div class="plan">
+        <span class="name">Studio</span>
+        <div class="price">$29<span>/mes</span></div>
+        <p class="desc">Para equipos y estudios de producción.</p>
+        <ul><li>Todo lo de Pro</li><li>Licencias para equipo</li><li>Bibliotecas compartidas en la nube</li><li>Automatización por scripts</li><li>Onboarding dedicado</li></ul>
+        <a href="#download" class="btn btn-ghost">Contactar ventas</a>
       </div>
     </div>
-    <div class="modal-overlay" id="signupModal">
-      <div class="modal-content glass-panel">
-        <button class="modal-close" onclick="closeModal('signupModal')">&times;</button>
-        <h2 data-i18n="auth.signupTitle">Join the Elite</h2>
-        <p data-i18n="auth.signupSub">Start your free trial.</p>
-        <form onsubmit="handleAuth(event)">
-          <div class="form-group"><label data-i18n="auth.name">Name</label><input type="text" required /></div>
-          <div class="form-group"><label data-i18n="auth.email">Email</label><input type="email" required /></div>
-          <div class="form-group"><label data-i18n="auth.password">Password</label><input type="password" required placeholder="••••••••" /></div>
-          <button type="submit" class="btn btn-primary btn-block" data-i18n="nav.signup">Start Free</button>
-        </form>
+  </div>
+</section>
+<section class="block">
+  <div class="wrap quote">
+    <blockquote>"Engravity reemplazó tres programas en mi taller. Diseño, vectorizo y mando al láser sin exportar a otra app. Es lo más rápido que he usado."</blockquote>
+    <div class="who"><strong>Ana Morales</strong>Diseñadora y dueña de taller de grabado</div>
+  </div>
+</section>
+<section class="block" id="download">
+  <div class="cta-banner">
+    <h2>Empieza a crear con Engravity hoy</h2>
+    <p>Descarga gratis. Sin tarjeta de crédito. Disponible para Windows, macOS y Linux.</p>
+    <a href="#" class="btn btn-primary">Descargar Engravity</a>
+  </div>
+</section>
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="logo" style="margin-bottom:12px"><span class="mark">E</span>Engravity</div>
+        <p>El software de diseño vectorial todo en uno para crear, grabar y producir.</p>
       </div>
+      <div><h4>Producto</h4><ul><li><a href="#features">Características</a></li><li><a href="#pricing">Precios</a></li><li><a href="#download">Descargar</a></li><li><a href="#">Novedades</a></li></ul></div>
+      <div><h4>Recursos</h4><ul><li><a href="#">Documentación</a></li><li><a href="#">Tutoriales</a></li><li><a href="#">Blog</a></li><li><a href="#">Comunidad</a></li></ul></div>
+      <div><h4>Empresa</h4><ul><li><a href="#">Acerca de</a></li><li><a href="#">Contacto</a></li><li><a href="#">Privacidad</a></li><li><a href="#">Términos</a></li></ul></div>
     </div>
-
-    <main id="smooth-wrapper">
-      <!-- ═══ FONDO ANIMADO "MOVIDO" (Morphing Mesh) ═══ -->
-      <div class="animated-mesh-bg">
-        <div class="mesh-blob blob1"></div>
-        <div class="mesh-blob blob2"></div>
-        <div class="mesh-blob blob3"></div>
-      </div>
-
-      <div id="smooth-content">
-
-        <!-- ═══ MÁSIVE BACKGROUND TEXT (MARQUEE) ═══ -->
-        <div class="bg-layer-text scroll-marquee">
-          <span>ENGRAVITY</span> <span>AI GENERATION</span> <span>VECTORIAL</span>
-        </div>
-
-        <!-- ═══ HERO INTERACTIVO (Typewriter + Parallax) ═══ -->
-        <section class="hero pompous-hero modern-hero-layout">
-          <div class="hero-content" data-speed="1.1">
-            <div class="badge reveal-up" data-i18n="hero.badge">DIGITAL DESIGN + PRODUCTION, UNIFIED</div>
-            <h1 class="hero-title mega-title reveal-up" data-i18n="hero.title">
-              The Power of the Vector. <br/><span class="gradient-text pompous-gradient">The Intelligence of the Future.</span>
-            </h1>
-            <p class="hero-subtitle pompous-sub reveal-up" data-i18n="hero.subtitle">
-              Where your digital design becomes a real product. Engravity bridges the creative world with manufacturing: import from any software, design with high-end vector tools, and send your file straight to the CNC. We don't replace Illustrator — we complete what it's missing.
-            </p>
-            <div class="hero-cta reveal-up">
-              <a href="./download/index.html" class="btn btn-primary btn-mega btn-pulse dynamic-os-download">💻 Download</a>
-              <a href="#features" class="btn btn-secondary btn-mega" data-i18n="hero.ctaSecondary">View Specs</a>
-            </div>
-          </div>
-          
-          <div class="hero-visual reveal-up" data-speed="0.9">
-            <!-- Interfaz Flotante Parallax 3D -->
-            <div class="hero-img-container magnetic-container">
-              <img class="hero-ui-mockup" src="./assets/images/software-ui.png" alt="Engravity Software Interface">
-            </div>
-            
-            <!-- Typewriter Prompt Box -->
-            <div class="glass-container float-prompt glass-glow tilt-element" data-tilt>
-              <div class="glow-spotlight"></div>
-              <div class="preview-header"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span></div>
-              <div class="preview-body">
-                <div class="prompt-box">
-                  <span class="prompt-text" id="typewriter-text"></span><span class="cursor"></span>
-                </div>
-                <!-- Animación de carga que se enciende cuando "termina" de escribir -->
-                <div class="generation-lines" id="generationLines" style="opacity: 0.2">
-                  <div class="line w-80"></div><div class="line w-60"></div><div class="line w-100 glow-line"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <!-- ═══ FORMAT SUPPORT MARQUEE ═══ -->
-        <div class="format-marquee-container">
-          <div class="format-marquee-heading" data-i18n="formats.heading">A PROFESSIONAL ALTERNATIVE · IMPORT YOUR NATIVE FILES</div>
-          <div class="format-marquee-track">
-            <span class="format-pill">SVG</span>
-            <span class="format-pill">PDF</span>
-            <span class="format-pill">EPS</span>
-            <span class="format-pill">DXF</span>
-            <span class="format-pill">AI</span>
-            <span class="format-pill">CDR</span>
-            <span class="format-pill">PNG</span>
-            <span class="format-pill">JPG</span>
-            <!-- Duplicated for infinite scroll -->
-            <span class="format-pill">SVG</span>
-            <span class="format-pill">PDF</span>
-            <span class="format-pill">EPS</span>
-            <span class="format-pill">DXF</span>
-            <span class="format-pill">AI</span>
-            <span class="format-pill">CDR</span>
-            <span class="format-pill">PNG</span>
-            <span class="format-pill">JPG</span>
-          </div>
-        </div>
-
-        <!-- ═══ BENTO GRID ASIMÉTRICO (Spotlight Hover) ═══ -->
-        <section id="features" class="bento-section">
-          <h2 class="section-title text-center"><span class="gradient-text" data-i18n="features.title">Digital Design That Produces.</span></h2>
-          <p class="section-subtitle text-center" data-i18n="features.subtitle">Professional creative tools — with the production engine no other design software has.</p>
-          <div class="bento-asymmetric-grid">
-            
-            <!-- Tarjeta Larga Principal (Span 8) -->
-            <div class="bento-card image-card span-8 tilt-element reveal-up glass-glow" data-tilt>
-              <div class="glow-spotlight"></div>
-              <img src="./assets/images/ada-sign.png" class="bento-bg-img parallax-img" alt="ADA Sign" />
-              <div class="glass-caption tall-gradient">
-                <h3 data-i18n="features.adaTitle" class="gradient-text">Professional Vector Design</h3>
-                <p data-i18n="features.adaDesc">Pen tool, Bézier curves, boolean pathfinder, gradients, mesh, and warp. You don't need to be an Illustrator expert: Engravity gives you creative power with the simplicity your workshop deserves.</p>
-              </div>
-            </div>
-
-            <!-- Tarjeta Cuadrada (Span 4) -->
-            <div class="bento-card dark-glass span-4 reveal-up glass-glow tilt-element" data-tilt>
-              <div class="glow-spotlight"></div>
-              <div class="card-content">
-                <span class="card-icon big-icon">🧠</span>
-                <h3 data-i18n="features.aiTitle">Generative AI on the Canvas</h3>
-                <p data-i18n="features.aiDesc">Build complete files with artificial intelligence. The AI designs complex geometry, vectors, and applies color schemes directly on the canvas, ready for native exports (DXF, AI, CDR).</p>
-              </div>
-            </div>
-
-            <!-- Tarjeta Cuadrada Pequeña (Span 4) -->
-            <div class="bento-card dark-glass span-4 reveal-up glass-glow tilt-element" data-tilt>
-              <div class="glow-spotlight"></div>
-              <div class="card-content">
-                <span class="card-icon big-icon">🧊</span>
-                <h3 data-i18n="features.colorTitle">3D Layer Preview</h3>
-                <p data-i18n="features.colorDesc">Render before you cut. True simulation of Face, Backer, Laminate, Spacers, and Standoffs. Tactile copy and domed Braille simulated volumetrically in real time.</p>
-              </div>
-            </div>
-
-            <!-- Tarjeta Panorámica (Span 8) -->
-            <div class="bento-card image-card span-8 reveal-up glass-glow tilt-element" data-tilt>
-              <div class="glow-spotlight"></div>
-              <img src="./assets/images/cnc-carving.png?v=2" class="bento-bg-img parallax-img" alt="CNC Wood Carving" />
-              <div class="glass-caption tall-gradient">
-                <h3 data-i18n="features.cncTitle">Toolpath Engine & Direct G-Code</h3>
-                <p data-i18n="features.cncDesc">Toolpath generation (Engrave, Cut, Pocket, V-Carve). Visual 3D cut simulation and a pure G-Code post-processor compatible with 6 industrial machine profiles.</p>
-              </div>
-            </div>
-
-            <!-- Tarjetas Adicionales (Span 6 y 6) -->
-            <div class="bento-card image-card span-6 reveal-up glass-glow tilt-element" data-tilt>
-              <div class="glow-spotlight"></div>
-              <img src="./assets/images/vinyl-cutting.png" class="bento-bg-img parallax-img" alt="Vinyl Cutting" />
-              <div class="glass-caption">
-                <h3 data-i18n="features.signsTitle">Native ADA Signage</h3>
-                <p data-i18n="features.signsDesc">Smart templates by sign type. Grade 2 UEB Braille and automatic pictogram validation, instantly.</p>
-              </div>
-            </div>
-
-            <div class="bento-card image-card span-6 reveal-up glass-glow tilt-element" data-tilt>
-              <div class="glow-spotlight"></div>
-              <img src="./assets/images/cnc-simulation.png?v=2" class="bento-bg-img parallax-img" alt="CNC 3D Simulation" />
-              <div class="glass-caption tall-gradient">
-                <h3 data-i18n="features.simTitle">Production Simulation</h3>
-                <p data-i18n="features.simDesc">Watch your virtual router head sculpt the acrylic. Verify <i>pocketing</i> and <i>v-carve</i> in 3D before wasting material.</p>
-              </div>
-            </div>
-
-            <!-- NUEVA: Tarjeta de Diseño Digital (Span 12, Full-Width) -->
-            <div class="bento-card dark-glass span-12 reveal-up glass-glow tilt-element" data-tilt style="min-height: 200px;">
-              <div class="glow-spotlight"></div>
-              <div class="card-content" style="text-align: center; max-width: 800px; margin: 0 auto;">
-                <span class="card-icon big-icon">🌐</span>
-                <h3 data-i18n="features.designTitle">Beyond Signage</h3>
-                <p data-i18n="features.designDesc">Engravity doesn't compete with your favorite design software — it complements it. Import your Illustrator, CorelDRAW, or AutoCAD files and add what those programs don't have: automatic ADA validation, 3D preview with real materials, and direct CNC production. <strong>Where your design ends, Engravity begins.</strong></p>
-              </div>
-            </div>
-
-          </div>
-        </section>
-
-        <!-- ═══ SECCIÓN ADA & BRAILLE (Scroll Sticky + Braille Re-activo) ═══ -->
-        <section id="ada-braille" class="ada-sticky-section">
-          <div class="ada-sticky-container">
-            
-            <!-- Columna Izquierda (Se queda Fija) -->
-            <div class="ada-left-col sticky-panel">
-              <div class="badge" data-i18n="ada.badge">CERTIFICATION 703</div>
-              <h2 class="section-title massive-h2"><span class="gradient-text pompous-gradient" data-i18n="ada.title">Absolute<br/>Compliance.</span></h2>
-              <p class="ada-intro" data-i18n="ada.intro">With Engravity, geometric validation of 5/8"–2" character heights and 1/32" reliefs runs mathematically in real time as you design.</p>
-
-              <!-- El Braille Demo Magnético -->
-              <div class="braille-interactive-box glass-glow tilt-element mt-2" data-tilt>
-                <div class="glow-spotlight"></div>
-                <h4 data-i18n="ada.brailleTitle">Live Tactile UEB Validation</h4>
-                <div class="braille-flow-vertical">
-                  <div class="step-text">"RESTROOM"</div>
-                  <div class="arrow-down">↓</div>
-                  <div class="step-braille-interactive" id="magnetic-braille" data-i18n-title="ada.brailleHint" title="Hover the cursor to feel the tactile relief">
-                    <span class="dot-b"></span><span class="dot-b empty"></span><span class="dot-b"></span><span class="dot-b"></span>
-                    <span class="dot-b empty"></span><span class="dot-b"></span><span class="dot-b"></span><span class="dot-b empty"></span>
-                    <span class="dot-b"></span><span class="dot-b empty"></span><span class="dot-b"></span><span class="dot-b empty"></span>
-                  </div>
-                  <div class="step-desc" data-i18n="ada.brailleDesc"><strong class="color-accent">Grade 2 Contracted.</strong> Hover the cursor over the dots to preview the 1/32" 3D dome (required by law).</div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Columna Derecha (Hace scroll hacia arriba mostrando las tarjetas gigantes) -->
-            <div class="ada-right-col scroll-slides">
-              <div class="slide-card glass-glow reveal-up">
-                <div class="glow-spotlight"></div>
-                <img src="./assets/images/braille-closeup.png" class="slide-bg-img parallax-img" alt="Close Braille">
-                <div class="slide-content tall-gradient">
-                  <div class="slide-number">01</div>
-                  <h3 data-i18n="ada.slide1Title">Domed Braille. Not Flat.</h3>
-                  <p data-i18n="ada.slide1Desc">Cutting straight cylinders with a laser violates the ADA rule. We generate conical bit toolpaths to sculpt perfect tactile half-spheres.</p>
-                </div>
-              </div>
-
-              <div class="slide-card glass-glow reveal-up">
-                <div class="glow-spotlight"></div>
-                <img src="./assets/images/ada-sign.png" class="slide-bg-img parallax-img" alt="ADA Distances">
-                <div class="slide-content tall-gradient">
-                  <div class="slide-number">02</div>
-                  <h3 data-i18n="ada.slide2Title">3/8" Clear Zones</h3>
-                  <p data-i18n="ada.slide2Desc">Braille can never touch decorative borders. The vector engine automatically generates an invisible 3/8-inch halo that rejects collisions.</p>
-                </div>
-              </div>
-
-              <div class="slide-card glass-glow reveal-up dark-solid">
-                <div class="glow-spotlight"></div>
-                <div class="slide-content centered-content">
-                  <div class="slide-number xl-num">6"</div>
-                  <h3 data-i18n="ada.slide3Title">Minimum Pictogram Field</h3>
-                  <p data-i18n="ada.slide3Desc">Any ISA pictogram that labels a permanent room must sit in a base field at least 6 inches tall, separated from the text below.</p>
-                </div>
-              </div>
-            </div>
-
-          </div>
-        </section>
-
-        <!-- ═══ VIDEOS — WHAT ENGRAVITY CAN DO ═══ -->
-        <section id="videos" class="videos-section">
-          <div class="videos-header">
-            <div class="badge" data-i18n="videos.badge">SEE IT IN ACTION</div>
-            <h2 class="section-title text-center"><span class="gradient-text pompous-gradient" data-i18n="videos.title">Watch what Engravity can do.</span></h2>
-            <p class="section-subtitle text-center" data-i18n="videos.subtitle">Short demos of real workflows: design, ADA validation, and CNC production on a single canvas.</p>
-          </div>
-
-          <div class="videos-grid">
-
-            <article class="video-card glass-panel glass-glow reveal-up tilt-element" data-tilt>
-              <div class="glow-spotlight"></div>
-              <div class="video-frame">
-                <video controls preload="none" poster="./assets/images/software-ui.png" playsinline>
-                  <source src="./assets/videos/demo-design.mp4" type="video/mp4">
-                </video>
-              </div>
-              <h3 data-i18n="videos.card1Title">Design with the vector engine</h3>
-              <p data-i18n="videos.card1Desc">From a blank canvas to a production-ready sign in minutes — Bézier tools, layers, and live previews.</p>
-            </article>
-
-            <article class="video-card glass-panel glass-glow reveal-up tilt-element" data-tilt>
-              <div class="glow-spotlight"></div>
-              <div class="video-frame">
-                <video controls preload="none" poster="./assets/images/braille-closeup.png" playsinline>
-                  <source src="./assets/videos/demo-ada.mp4" type="video/mp4">
-                </video>
-              </div>
-              <h3 data-i18n="videos.card2Title">ADA &amp; Braille validation</h3>
-              <p data-i18n="videos.card2Desc">Real-time geometric checks for character heights, dome reliefs, and 3/8" clear zones — straight to UEB Grade 2.</p>
-            </article>
-
-            <article class="video-card glass-panel glass-glow reveal-up tilt-element" data-tilt>
-              <div class="glow-spotlight"></div>
-              <div class="video-frame">
-                <video controls preload="none" poster="./assets/images/cnc-simulation.png" playsinline>
-                  <source src="./assets/videos/demo-cnc.mp4" type="video/mp4">
-                </video>
-              </div>
-              <h3 data-i18n="videos.card3Title">CNC simulation &amp; G-Code</h3>
-              <p data-i18n="videos.card3Desc">Multi-material toolpath simulation with collision checks and ready-to-cut G-Code for your machine profile.</p>
-            </article>
-
-          </div>
-
-          <p class="videos-note text-center" data-i18n="videos.note">More demos arriving as the launch approaches.</p>
-        </section>
-
-        <!-- ═══ NOSOTROS — EXPERIENCIA INMERSIVA ═══ -->
-        <section id="about" class="about-immersive">
-
-          <!-- Skills Ticker (Continuous Horizontal Belt) -->
-          <div class="skills-ticker">
-            <div class="ticker-track">
-              <span>DEEP ENGRAVING</span><span class="ticker-dot">✦</span>
-              <span>DIGITAL DESIGN</span><span class="ticker-dot">✦</span>
-              <span>LASER CUTTING</span><span class="ticker-dot">✦</span>
-              <span>3D PRINTING</span><span class="ticker-dot">✦</span>
-              <span>FINISHING & DETAILING</span><span class="ticker-dot">✦</span>
-              <span>INDUSTRIAL CLEANING</span><span class="ticker-dot">✦</span>
-              <span>CNC ROUTING</span><span class="ticker-dot">✦</span>
-              <span>ADA BRAILLE</span><span class="ticker-dot">✦</span>
-              <span>VINYL CUTTING</span><span class="ticker-dot">✦</span>
-              <!-- Duplicated for infinite loop -->
-              <span>DEEP ENGRAVING</span><span class="ticker-dot">✦</span>
-              <span>DIGITAL DESIGN</span><span class="ticker-dot">✦</span>
-              <span>LASER CUTTING</span><span class="ticker-dot">✦</span>
-              <span>3D PRINTING</span><span class="ticker-dot">✦</span>
-              <span>FINISHING & DETAILING</span><span class="ticker-dot">✦</span>
-              <span>INDUSTRIAL CLEANING</span><span class="ticker-dot">✦</span>
-              <span>CNC ROUTING</span><span class="ticker-dot">✦</span>
-              <span>ADA BRAILLE</span><span class="ticker-dot">✦</span>
-              <span>VINYL CUTTING</span><span class="ticker-dot">✦</span>
-            </div>
-          </div>
-
-          <!-- Contenedor Sticky + Galería -->
-          <div class="about-stage">
-            <!-- LEFT: Founder Story (Sticky) -->
-            <div class="about-story-col">
-              <div class="about-story-card glass-glow">
-                <div class="glow-spotlight"></div>
-                <div class="about-story-inner">
-                  <div class="badge" data-i18n="about.badge">OUR STORY</div>
-                  <h2 class="about-mega-title"><span class="gradient-text pompous-gradient" data-i18n="about.title">Born in the Workshop.</span></h2>
-                  <div class="about-year-badge" data-i18n="about.yearBadge">Startup · First Product</div>
-                  <p class="about-lead" data-i18n="about.p1">We're a <strong>startup that's just getting started</strong>, but we come from an industry we know inside out. Engravity is our first major product, and we're building it with the same passion we put into the first sign we ever cut.</p>
-                  <p class="about-body" data-i18n="about.p2">Founded by <strong>a woman and a man</strong> with <strong>more than 25 years of hands-on experience in sign workshops</strong>. We've worked every process ourselves: <strong>digital design</strong>, deep <strong>engraving</strong>, <strong>laser</strong>, <strong>3D printing</strong>, and the demanding craft of <strong>finishing and cleaning</strong>.</p>
-                  <p class="about-body" data-i18n="about.p3">We don't pretend to know it all. We keep learning every day alongside the maker community. But we know exactly where it hurts because we've lived it. That's why we built Engravity: to solve the real problems nobody else is addressing.</p>
-                  <p class="about-body about-cta-text" data-i18n="about.p4">🚀 This is just the beginning. We grow with you.</p>
-                  <div class="about-stats">
-                    <div class="stat-item">
-                      <div class="stat-num">25+</div>
-                      <div class="stat-label" data-i18n="about.stat1">Years of Real Workshop Experience</div>
-                    </div>
-                    <div class="stat-item">
-                      <div class="stat-num">v1</div>
-                      <div class="stat-label" data-i18n="about.stat2">Our First Major Product</div>
-                    </div>
-                    <div class="stat-item">
-                      <div class="stat-num">2</div>
-                      <div class="stat-label" data-i18n="about.stat3">Founders Still Learning</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- RIGHT: Portfolio Sign Gallery (Scrolls) -->
-            <div class="about-gallery-col">
-              <div class="gallery-item glass-glow reveal-up">
-                <div class="glow-spotlight"></div>
-                <img src="./assets/images/modern-ada-sign.png" class="gallery-img parallax-img" alt="Modern ADA Braille Sign" />
-                <div class="gallery-label">
-                  <span class="gallery-tag" data-i18n="gallery.tag1">ADA COMPLIANT</span>
-                  <h4 data-i18n="gallery.title1">Modern Braille Signage</h4>
-                  <p data-i18n="gallery.desc1">Domed braille on matte-black aluminum with silver tactile letters.</p>
-                </div>
-              </div>
-
-              <div class="gallery-item glass-glow reveal-up">
-                <div class="glow-spotlight"></div>
-                <img src="./assets/images/acrylic-sign.png?v=2" class="gallery-img parallax-img" alt="Acrylic Standoff Sign" />
-                <div class="gallery-label">
-                  <span class="gallery-tag" data-i18n="gallery.tag2">PREMIUM ACRYLIC</span>
-                  <h4 data-i18n="gallery.title2">Acrylic with Standoffs</h4>
-                  <p data-i18n="gallery.desc2">Laser engraving with stainless-steel standoffs for corporate lobbies.</p>
-                </div>
-              </div>
-
-              <div class="gallery-item glass-glow reveal-up">
-                <div class="glow-spotlight"></div>
-                <img src="./assets/images/wood-metal-sign.png?v=2" class="gallery-img parallax-img" alt="Wood Metal Corporate Sign" />
-                <div class="gallery-label">
-                  <span class="gallery-tag" data-i18n="gallery.tag3">DIMENSIONAL</span>
-                  <h4 data-i18n="gallery.title3">Corporate Wood & Metal</h4>
-                  <p data-i18n="gallery.desc3">Dimensional letters cut from aluminum on dark walnut panels.</p>
-                </div>
-              </div>
-
-              <div class="gallery-item glass-glow reveal-up">
-                <div class="glow-spotlight"></div>
-                <img src="./assets/images/workshop.png?v=2" class="gallery-img parallax-img" alt="Sign Workshop" />
-                <div class="gallery-label">
-                  <span class="gallery-tag" data-i18n="gallery.tag4">OUR ORIGIN</span>
-                  <h4 data-i18n="gallery.title4">The Workshop Where It All Started</h4>
-                  <p data-i18n="gallery.desc4">Years of hand production taught us every pain point of a broken workflow.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <!-- ═══ AUDIENCE: PARA QUIÉN ES ENGRAVITY ═══ -->
-        <section id="audience" class="audience-section">
-          <h2><span class="gradient-text" data-i18n="audience.title">Built for people who create with their hands.</span></h2>
-          <p class="lead" data-i18n="audience.lead">Engravity serves three distinct communities — and sometimes they're the same person at different points in their career.</p>
-
-          <div class="audience-grid">
-
-            <div class="audience-card reveal-up">
-              <span class="audience-icon">🪧</span>
-              <h3 data-i18n="audience.card1Title">Sign makers</h3>
-              <p data-i18n="audience.card1Desc">Sign shops and CNC production teams that need ADA validation, 3D simulation, and clean G-Code without juggling five programs. Design, validate, and produce on the same canvas.</p>
-              <a href="./pricing/index.html" data-i18n="audience.card1Link">See the Industrial plan →</a>
-            </div>
-
-            <div class="audience-card reveal-up">
-              <span class="audience-icon">🎨</span>
-              <h3 data-i18n="audience.card2Title">Creative designers</h3>
-              <p data-i18n="audience.card2Desc">If you come from Illustrator, Figma, or CorelDRAW, Engravity is the next step: import your files, add the production engine they're missing, and watch your design take physical form.</p>
-              <a href="./pricing/index.html" data-i18n="audience.card2Link">See the Professional plan →</a>
-            </div>
-
-            <div class="audience-card reveal-up">
-              <span class="audience-icon">🎓</span>
-              <h3 data-i18n="audience.card3Title">Students &amp; makers</h3>
-              <p data-i18n="audience.card3Desc">Learning shouldn&#39;t be expensive. If you&#39;re in design, architecture, or visual-communication school, you can access professional tools without paying professional prices.</p>
-              <a href="./pricing/index.html" data-i18n="audience.card3Link">See the Student plan →</a>
-            </div>
-
-          </div>
-        </section>
-
-        <!-- ═══ PRICING TEASER ═══ -->
-        <section id="pricing" class="pricing-section">
-          <h2 class="section-title text-center"><span class="gradient-text" data-i18n="pricing.title">Plans that grow with you</span></h2>
-          <p class="section-subtitle text-center" style="margin-bottom: 3rem;" data-i18n="pricing.subtitle">Start free if you're a student. Move to the Professional plan when you start selling. Step up to Industrial when your workshop is in full production.</p>
-          <div class="pricing-grid">
-            <div class="price-tier glass-panel reveal-up glass-glow tilt-element" data-tilt>
-              <div class="glow-spotlight"></div>
-              <h3 data-i18n="pricing.tier1">Professional</h3>
-              <div class="price">$49<span class="per-month" data-i18n="pricing.perMonth">/month</span></div>
-              <ul>
-                <li data-i18n="pricing.tier1F1">ADA 703 Validation</li>
-                <li data-i18n="pricing.tier1F2">Bézier Vector Engine</li>
-                <li data-i18n="pricing.tier1F3">Standard G-Code</li>
-                <li data-i18n="pricing.tier1F4">Unlimited projects</li>
-              </ul>
-              <button onclick="openModal('signupModal')" class="btn btn-secondary btn-block" data-i18n="pricing.cta">Get Started</button>
-            </div>
-            <div class="price-tier glass-panel premium-tier reveal-up glass-glow tilt-element" data-tilt>
-              <div class="glow-spotlight"></div>
-              <div class="popular-badge" data-i18n="pricing.popular">Most Popular</div>
-              <h3 data-i18n="pricing.tier2">Industrial</h3>
-              <div class="price gradient-text">$129<span class="per-month" data-i18n="pricing.perMonth">/month</span></div>
-              <ul>
-                <li data-i18n="pricing.tier2F1">Multi-material CNC simulation</li>
-                <li data-i18n="pricing.tier2F2">Sherwin-Williams Pro</li>
-                <li data-i18n="pricing.tier2F3">6 machine profiles</li>
-                <li data-i18n="pricing.tier2F4">Specialized support</li>
-              </ul>
-              <button onclick="openModal('signupModal')" class="btn btn-primary btn-block" data-i18n="pricing.cta2">Optimize Workshop</button>
-            </div>
-          </div>
-          <div style="text-align: center; margin-top: 2.5rem;">
-            <a href="./pricing/index.html" class="btn btn-secondary btn-mega" data-i18n="pricing.compareLink">See all plans & compare →</a>
-          </div>
-        </section>
-
-      </div>
-    </main>
-
-    <footer class="footer-unified">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <h3 class="gradient-text pompous-gradient">ENGRAVITY</h3>
-          <p data-i18n="footer.desc">A startup built from the workshop floor. Professional tools made by makers, for makers — and for those learning to be one.</p>
-        </div>
-        <div class="footer-col">
-          <h4 data-i18n="footer.colProduct">Product</h4>
-          <a href="#features" data-i18n="nav.features">Features</a>
-          <a href="./pricing/index.html" data-i18n="nav.pricing">Pricing</a>
-          <a href="./download/index.html" data-i18n="footer.download">Download</a>
-          <a href="./changelog/index.html" data-i18n="footer.changelog">Changelog</a>
-        </div>
-        <div class="footer-col">
-          <h4 data-i18n="footer.colResources">Resources</h4>
-          <a href="./docs/index.html" data-i18n="footer.docs">Documentation</a>
-          <a href="./blog/index.html" data-i18n="nav.blog">Blog</a>
-          <a href="./blog/ada-compliance.html" data-i18n="footer.adaGuide">ADA Guide</a>
-          <a href="./blog/cnc-routing.html" data-i18n="footer.cncGuide">CNC Guide</a>
-        </div>
-        <div class="footer-col">
-          <h4 data-i18n="footer.colCompany">Company</h4>
-          <a href="./about/index.html" data-i18n="nav.about">About</a>
-          <a href="mailto:hola@engravitysigns.com" data-i18n="footer.contact">Contact</a>
-          <a href="https://github.com/engravity" target="_blank" rel="noopener">GitHub</a>
-        </div>
-      </div>
-      <div class="footer-divider">
-        <span data-i18n="footer.copyright">&copy; 2026 Engravitysigns.com — All rights reserved.</span>
-        <span class="footer-startup-note" data-i18n="footer.startupNote">First product · Learning and growing with the industry</span>
-      </div>
-    </footer>
-
-    <script src="./src/js/main.js?v=7"></script>
-    <script type="module" src="./src/js/auth.js"></script>
-  </body>
+    <div class="foot-bottom">
+      <span>© 2026 Engravity. Todos los derechos reservados.</span>
+      <span>Hecho para creadores ✦</span>
+    </div>
+  </div>
+</footer>
+</body>
 </html>
